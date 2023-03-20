@@ -3,9 +3,10 @@
  * 회원 가입 form 전체 검정
  */
 function validateSignInForm(e) {
-    e.preventDefault;
+    e.preventDefault();
     validateUserId();
     validateUserPassword();
+    validateUserEmail();
 }
 
 /**
@@ -35,6 +36,21 @@ function validateUserPassword() {
 
     if(!userPasswordReg.test(userPassword)) {
         alert("비밀번호는 영어 소문자, 숫자 조합 8 ~ 32자를 입력해 주세요.");
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 이메일 유효성 검사
+ */
+function validateUserEmail() {
+    var userEmail = document.getElementsByName("user_email")[0].value;
+    console.log(userEmail);
+    var userEmailReg = /^[\w.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+    if(!userEmailReg.test(userEmail)) {
+        alert("올바른 이메일을 입력해 주세요.");
         return false;
     }
     return true;
