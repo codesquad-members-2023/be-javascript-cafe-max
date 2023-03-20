@@ -1,0 +1,85 @@
+.login-header {
+    width: 1040px;
+    height: 64px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.hello-java {
+    position: absolute;
+    width: 96px;
+    height: 16px;
+    left: 0px;
+    top: calc(50% - 16px/2);
+
+    /* BoldR */
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    /* identical to box height, or 16px */
+
+
+    /* Black */
+
+    color: #14212B;
+}
+.sign-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+
+    width: 122px;
+    height: 32px;
+
+    /* Primary */
+
+    background: #4362D0;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.login-section {
+    width: 1040px;
+    height: 148px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.login {
+    position: absolute;
+    width: 83px;
+    height: 38px;
+    left: calc(50% - 83px/2 + 0.5px);
+    top: calc(50% - 38px/2);
+
+    /* DisplayL */
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+
+    /* Black */
+
+    color: #14212B;
+}
