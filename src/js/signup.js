@@ -5,6 +5,7 @@
 function validateSignInForm(e) {
     e.preventDefault;
     validateUserId();
+    validateUserPassword();
 }
 
 /**
@@ -18,6 +19,22 @@ function validateUserId() {
 
     if(!userIdReg.test(userId)) {
         alert("아이디는 영문, 숫자 조합 2 ~ 64자를 입력해 주세요.");
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 비밀번호 유효성 검사
+ *  - 영어 소문자, 숫자 조합 8 ~ 32자
+ */
+function validateUserPassword() {
+    var userPassword = document.getElementsByName("user_password")[0].value;
+    console.log(userPassword);
+    var userPasswordReg = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,32}$/;
+
+    if(!userPasswordReg.test(userPassword)) {
+        alert("비밀번호는 영어 소문자, 숫자 조합 8 ~ 32자를 입력해 주세요.");
         return false;
     }
     return true;
