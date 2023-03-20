@@ -7,10 +7,13 @@
 - [ ] 오브젝트 CH6,7,8
 ____
 ## 월(3/20)
-- [ ] html, css 강의 듣기
-- [ ] 미니미션 1. 게시판 구현하기
-- [ ] 스프링 기본편 섹션2 듣기
-- [ ] 리트코드 풀기
+- [x] html, css 강의 듣기
+    * [한시간만에 끝내는 HTML+CSS 입문](https://www.youtube.com/watch?v=cb7VlXqFla4)
+    * [제대로 파는 HTML & CSS - 웹 퍼블리싱 끝.장.내.기](https://www.youtube.com/watch?v=TrC2x4N0XqY)
+    * [강의자료](https://www.yalco.kr/lectures/html-css/)
+- [x] 미니미션 1. 게시판 구현하기 - html 기본 틀 만들기
+- [x] 스프링 기본편 섹션2 듣기
+- [x] 리트코드 풀기
 
 ## 화(3/21)
 - [ ] 스프링 기본편 섹션3 듣기
