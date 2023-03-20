@@ -4,21 +4,18 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register1</title>
     <link rel="stylesheet" href="css/style.css" />
-    <title>Board</title>
   </head>
   <body>
     <div id="topBar">
       <p>HELLO JAVA!</p>
-      <button
-        onclick="window.location.href = 'register1.html';"
-        id="login-button"
-      >
+      <button onclick="window.location.href = 'index.html';" id="login-button">
         로그인/회원가입
       </button>
     </div>
     <div id="login">
-      <div id="login-topBar"><p>로그인</p></div>
+      <div id="login-topBar"><p>회원가입</p></div>
       <form action="example.html" method="get" id="login-form">
         <div id="login-box">
           <p>이메일</p>
@@ -30,6 +27,15 @@
           />
         </div>
         <div id="login-box">
+          <p>닉네임</p>
+          <input
+            input
+            name="nickName"
+            type="text"
+            placeholder="닉네임을 입력해주세요"
+          />
+        </div>
+        <div id="login-box">
           <p>비밀번호</p>
           <input
             input
@@ -38,12 +44,9 @@
             placeholder="비밀번호를 입력해주세요"
           />
         </div>
-        <input type="submit" value="로그인" id="login-button" />
+        <input type="submit" value="회원가입" id="login-button" />
       </form>
-      <div id="login-bottomBar">
-        <a>아직 회원가입을 안하셨나요?</a>
-        <a href="register1.html" id="login-bottomBar-signUp">회원가입하기</a>
-      </div>
     </div>
+    <script src="js/validate.js"></script>
   </body>
 </html>
