@@ -1,0 +1,79 @@
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+    width: 122px;
+    height: 32px;
+    background: #4362D0;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    flex: none;
+    order: 1;
+}
+
+#frame {
+    height: 148px;
+    width: 1040px;
+    border-radius: 0px;
+}
+
+h1 {
+    height: 38px;
+    width: 111px;
+}
+
+#join-form {
+    width: 300px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+#join-form button[type="submit"] {
+    height: 40px;
+    width: 320px;
+    border: none;
+    border-radius: 8px;
+    padding: 0 10px;
+    background-color: #4362D0;
+    color: white;
+    font-size: 16px;
+}
+
+.input-control input {
+    border: 2px solid #f0f0f0;
+    border-radius: 4px;
+    display: block;
+    font-size: 12px;
+    padding: 10px;
+    width: 100%;
+}
+
+.input-control input:focus {
+    outline: none;
+}
+
+.input-control.success input {
+    border-color: #09c372;
+}
+
+.input-control.error input {
+    border-color: #ff3860;
+}
+
+.input-control .error {
+    color: #ff3860;
+    font-size: 9px;
+    height: 13px;
+}
