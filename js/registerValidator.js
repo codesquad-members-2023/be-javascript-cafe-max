@@ -1,6 +1,6 @@
-const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-const nickNameRegex = /^[A-Za-z0-9ㄱ-ㅎ가-힣]{2,64}$/;
-const passwordRegex = /(?=.*[a-z])(?=.*[0-9])[\S]{8,32}$/;
+const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+/;
+const nickNameRegex = /^[A-Za-z0-9ㄱ-ㅎ가-힣]{2,64}/;
+const passwordRegex = /(?=.*[a-z])(?=.*[0-9])[\S]{8,32}/;
 
 document
   .getElementById("login-form")
