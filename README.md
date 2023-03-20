@@ -1,1 +1,7 @@
-# be-javascript-cafe-max
+# 카페 만들기
+
+## 목차
+
+- [학습 목표](STUDY_PLAN.md)
+- [\[1단계\] 회원가입](STEP1.md)
+
