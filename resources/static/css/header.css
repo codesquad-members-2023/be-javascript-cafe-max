@@ -1,0 +1,32 @@
+.header {
+  display: flex;
+  justify-content: space-around;
+  padding: 25px 0;
+}
+
+.header .header_title_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header .header_title {
+  font-size: 20px;
+}
+
+.header .header_signup_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 125px;
+  height: 50px;
+}
+
+.header .header_signup {
+  display: inline-block;
+  padding: 10px;
+  background-color: #4362D0;
+  border-radius: 10px;
+  color: white;
+  font-size: 14px;
+}
