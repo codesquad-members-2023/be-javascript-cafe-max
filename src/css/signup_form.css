@@ -107,3 +107,13 @@ input:focus {
 .submit-btn:hover {
     border: 1px solid #0c3225;
 }
+
+.text-detail {
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+}
+
+hr {
+    border-top: 1px solid #a8d4c5;
+}
