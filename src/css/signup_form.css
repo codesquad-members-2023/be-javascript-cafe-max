@@ -98,7 +98,6 @@ input:focus {
     padding: 0.375rem 0.75rem;
     border: 1px solid transparent;
     border-radius: .25rem;
-    /* background: #a8d4c5 linear-gradient(180deg,#a8d4c5,#7aab9a) repeat-x!important; */
     background: #007bff linear-gradient(180deg,#268fff,#007bff) repeat-x!important;
     color: #ebfef8;
     font-weight: bold;
@@ -112,6 +111,7 @@ input:focus {
     text-align: left;
     font-size: large;
     font-weight: bold;
+    word-break:break-all
 }
 
 hr {

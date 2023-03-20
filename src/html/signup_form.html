@@ -21,7 +21,7 @@
             <div class="login-box">
                 <div class="card">
                     <h1>회원 가입</h1>
-                    <form class="vertical-form">
+                    <form name="signup_form" class="vertical-form">
                         <div>
                             <input type="text" name="user_id" class="vertical-input"
                                 placeholder="아이디(영문, 숫자 조합 2 ~ 64자)" autocomplete="off">
@@ -36,7 +36,7 @@
                         <div>
                             <input type="password" name="user_password_check" class="vertical-input" placeholder="비밀번호 확인">
                         </div>
-                        <button class="submit-btn" onclick="validateSignInForm(event)">회원가입</button>
+                        <button class="submit-btn" onclick="signUp(event)">회원가입</button>
                     </form>
 
                 </div>
@@ -44,12 +44,7 @@
         </div>
     </section>
 
-
-
-
-
+    <script src="../js/signup.js"></script>
 </body>
-
-<script src="../js/signup.js"></script>
 
 </html>

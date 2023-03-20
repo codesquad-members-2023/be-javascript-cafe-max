@@ -1,13 +1,23 @@
 
-/**
- * 회원 가입 form 전체 검정
- */
-function validateSignInForm(e) {
+function signUp(e) {
     e.preventDefault();
-    validateUserId();
-    validateUserEmail();
-    validateUserPassword();
-    validateUserPasswordCheck();
+    if(!validateSignInForm()) return;
+
+    var userId = document.getElementsByName("user_id")[0].value;
+    var userEmail = document.getElementsByName("user_email")[0].value;
+    var url = "../html/signup_success.html?user_id="+userId+"&user_email="+userEmail;
+    location.href = url;
+}
+
+/**
+ * 회원 가입 form 전체 검증
+ */
+function validateSignInForm() {
+    if(!validateUserId()) return false;
+    if(!validateUserEmail()) return false;
+    if(!validateUserPassword()) return false;
+    if(!validateUserPasswordCheck()) return false;
+    return true;
 }
 
 /**
