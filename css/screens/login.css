@@ -1,0 +1,74 @@
+#topBar {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: 30px;
+  margin: 30px 100px;
+}
+
+#topBar p {
+  font-weight: 600;
+}
+
+#topBar button {
+  width: 122px;
+  height: 32px;
+}
+
+#login {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 300px;
+}
+
+#login-topBar {
+  margin-bottom: 100px;
+  font-size: 30px;
+}
+
+#login-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 320px;
+}
+
+#login-box {
+  box-sizing: border-box; /**봐봐**/
+  width: 320px;
+  height: 64px;
+  border: 1px solid #d2dae0;
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin: 10px;
+  background-color: white;
+}
+
+#login-box p {
+  color: #4b5966;
+}
+
+#login-form input {
+  border: none;
+  font-size: 15px;
+  margin-top: 10px;
+}
+
+#login-button {
+  width: 320px;
+  height: 40px;
+  background-color: rgb(67, 98, 208);
+  border-radius: 5px;
+  border: none;
+  color: aliceblue;
+}
+
+#login-bottomBar {
+  margin-top: 10px;
+  font-size: 12px;
+}
+
+#login-bottomBar-signUp {
+  color: blue;
+}
