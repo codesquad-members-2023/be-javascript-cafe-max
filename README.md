@@ -14,3 +14,9 @@
     - 방식: 책 
   - Thymeleaf 학습
     - 공식 문서
+
+### 학습 내용
+bootstarp
+- 12 columns
+- row 가로 
+- col 세로
