@@ -8,7 +8,7 @@
 
 작업은 VSCode를 사용할 예정
 
-1. HTML과 CSS를 사용하여 회원가입 웹 페이지를 만들기 (2H)
-2. JavaScript를 사용하여 유효성 검증을 구현하기 (2H)
+1. HTML과 CSS를 사용하여 회원가입 웹 페이지를 만들기 (2H) ✔️
+2. JavaScript를 사용하여 유효성 검증을 구현하기 (2H) ✔️
 3. Spring 예습 (2H)
 4. Objects 읽기 (2H)
