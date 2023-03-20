@@ -1,7 +1,18 @@
 .login-section {
-    width: 1040px;
-    height: 148px;
-    flex: none;
-    order: 1;
-    flex-grow: 0;
+    height: 200px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
+
+
+
+.login-form {
+    width: 50%;
+    max-width: 400px;
+    margin: 0 auto;
+
+}
+
+

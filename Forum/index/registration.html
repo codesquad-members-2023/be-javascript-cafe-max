@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
+    <link rel="stylesheet" href="../mystyle.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
@@ -27,26 +28,30 @@
 
 </nav>
 <body>
-<h1 class="text-center">로그인</h1>
-<form>
+<div class="login-section">
+    <h1>회원가입</h1>
+</div>
+
+<form class="login-form">
     <div class="form-group">
-        <label for="email">Email address:</label>
+        <label for="email">이메일 주소:</label>
         <input type="email" class="form-control" placeholder="Enter email" id="email">
     </div>
     <div class="form-group">
-        <label>Nickname:</label>
+        <label>닉네임:</label>
         <input class="form-control" placeholder="Enter nickname">
     </div>
     <div class="form-group">
-        <label for="pwd">Password:</label>
+        <label for="pwd">비밀번호:</label>
         <input type="password" class="form-control" placeholder="Enter password" id="pwd">
     </div>
-    <div>
-        By clicking on submit, you agree to the terms and conditions.
+    <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="privacyCheck">
+        <label class="form-check-label" for="privacyCheck"><a href="#">개인정보수집 및 이용약관</a>에 동의에 동의합니다</label>
     </div>
+    <button type="submit" class="btn btn-primary">
+        회원가입</button>
 
-
-    <button type="submit" class="btn btn-primary">Submit</button>
 </form>
 </body>
 </html>
