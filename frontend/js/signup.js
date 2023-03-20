@@ -17,7 +17,7 @@ signupForm.addEventListener('submit', (e) => {
     }
 
     alert('회원가입이 완료되었습니다.');
-
+    signupForm.submit();
 });
 
 function validateNickname() {
