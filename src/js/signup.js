@@ -5,8 +5,9 @@
 function validateSignInForm(e) {
     e.preventDefault();
     validateUserId();
-    validateUserPassword();
     validateUserEmail();
+    validateUserPassword();
+    validateUserPasswordCheck();
 }
 
 /**
@@ -20,6 +21,21 @@ function validateUserId() {
 
     if(!userIdReg.test(userId)) {
         alert("아이디는 영문, 숫자 조합 2 ~ 64자를 입력해 주세요.");
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 이메일 유효성 검사
+ */
+function validateUserEmail() {
+    var userEmail = document.getElementsByName("user_email")[0].value;
+    console.log(userEmail);
+    var userEmailReg = /^[\w.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+
+    if(!userEmailReg.test(userEmail)) {
+        alert("올바른 이메일을 입력해 주세요.");
         return false;
     }
     return true;
@@ -42,16 +58,21 @@ function validateUserPassword() {
 }
 
 /**
- * 이메일 유효성 검사
+ * 비밀번호 확인 유효성 검사
+ * @returns 유효성 검사 통과 유무
  */
-function validateUserEmail() {
-    var userEmail = document.getElementsByName("user_email")[0].value;
-    console.log(userEmail);
-    var userEmailReg = /^[\w.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+function validateUserPasswordCheck() {
+    var userPassword = document.getElementsByName("user_password")[0].value;
+    var userPasswordCheck = document.getElementsByName("user_password_check")[0].value;
 
-    if(!userEmailReg.test(userEmail)) {
-        alert("올바른 이메일을 입력해 주세요.");
+    if(!userPasswordCheck.length || !userPasswordCheck) {
+        alert("비밀번호 확인란을 입력해 주세요.");
         return false;
     }
+    if(userPassword != userPasswordCheck) {
+        alert("비밀번호와 비밀번호 확인란이 일치하지 않습니다.");
+        return false;
+    }
+    
     return true;
 }
