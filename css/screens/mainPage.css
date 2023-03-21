@@ -43,6 +43,7 @@
   width: 140px;
 }
 
+/** 이거 사실 중복코드**/
 .my-list-item {
   display: flex;
   flex-direction: row;
@@ -61,4 +62,28 @@
 #my-list-item-except-title p {
   text-align: center;
   width: 140px;
+}
+
+/** mainPage 아래**/
+
+#mainPage-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#search {
+  border: none;
+  width: 200px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#mainPage-bottom-right-bar-button {
+  width: 130px;
+  margin-left: 10px;
+  background-color: rgb(67, 98, 208);
+  border-radius: 5px;
+  border: none;
+  color: aliceblue;
+  height: 32px;
 }
