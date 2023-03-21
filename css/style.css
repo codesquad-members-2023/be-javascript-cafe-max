@@ -1,6 +1,7 @@
 /**screens**/
 @import "screens/login.css";
 @import "screens/mainPage.css";
+@import "screens/posting.css";
 
 /**components**/
 @import "components/topBar.css";

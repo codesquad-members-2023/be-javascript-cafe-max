@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Document</title>
+  </head>
+  <header class="main">
+    <div id="topBar">
+      <p id="topBar-left-text">HELLO JAVA!</p>
+      <div id="topBar-right">
+        <p id="topBar-right-text">멤버리스트</p>
+        <button onclick="location.href = 'register1.html';" id="login-button">
+          마이페이지
+        </button>
+        <button onclick="location.href = 'register1.html';" id="login-button">
+          로그아웃
+        </button>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="main">
+      <p id="posting-title">글쓰기</p>
+      <form action="mainPage.html" method="get" id="posting-form">
+        <div class="posting-box" id="posting-box-title">
+          <p>제목</p>
+          <textarea
+            type="text"
+            id="title-box-input"
+            placeholder="글의 제목을 입력하세요"
+          ></textarea>
+        </div>
+
+        <div class="posting-box" id="posting-box-content">
+          <p>내용</p>
+          <textarea
+            type="text"
+            id="content-box-input"
+            placeholder="글의 내용을 입력하세요"
+          ></textarea>
+        </div>
+
+        <div id="button-box">
+          <button type="submit" id="posting-bottomBar-button">작성완료</button>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>
