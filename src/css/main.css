@@ -128,3 +128,39 @@ input:focus {
 hr {
     border-top: 1px solid #a8d4c5;
 }
+
+/* Table CSS */
+.crud-board-table {
+    background-color: transparent;
+    width: 100%;
+    table-layout:fixed;
+    word-break:break-all;
+    height: auto;
+    border-collapse: collapse;
+}
+
+/* 게시판 헤더 : | no | title | writer | reg date | hit | */
+.crud-board-table tr {
+    border-bottom: 1px solid #a8d4c5;
+}
+.crud-board-table tbody tr:hover {
+    background-color: #bfeede;
+}
+.crud-board-table th, .crud-board-table td {
+    padding: 1rem 0.25rem;
+}
+.crud-board-table th:nth-child(1) {
+    width: 10%;
+}
+.crud-board-table th:nth-child(2) {
+    width: 50%;
+}
+.crud-board-table th:nth-child(3) {
+    width: 20%;
+}
+.crud-board-table th:nth-child(4) {
+    width: 10%;
+}
+.crud-board-table th:nth-child(5) {
+    width: 10%;
+}
