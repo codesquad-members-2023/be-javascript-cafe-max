@@ -18,6 +18,10 @@
   margin-bottom: 20px;
 }
 
+.signup_form .form_input input:focus {
+  outline: none;
+}
+
 .signup_form .form_input label {
   font-size: 12px;
 }
