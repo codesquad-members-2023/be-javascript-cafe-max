@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Log In</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <div class="navigation">
+        <p>Hello Java!</p>
+        <button>로그인/회원가입</button>
+    </div>
+    <header>
+        <h1>로그인</h1>
+    </header>
+    <form>
+        <div class="input-info">
+            <label>이메일</label>
+            <input name="email" type="email" placeholder="이메일을 입력해주세요">
+        </div>
+        <div class="input-info">
+            <label>비밀번호</label>
+            <input name="password" type="password" placeholder="비밀번호를 입력해주세요" required minlength="8" maxlength="32">
+        </div>
+        <div id="submit">
+            <input type="submit" value="로그인">
+            <span>아직 회원가입을 안하셨나요? <a href="sign-in.html">회원가입 하기</a></span>
+        </div>
+    </form>
+    <div></div>
+</body>
+</html>
