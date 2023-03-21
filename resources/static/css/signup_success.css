@@ -1,0 +1,40 @@
+.signup_success_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.signup_success_form .form_title {
+  margin: 90px 0;
+}
+
+.signup_success_form .form_input {
+  width: 320px;
+  height: 65px;
+  padding: 0px 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 20px;
+  background-color: #eeeeee;
+}
+
+.signup_success_form .form_input input:focus {
+  outline: none;
+}
+
+.signup_success_form .form_input label {
+  font-size: 12px;
+}
+
+.signup_success_form .form_input input {
+  border: none;
+  background-color: #eeeeee;
+}
+
+.signup_success_form .form_btn button {
+  background-color: #4362D0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
