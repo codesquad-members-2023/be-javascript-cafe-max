@@ -1,15 +1,50 @@
 <!DOCTYPE HTML>
 <html lang="kr">
 <head>
-  <title>로그인</title>
+  <title>Hello JAVA!</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
   <header data-include-path="/cafe/resources/components/head_header.html"></header>
   <script src="/cafe/resources/static/js/jquery-3.6.4.js"></script>
+  <link href="/cafe/resources/static/css/board.css" rel="stylesheet">
 </head>
 <body>
-
 <header data-include-path="/cafe/resources/components/header.html"></header>
 
+<div class="board_container">
+  <!-- 게시글 배너-->
+  <div class="board_banner">
+    <p>코드스쿼드 백엔드 교육용 페이지</p>
+    <h4>HELLO JAVA! 입니다.</h4>
+  </div>
+
+  <!--게시글 리스트 -->
+  <div class="board_list">
+    <label>전체 글 <span id="countOfPost">120</span>개</label>
+    <table class="table" id="board_table">
+      <thead>
+      <tr>
+        <th>제목</th>
+        <th>작성자</th>
+        <th>작성일자</th>
+        <th>조회수</th>
+      </tr>
+      </thead>
+      <tbody id="board_table_tbody">
+      </tbody>
+    </table>
+  </div>
+  <div class="board_page">
+    <nav aria-label="Page navigation">
+      <ul class="pagination" id="board_pagination">
+
+      </ul>
+    </nav>
+  </div>
+</div>
+
+
 <script src="/cafe/resources/static/js/common.js"></script>
+<script src="/cafe/resources/static/js/post_generator.js"></script>
+<script src="/cafe/resources/static/js/post_pagination.js"></script>
 </body>
 </html>

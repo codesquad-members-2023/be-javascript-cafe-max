@@ -1,0 +1,45 @@
+.board_container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.board_container .board_banner {
+  background-color: #4362D0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  padding: 30px;
+  margin-bottom: 40px;
+}
+
+.board_container .board_list table {
+  text-align: center;
+}
+
+.board_container .board_list .board_table_title {
+  text-align: left;
+}
+
+
+.board_container .board_page_link:hover {
+  z-index: 2;
+  color: #0056b3;
+  text-decoration: none;
+  background-color: #e9ecef;
+  border-color: #dee2e6;
+}
+
+.board_container .board_page_link.active {
+  background-color: #e9ecef;
+}
+
+.board_container .board_page_link {
+  position: relative;
+  display: block;
+  padding: 0.5rem 0.75rem;
+  margin-left: -1px;
+  line-height: 1.25;
+  color: #007bff;
+  background-color: #fff;
+  border: none;
+}
