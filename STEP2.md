@@ -7,6 +7,21 @@
 
 ## jquery selector와 document.getElementById 차이점
 
+jquery selector로 태그를 가져오면 jquery 객체를 리턴합니다.
+
+반대로 document.getElementById로 태그를 가져오면 DOM 객체를 리턴합니다.
+
+jquery 객체로 가져와야 한다면 배열의 인덱스를 활용하여 가져올 수 있습니다.
+
+```javascript
+let prevButton = $("#page_prev_link")[0]
+let prevButton = document.getElementById("page_prev_link")
+```
+
+가져올 태그가 id를 가져서 한 개만 가져온다면 document를 이용하여 DOM 객체로 가져오는 것이 좋아보입니다.
+
+반대로 가져올 태그들이 여러개라면 jquery로 가져오는 것이 좋아보입니다.
+
 ## References
 
 - [How TO - Include HTML](https://www.w3schools.com/howto/howto_html_include.asp)
