@@ -21,7 +21,7 @@ function checkSignupForm() {
   document.signupForm.submit();
 }
 
-function isEmail(value){
+function isEmail(value) {
   const regExp = /^[\da-zA-Z]([-_.]?[\da-zA-Z])*@[\da-zA-Z]([-_.]?[\da-zA-Z])*\.[a-zA-Z]{2,3}$/i;
   return regExp.test(value);
 }
@@ -37,3 +37,10 @@ function isPassword(value) {
   const regExp = /^(?=.*[a-zA-z])(?=.*\d).{8,16}$/;
   return regExp.test(value);
 }
+
+$(document).ready(function () {
+  $("#signUpBtn").click(function (event) {
+    event.preventDefault();
+    checkSignupForm();
+  });
+});
