@@ -191,6 +191,12 @@ hr {
     cursor: pointer;
 }
 
+.paging-btn-group > button.checked {
+    background: #a8d4c5 linear-gradient(180deg, #a8d4c5, #0c3225) repeat-x !important;
+    color: #ebfff8;
+    cursor: pointer;
+}
+
 .paging-btn-group > button:not(:last-child) {
     border-top-right-radius: 0;
     border-bottom-right-radius: 0;

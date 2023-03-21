@@ -1,5 +1,6 @@
 let boardData;
 let postNumberPerPage = 15; // 한 페이지에 보여줄 게시글 수
+let firstPostIdxInCurrentPage; // 현재 페이지의 첫 번째 글 번호
 let pagingBarSize = 5; // 페이징 바에 보여줄 페이지 수
 let firstPage = 1; // 1 페이지
 let lastPage; // 마지막 페이지
@@ -12,8 +13,8 @@ let hasNextBlock; // 페이징 바에서 다음 블록이 존재하는가?
 
 window.onload = function () {
     initialBoardConfiguration();
-    buildBoard();
     buildPagingBar();
+    buildBoard();
 }
 
 /**
@@ -56,11 +57,12 @@ function initialBoardConfiguration() {
     totalPostsNumber = boardData.length;
     lastPage = Math.floor((totalPostsNumber - 1) / postNumberPerPage) + 1;
     currentPage = getCurrentPage();
+    firstPostIdxInCurrentPage = (totalPostsNumber - (currentPage - 1) * postNumberPerPage);
     beginPageInPagingBar = (Math.floor((currentPage - 1) / pagingBarSize) * pagingBarSize) + 1;
     endPageInPagingBar = beginPageInPagingBar + pagingBarSize - 1;
     if (endPageInPagingBar > lastPage) endPageInPagingBar = lastPage;
     hasPreviousBlock = currentPage > pagingBarSize;
-    hasNextBlock = currentPage <= lastPage - 10;
+    hasNextBlock = currentPage <= lastPage - pagingBarSize + 1;
 }
 
 /**
@@ -69,7 +71,10 @@ function initialBoardConfiguration() {
 function buildBoard() {
     const table = document.getElementById('crudBoard').getElementsByTagName("tbody")[0];
 
-    for (var i = 0; i < 10; i++) {
+
+    for (var i = firstPostIdxInCurrentPage - postNumberPerPage; i < firstPostIdxInCurrentPage; i++) {
+        if(i < 0) continue;
+
         const tableRow = table.insertRow(0);
         const numCell = tableRow.insertCell(0);
         const titleCell = tableRow.insertCell(1);
@@ -120,6 +125,7 @@ function buildPagingBar() {
         let page = i;
         button.type = "button";
         button.innerHTML = i;
+        if(currentPage == page) button.className = "checked";
         button.onclick = function () {
             location.href = pathnameOfURL + "?page=" + page;
         };
@@ -132,7 +138,7 @@ function buildPagingBar() {
         button.type = "button";
         button.innerHTML = '<i class="fa-solid fa-play"></i>';
         button.onclick = function () {
-            location.href = pathnameOfURL + "?page=" + (Number(currentPage) + pagingBarSize);
+            location.href = pathnameOfURL + "?page=" + getValidatedCurrentPage(Number(currentPage) + pagingBarSize);
         };
         buttonGroup.appendChild(button);
     }
