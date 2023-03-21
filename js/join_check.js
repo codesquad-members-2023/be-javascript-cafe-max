@@ -1,37 +1,37 @@
 // 이메일 유효성 검사
 function validateEmail(email) {
-    var re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     return re.test(email);
 }
 
 // 닉네임 유효성 검사
 function validateNickname(nickname) {
-    var re = /^\w{2,64}$/;
+    const re = /^.{2,64}$/;
     return re.test(nickname);
 }
 
 // 패스워드 유효성 검사
 function validatePassword(password) {
-    var re = /^(?=.*[a-z])(?=.*\d).{8,32}$/;
+    const re = /^(?=.*[a-z])(?=.*\d).{8,32}$/;
     return re.test(password);
 }
 
 // 버튼 요소 선택
-var button = document.querySelector('.login-button');
+const button = document.querySelector('.login-button');
 
 // 버튼 클릭 이벤트 핸들러 함수
 function handleClick() {
-  var emailInput = document.querySelector('input[name="email"]');
-  var nicknameInput = document.querySelector('input[name="nickname"]');
-  var passwordInput = document.querySelector('input[name="password"]');
+  const emailInput = document.querySelector('input[name="email"]');
+  const nicknameInput = document.querySelector('input[name="nickname"]');
+  const passwordInput = document.querySelector('input[name="password"]');
 
-  var email = emailInput.value;
-  var nickname = nicknameInput.value;
-  var password = passwordInput.value;
+  const email = emailInput.value;
+  const nickname = nicknameInput.value;
+  const password = passwordInput.value;
 
-  var isValidEmail = validateEmail(email);
-  var isValidNickname = validateNickname(nickname);
-  var isValidPassword = validatePassword(password);
+  const isValidEmail = validateEmail(email);
+  const isValidNickname = validateNickname(nickname);
+  const isValidPassword = validatePassword(password);
 
   if (!isValidEmail) {
     alert('올바른 이메일 주소를 입력하세요.');
