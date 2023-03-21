@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Board</title>
+  </head>
+  <body>
+    <div id="topBar">
+      <p>HELLO JAVA!</p>
+      <button
+        onclick="window.location.href = 'register1.html';"
+        id="login-button"
+      >
+        로그인/회원가입
+      </button>
+    </div>
+    <div id="login">
+      <div id="login-topBar"><p>가입이 완료되었습니다!</p></div>
+      <form action="index.html" method="get" id="login-form">
+        <div id="login-box">
+          <p>이메일</p>
+          <input
+            input
+            id="login-email"
+            name="email"
+            type="text"
+            placeholder="이메일을 입력해주세요"
+          />
+        </div>
+        <div id="login-box">
+          <p>닉네임</p>
+          <input
+            input
+            id="login-nickName"
+            name="nickName"
+            type="nickName"
+            placeholder="비밀번호를 입력해주세요"
+          />
+        </div>
+        <input type="submit" value="지금 로그인하기" id="login-button" />
+      </form>
+    </div>
+    <script src="js/setPlaceholder.js"></script>
+  </body>
+</html>

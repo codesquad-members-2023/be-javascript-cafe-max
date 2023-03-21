@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>register1</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div id="topBar">
+      <p>HELLO JAVA!</p>
+      <button onclick="window.location.href = 'index.html';" id="login-button">
+        로그인/회원가입
+      </button>
+    </div>
+    <div id="login">
+      <div id="login-topBar"><p>회원가입</p></div>
+      <form action="register2.html" method="get" id="login-form">
+        <div id="login-box">
+          <p>이메일</p>
+          <input
+            input
+            id="login-email"
+            name="email"
+            type="text"
+            placeholder="이메일을 입력해주세요"
+          />
+        </div>
+        <div id="login-box">
+          <p>닉네임</p>
+          <input
+            input
+            id="login-nickName"
+            name="nickName"
+            type="text"
+            placeholder="닉네임을 입력해주세요"
+          />
+        </div>
+        <div id="login-box">
+          <p>비밀번호</p>
+          <input
+            input
+            id="login-password"
+            name="password"
+            type="password"
+            placeholder="비밀번호를 입력해주세요"
+          />
+        </div>
+        <input type="submit" value="회원가입" id="login-button" />
+      </form>
+    </div>
+    <script src="js/registerValidator.js"></script>
+  </body>
+</html>
