@@ -16,7 +16,7 @@ function validate_email(){
 
 // 사용자 이름이 유효한지 확인
 function validate_username(){
-    const reg = /^\w{2,64}$/;
+    const reg = /^[ㄱ-ㅎ가-힣a-zA-Z0-9]{2,64}$/;
     return reg.test(username.value);
 }
 
