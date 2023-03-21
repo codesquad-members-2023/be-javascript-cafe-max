@@ -2,7 +2,8 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>HELLO JAVA!</title>
+    <link rel="stylesheet" href="/style.css">
 </head>
 <body>
 <nav>
@@ -10,15 +11,15 @@
         <li>HELLO JAVA!</li>
     </ul>
     <div>
-        <form action="login.html" method="GET">
+        <form action="/login.html" method="GET">
             <button type="button">로그인/회원가입</button>
         </form>
     </div>
 </nav>
 <div class="container">
-    <form id="join-form" action="/register2" method="POST">
+    <form id="success-form" action="/login.html" method="GET">
         <div id="frame">
-            <h1>회원가입</h1>
+            <h1>가입이 완료되었습니다!</h1>
         </div>
         <div class="input-control">
             <label for="email">이메일</label>
@@ -26,7 +27,7 @@
                     id="email"
                     name="email"
                     type="email"
-                    placeholder="이메일을 입력해주세요">
+                    value="">
             <div class="error"></div>
         </div>
 
@@ -36,18 +37,11 @@
                     id="username"
                     name="username"
                     type="text"
-                    placeholder="닉네임을 입력해주세요">
+                    value="">
             <div class="error"></div>
         </div>
-
-        <div class="input-control">
-            <label for="password">비밀번호</label>
-            <input
-                    id="password"
-                    name="password"
-                    type="password"
-                    placeholder="비밀번호를 입력해주세요">
-            <div class="error"></div>
-        </div>
+        <button type="submit">지금 로그인하기</button>
+    </form>
+</div>
 </body>
 </html>

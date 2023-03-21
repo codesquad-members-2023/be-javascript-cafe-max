@@ -24,12 +24,10 @@ nav button {
 #frame {
     height: 148px;
     width: 1040px;
-    border-radius: 0px;
 }
 
 h1 {
     height: 38px;
-    width: 111px;
 }
 
 #join-form {
@@ -40,7 +38,16 @@ h1 {
     font-size: 12px;
 }
 
-#join-form button[type="submit"] {
+#success-form {
+    width: 300px;
+    margin: 20vh auto 0 auto;
+    padding: 20px;
+    border-radius: 4px;
+    font-size: 12px;
+}
+
+
+button[type="submit"] {
     height: 40px;
     width: 320px;
     border: none;

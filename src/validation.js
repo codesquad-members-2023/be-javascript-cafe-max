@@ -1,4 +1,4 @@
-const form = document.getElementById('join-form');
+const form = document.getElementById('form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -67,4 +67,8 @@ const validateInputs = () => {
     } else {
         setSuccess(password);
     }
+
+    form.action = "/register2.html";
+    form.method = "POST";
+    form.submit();
 }
