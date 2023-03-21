@@ -1,0 +1,190 @@
+header {
+    width: 1040px;
+    height: 148px;
+    text-align: center;
+}
+
+form {
+   /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+
+    width: 320px;
+    height: 144px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+}
+
+.input-info {
+    /* InputInfo */
+
+
+    box-sizing: border-box;
+
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 8px 16px;
+    gap: 8px;
+
+    width: 320px;
+    height: 64px;
+
+    /* White */
+
+    background: #FFFFFF;
+    /* Gray100 */
+
+    border: 1px solid #D2DAE0;
+    border-radius: 8px;
+}
+
+.input-info label {
+    /* Label */
+
+
+    width: 288px;
+    height: 14px;
+
+    /* BoldS */
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+
+
+    /* Gray300 */
+
+    color: #4B5966;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+.input-info input {
+    /* Text */
+
+    border-style: none;
+    width: 288px;
+    height: 26px;
+
+    /* BodyR */
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    /* identical to box height, or 26px */
+
+
+    /* Gray200 */
+
+    color: #879298;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+
+#submit {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+
+    width: 320px;
+    height: 78px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+
+#submit input {
+    /* Auto layout */
+
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    gap: 10px;
+
+    width: 320px;
+    height: 40px;
+
+    border: none;
+    color: #FFFFFF;
+
+    /* Primary */
+
+    background: #4362D0;
+    border-radius: 8px;
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+
+#submit span {
+    width: 320px;
+    height: 22px;
+
+    /* BodyS */
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 160%;
+    /* or 22px */
+
+    text-align: center;
+
+    /* Black */
+
+    color: #14212B;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+#submit span a {
+    text-decoration: none;
+}
