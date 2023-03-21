@@ -33,5 +33,6 @@ function getList(jsonList) {
         '<td class="view_count">'+jsonList[i]["viewcount"]+'</td>'+
         '</tr>'
     }
+    document.getElementById('count_post').innerHTML = "전체 글 : "+jsonList.length;
     document.getElementById('list').innerHTML += html;
 }
