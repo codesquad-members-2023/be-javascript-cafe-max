@@ -2,6 +2,7 @@ const btn = document.querySelector("button");
 const email = document.querySelector("input[name=email]");
 const password = document.querySelector("input[name=password]");
 const form = document.querySelector("form");
+const submit = document.querySelector("input[type=submit]");
 
 // navigation에 있는 button 클릭 시, 회원가입 페이지로 이동
 btn.addEventListener("click", function(){
@@ -30,4 +31,13 @@ form.addEventListener("submit", function(event){
         info_message += validate_password() ? "" : "비밀번호 ";
         document.getElementById("access-denied-text").innerHTML = info_message + "을/를 다시 입력해주세요";
     }
+});
+
+// 마우스를 submit 위로 올렸을 때, submit 밖으로 나갈 때 배경색 바뀌는 기능 추가
+submit.addEventListener("mouseover", function(){
+    submit.style.backgroundColor = "#14212B";
+});
+
+submit.addEventListener("mouseout", function(){
+    submit.style.backgroundColor = "#4362D0";
 });
