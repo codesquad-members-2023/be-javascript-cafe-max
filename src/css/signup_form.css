@@ -1,0 +1,119 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    background-color: #ebfef8;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #a8d4c5;
+}
+
+/* Style the topnav links */
+.topnav div,
+a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Change color on hover */
+.topnav div:hover,
+a:hover {
+    background-color: #bfeede;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Middle column */
+@media (min-width: 768px){
+    .column.middle {
+        width: 50%;
+    }
+}
+
+@media (max-width: 767px){
+    .column.middle {
+        width: 80%;
+    }
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: #ebfff8;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: .25rem;
+    box-shadow: 0 0 1px #0c3225;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.vertical-form {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.login-box { 
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	margin: -150px 0 0 -150px;
+	width: 300px;
+	height: 300px;
+}
+
+input {
+    width: 100%; 
+	margin-bottom: 10px;
+    padding: 10px;
+    border-radius: .5rem;
+    font-weight: bold;
+    border: solid 1px #0c3225;
+}
+
+input:focus {
+    border: solid 2px #0c3225;
+}
+
+.submit-btn {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    background: #007bff linear-gradient(180deg,#268fff,#007bff) repeat-x!important;
+    color: #ebfef8;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    border: 1px solid #0c3225;
+}
+
+.text-detail {
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+    word-break:break-all
+}
+
+hr {
+    border-top: 1px solid #a8d4c5;
+}
