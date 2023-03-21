@@ -21,25 +21,35 @@
 
 
 ## 생활코딩
+<ol>
+
 1. 브라우저에서 ctrl+O    
 로컬에 저장되어 있는 파일 열기   
-2. 태그   
+
+2. 태그 
+
 <ol>
+
 1. strong   
     <strong>굵은 글씨로 강조</strong>
-    2. u   
+
+2. u   
     <u>밑줄긋기</u>
-    3. heading(제목)   
+    
+3. heading(제목)   
     <h1>h1</h1>   
     <h2>h2</h2>   
     <h3>h3</h3>   
     <h4>h4</h4>   
     <h5>h5</h5>   
-    <h6>h6</h6>   
+    <h6>h6</h6>
+
 4. br<br>           
-    줄바꿈<br>   
+    줄바꿈<br>
+
 5. p   
     <p>단락</p>
+
 6. img
     <img src = https://user-images.githubusercontent.com/70848762/226504983-d266cedb-9016-4496-9b08-08270ff23e45.png>
     7. li & ul & ol
@@ -51,7 +61,8 @@
     <li>첫번째ul</li>
     <li>두번째ul</li>
     </ul>
-8. title, meta, head, body
+
+7. title, meta, head, body
 
     ```html
     <head>//본문을 설명하는 태그
@@ -64,7 +75,7 @@
     </body>
     ``` 
 
-9. a (anchor) 
+8. a (anchor) 
 
     <a href = https://github.com/sejeong00/be-javascript-cafe-max>링크</a>
 
@@ -78,6 +89,8 @@
 
 4. W3C   
 국제민간표준화기구   
+
+</ol>
 
 ## 타임리프, 부트스트랩
 
