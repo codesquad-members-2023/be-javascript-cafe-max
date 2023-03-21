@@ -34,7 +34,7 @@ function isNickName(value) {
 
 // 소문자 및 숫자를 포함하는 8~32글자인지 검사합니다.
 function isPassword(value) {
-  const regExp = /^(?=.*[a-zA-z])(?=.*\d).{8,16}$/;
+  const regExp = /^(?=.*[a-zA-z])(?=.*\d).{8,32}$/;
   return regExp.test(value);
 }
 
