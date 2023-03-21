@@ -30,13 +30,13 @@
 
 <ul>
 
-1. strong   
+- strong   
     <strong>굵은 글씨로 강조</strong>
 
-2. u   
+- u   
     <u>밑줄긋기</u>
     
-3. heading(제목)   
+- heading(제목)   
     <h1>h1</h1>   
     <h2>h2</h2>   
     <h3>h3</h3>   
@@ -44,15 +44,16 @@
     <h5>h5</h5>   
     <h6>h6</h6>
 
-4. br<br>           
+- br<br>           
     줄바꿈<br>
 
-5. p   
+- p   
     <p>단락</p>
 
-6. img
+- img
     <img src = https://user-images.githubusercontent.com/70848762/226504983-d266cedb-9016-4496-9b08-08270ff23e45.png>
-    7. li & ul & ol
+    
+- li & ul & ol
     <ol>
     <li>첫번째ol</li>
     <li>두번째ol</li>
@@ -62,7 +63,7 @@
     <li>두번째ul</li>
     </ul>
 
-7. title, meta, head, body
+- title, meta, head, body
 
     ```html
     <head>//본문을 설명하는 태그
@@ -75,7 +76,7 @@
     </body>
     ``` 
 
-8. a (anchor) 
+- a (anchor) 
 
     <a href = https://github.com/sejeong00/be-javascript-cafe-max>링크</a>
 
