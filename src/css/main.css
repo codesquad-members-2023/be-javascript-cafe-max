@@ -35,6 +35,17 @@ a:hover {
     cursor: pointer;
 }
 
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
 /* Create three unequal columns that floats next to each other */
 .column {
     margin: 0 auto;
@@ -42,13 +53,13 @@ a:hover {
 }
 
 /* Middle column */
-@media (min-width: 768px){
+@media (min-width: 768px) {
     .column.middle {
         width: 50%;
     }
 }
 
-@media (max-width: 767px){
+@media (max-width: 767px) {
     .column.middle {
         width: 80%;
     }
@@ -72,18 +83,18 @@ a:hover {
     vertical-align: middle;
 }
 
-.login-box { 
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	margin: -150px 0 0 -150px;
-	width: 300px;
-	height: 300px;
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+    width: 300px;
+    height: 300px;
 }
 
 input {
-    width: 100%; 
-	margin-bottom: 10px;
+    width: 100%;
+    margin-bottom: 10px;
     padding: 10px;
     border-radius: .5rem;
     font-weight: bold;
@@ -98,7 +109,7 @@ input:focus {
     padding: 0.375rem 0.75rem;
     border: 1px solid transparent;
     border-radius: .25rem;
-    background: #007bff linear-gradient(180deg,#268fff,#007bff) repeat-x!important;
+    background: #007bff linear-gradient(180deg, #268fff, #007bff) repeat-x !important;
     color: #ebfef8;
     font-weight: bold;
 }
@@ -111,7 +122,7 @@ input:focus {
     text-align: left;
     font-size: large;
     font-weight: bold;
-    word-break:break-all
+    word-break: break-all
 }
 
 hr {
