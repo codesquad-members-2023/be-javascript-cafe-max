@@ -1,0 +1,49 @@
+.login_form {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.login_form .form_title {
+  margin: 90px 0;
+}
+
+.login_form .form_input {
+  width: 320px;
+  height: 65px;
+  padding: 0px 20px;
+  border: 1px solid #eee;
+  border-radius: 5px;
+  margin-bottom: 20px;
+}
+
+.login_form .form_input input:focus {
+  outline: none;
+}
+
+.login_form .form_input label {
+  font-size: 12px;
+}
+
+.login_form .form_input input {
+  border: none;
+}
+
+.login_form .form_btn button {
+  background-color: #4362D0;
+  color: white;
+  border: none;
+  border-radius: 5px;
+}
+
+.login_form .form_btn .signup_intro {
+  font-size: 11px;
+  text-align: center;
+  margin-top: 20px;
+}
+
+.login_form .form_btn a {
+  color: blue;
+  margin-left: 10px;
+}
