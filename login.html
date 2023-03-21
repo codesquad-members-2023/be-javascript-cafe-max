@@ -10,7 +10,7 @@
   <header class="main">
       <div id="topBar">
         <p id="topBar-left-text">HELLO JAVA!</p>
-        <button onclick="location.href = 'register1.html';" id="topBar-button">
+        <button onclick="location.href = 'register1.html';" class="button">
           로그인/회원가입
         </button>
       </div>
@@ -19,11 +19,11 @@
       <div id="login">
         <div id="login-topBar"><p>로그인</p></div>
         <form action="mainPage.html" method="get" id="login-form">
-          <div id="login-box">
+          <div class="login-box">
             <p>이메일</p>
             <input input type="text" placeholder="이메일을 입력해주세요" />
           </div>
-          <div id="login-box">
+          <div class="login-box">
             <p>비밀번호</p>
             <input
               input
@@ -31,7 +31,7 @@
               placeholder="비밀번호를 입력해주세요"
             />
           </div>
-          <input type="submit" value="로그인" id="login-button" />
+          <button type="submit" class="button">로그인</button>
         </form>
         <div id="login-bottomBar">
           <a>아직 회원가입을 안하셨나요?</a>

@@ -79,11 +79,7 @@
 }
 
 #mainPage-bottom-right-bar-button {
-  width: 130px;
+  width: 100px;
+  height: 30px;
   margin-left: 10px;
-  background-color: rgb(67, 98, 208);
-  border-radius: 5px;
-  border: none;
-  color: aliceblue;
-  height: 32px;
 }

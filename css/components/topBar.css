@@ -10,6 +10,10 @@
   flex-direction: row;
 }
 
+#topBar-right button {
+  margin-left: 10px;
+}
+
 #topBar p {
   padding-top: 10px;
 }
@@ -21,14 +25,4 @@
 #topBar-right-text {
   color: rgba(0, 0, 0, 0.8);
   font-size: small;
-}
-
-#topBar button {
-  width: 130px;
-  margin-left: 10px;
-  background-color: rgb(67, 98, 208);
-  border-radius: 5px;
-  border: none;
-  color: aliceblue;
-  height: 32px;
 }

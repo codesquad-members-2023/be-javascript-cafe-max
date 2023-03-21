@@ -5,6 +5,7 @@
 
 /**components**/
 @import "components/topBar.css";
+@import "components/button.css";
 
 /**reset**/
 @import "reset.css";

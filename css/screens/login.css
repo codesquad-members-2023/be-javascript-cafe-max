@@ -17,19 +17,14 @@
   width: 320px;
 }
 
-#login-box {
+.login-box {
   box-sizing: border-box; /**봐봐**/
-  width: 320px;
-  height: 64px;
+  width: 100%;
   border: 1px solid #d2dae0;
   border-radius: 8px;
   padding: 8px 16px;
   margin: 10px;
   background-color: white;
-}
-
-#login-box p {
-  color: #4b5966;
 }
 
 #login-form input {
@@ -38,13 +33,10 @@
   margin-top: 10px;
 }
 
-#login-button {
+#login-form button {
   width: 100%;
   height: 40px;
-  background-color: rgb(67, 98, 208);
-  border-radius: 5px;
-  border: none;
-  color: aliceblue;
+  margin: 10px 0px;
 }
 
 #login-bottomBar {

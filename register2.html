@@ -10,7 +10,7 @@
   <header class="main">
     <div id="topBar">
       <p id="topBar-left-text">HELLO JAVA!</p>
-      <button onclick="window.location.href = 'login.html';" id="login-button">
+      <button onclick="window.location.href = 'login.html';" class="button">
         로그인/회원가입
       </button>
     </div>
@@ -19,7 +19,7 @@
     <div id="login">
       <div id="login-topBar"><p>가입이 완료되었습니다!</p></div>
       <form action="login.html" method="get" id="login-form">
-        <div id="login-box">
+        <div class="login-box">
           <p>이메일</p>
           <input
             input
@@ -29,7 +29,7 @@
             placeholder="이메일을 입력해주세요"
           />
         </div>
-        <div id="login-box">
+        <div class="login-box">
           <p>닉네임</p>
           <input
             input
@@ -39,7 +39,7 @@
             placeholder="비밀번호를 입력해주세요"
           />
         </div>
-        <input type="submit" value="지금 로그인하기" id="login-button" />
+        <button type="submit" class="button">지금 로그인하기</button>
       </form>
     </div>
     <script src="js/setPlaceholder.js"></script>
