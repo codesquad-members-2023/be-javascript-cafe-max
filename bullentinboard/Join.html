@@ -11,7 +11,7 @@
         <p class="navbar-brand">Hello JAVA!</p>
     </div>
     <div class="nav justify-content-end" id="login">
-        <button class="btn btn-primary" type="submit">로그인/회원가입</button>
+        <a class="btn btn-primary" href="Login.html" type="submit" role="button">로그인/회원가입</a>
     </div>
 </nav>
 <div class="container-fluid row-gap-3 mt-5 mb-5">
@@ -21,23 +21,32 @@
         </div>
     </div>
 </div>
-<form>
+<form class="needs-validation" action="Login.html" novalidate>
     <div class="row justify-content-center mb-3">
         <div class="col-3">
             <label for="email" class="form-label">이메일</label>
-            <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요">
+            <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요" required>
+            <div class="invalid-feedback">
+                이메일을 입력해주세요
+            </div>
         </div>
     </div>
     <div class="row justify-content-center mb-3">
         <div class="col-3">
             <label for="nickname" class="form-label">닉네임</label>
-            <input type="email" class="form-control" id="nickname" placeholder="비밀번호를 입력해주세요">
+            <input type="text" class="form-control" id="nickname" placeholder="닉네임을 입력해주세요" required>
+            <div class="invalid-feedback">
+                닉네임을 입력해주세요
+            </div>
         </div>
     </div>
     <div class="row justify-content-center mb-5">
         <div class="col-3">
             <label for="password" class="form-label">비밀번호</label>
-            <input type="email" class="form-control" id="password" placeholder="비밀번호를 입력해주세요">
+            <input type="password" class="form-control" id="password" placeholder="비밀번호를 입력해주세요" required>
+            <div class="invalid-feedback">
+                비밀번호를 입력해주세요
+            </div>
         </div>
     </div>
     <div class="row justify-content-center mb-3">
@@ -48,4 +57,48 @@
 </form>
 
 </body>
+<script>
+    function validateForm(){
+
+
+    }
+
+    function validateEmail(){
+        let email = document.querySelector('#email');
+    }
+
+    function validateNickName(){
+        let nickname = document.querySelector('#nickname');
+        if (nickname.charset.size < 2 || nickname.charset.size > 64){
+
+        }
+    }
+
+    function validatePassword(){
+        let password = document.querySelector('#password');
+        if (password.size < 8 || password.size > 32){
+
+        }
+        if (!password.charset.match("[a-z]")) {
+
+        }
+    }
+    (() => {
+        'use strict'
+
+        // Fetch all the forms we want to apply custom Bootstrap validation styles to
+        const forms = document.querySelectorAll('.needs-validation')
+
+        // Loop over them and prevent submission
+        Array.from(forms).forEach(form => {
+            form.addEventListener('submit', event => {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
 </html>
