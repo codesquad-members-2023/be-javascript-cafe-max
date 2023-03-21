@@ -55,13 +55,13 @@ a:hover {
 /* Middle column */
 @media (min-width: 768px) {
     .column.middle {
-        width: 50%;
+        width: 55%;
     }
 }
 
 @media (max-width: 767px) {
     .column.middle {
-        width: 80%;
+        width: 100%;
     }
 }
 
