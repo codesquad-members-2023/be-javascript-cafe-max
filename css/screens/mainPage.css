@@ -39,5 +39,26 @@
 }
 
 #mainPage-table-caption-except-title p {
+  text-align: center;
+  width: 140px;
+}
+
+.my-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#my-list-item-title {
+  width: 500px;
+}
+#my-list-item-except-title {
+  display: flex;
+  flex-direction: row;
+}
+
+#my-list-item-except-title p {
+  text-align: center;
   width: 140px;
 }
