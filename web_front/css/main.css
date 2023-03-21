@@ -429,12 +429,5 @@ font-weight: 500;
 font-size: 14px;
 line-height: 100%;
 /* identical to box height, or 14px */
-
-display: flex;
-align-items: center;
-text-align: center;
-
-/* White */
-
 color: #FFFFFF;
 }
