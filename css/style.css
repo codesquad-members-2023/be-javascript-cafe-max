@@ -1,5 +1,8 @@
 /**screens**/
 @import "screens/login.css";
 
+/**components**/
+@import "components/topBar.css";
+
 /**reset**/
 @import "reset.css";

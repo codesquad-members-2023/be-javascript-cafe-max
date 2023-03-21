@@ -1,20 +1,3 @@
-#topBar {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  height: 30px;
-  margin: 30px 100px;
-}
-
-#topBar p {
-  font-weight: 600;
-}
-
-#topBar button {
-  width: 122px;
-  height: 32px;
-}
-
 #login {
   display: flex;
   flex-direction: column;
