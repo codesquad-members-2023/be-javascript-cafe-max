@@ -2,6 +2,7 @@ const btn = document.querySelector("button");
 const email = document.querySelector("input[name=email]");
 const username = document.querySelector("input[name=username]");
 const form = document.querySelector("form");
+const submit = document.querySelector("input[type=submit]");
 
 // navigation에 있는 button 클릭 시, 로그인 페이지로 이동
 btn.addEventListener("click", function(){
