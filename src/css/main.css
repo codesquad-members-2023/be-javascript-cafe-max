@@ -74,6 +74,10 @@ a:hover {
     box-shadow: 0 0 1px #0c3225;
 }
 
+.card-footer {
+    padding: 20px;
+}
+
 .text-center {
     text-align: center;
 }
@@ -145,6 +149,7 @@ hr {
 }
 .crud-board-table tbody tr:hover {
     background-color: #bfeede;
+    cursor: pointer;
 }
 .crud-board-table th, .crud-board-table td {
     padding: 1rem 0.25rem;
@@ -163,4 +168,34 @@ hr {
 }
 .crud-board-table th:nth-child(5) {
     width: 10%;
+}
+
+/* paging buttons */
+.paging-btn-group {
+    padding: 1rem 0rem;
+    display: inline-flex;
+}
+
+.paging-btn-group > button {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #bfeede;
+    border-radius: .25rem;
+    background: #bfeede linear-gradient(180deg, #bfeede, #a8d4c5) repeat-x !important;
+    color: #000000;
+    font-weight: bold;
+}
+
+.paging-btn-group > button:hover {
+    background: #a8d4c5 linear-gradient(180deg, #a8d4c5, #0c3225) repeat-x !important;
+    color: #ebfff8;
+    cursor: pointer;
+}
+
+.paging-btn-group > button:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.paging-btn-group > button:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
 }
