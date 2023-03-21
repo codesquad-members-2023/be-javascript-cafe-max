@@ -28,7 +28,7 @@
 
 2. 태그 
 
-<ol>
+<ul>
 
 1. strong   
     <strong>굵은 글씨로 강조</strong>
@@ -79,7 +79,7 @@
 
     <a href = https://github.com/sejeong00/be-javascript-cafe-max>링크</a>
 
-</ol>
+</ul>
 
 3. doctype 선언문
 ```html
