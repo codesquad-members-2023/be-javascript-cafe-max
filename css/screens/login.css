@@ -39,7 +39,7 @@
 }
 
 #login-button {
-  width: 320px;
+  width: 100%;
   height: 40px;
   background-color: rgb(67, 98, 208);
   border-radius: 5px;

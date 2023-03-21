@@ -3,14 +3,32 @@
   flex-direction: row;
   justify-content: space-between;
   height: 30px;
-  margin: 30px 100px;
+}
+
+#topBar-right {
+  display: flex;
+  flex-direction: row;
 }
 
 #topBar p {
+  padding-top: 10px;
+}
+
+#topBar-left-text {
   font-weight: 600;
 }
 
+#topBar-right-text {
+  color: rgba(0, 0, 0, 0.8);
+  font-size: small;
+}
+
 #topBar button {
-  width: 122px;
+  width: 130px;
+  margin-left: 10px;
+  background-color: rgb(67, 98, 208);
+  border-radius: 5px;
+  border: none;
+  color: aliceblue;
   height: 32px;
 }
