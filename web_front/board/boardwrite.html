@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/board.css">
+
+</head>
+<body>
+    <div class = "wrap">
+        <!-------------header_start----------------------------------->
+        <div class="nav">
+            <div class="nav_title">
+            <span style="line-height: 100%;">Hello! Java</span>
+            </div>
+            <div class="header_btn">
+            <ul>
+                <li style="margin-top: 20px;"><a href="#">멤버리스트</a></li>
+                <li><button type="button" id="header_button">마이페이지</button></li>
+                <li><button type="button" id="logout">로그아웃</button></li>
+            </ul>
+            </div> 
+        </div>
+        <!-------------header_end------------------------------------->
+
+
+        <form id="form">
+
+        <!-------------start_content----------------------------------->
+        <div class="post_area">
+            <h1 class="post_title">글쓰기</h1>
+            <div class="input_info">
+                <label>제목</label>
+                <div><input id="title" type="text"placeholder="글의 제목을 입력해주세요."></div>
+            </div>
+
+            <div class="content_area">
+                <label>내용</label>
+                <textarea id="content" placeholder="내용을 입력해주세요."></textarea>
+            </div>
+        </div>
+        <!-------------end_content------------------------------------->
+
+        <!-------------footer_start----------------------------------->
+        <div class="footer_area">
+            <span><button id="write">작성완료</button></span>
+        </div>
+        <!-------------footer_end------------------------------------->
+
+    </form>
+
+    
+
+    </div>
+    <script src="../js/boardwrite.js"></script>
+</body>
+</html>
