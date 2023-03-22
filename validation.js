@@ -5,6 +5,7 @@ function validateAll() {
 
     if (email && nickname && password) {
         alert("회원가입이 완료되었습니다");
+        document.getElementById("signUp").submit();
     }
 }
 
