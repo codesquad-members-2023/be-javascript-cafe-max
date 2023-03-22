@@ -1,8 +1,7 @@
 /*  keyup 이벤트 사용하여 키보드 입력될 때마다 체크
     else 너무 많이 씀 함수 계속 실행됨 괜찮나...
 */ 
-let check =[false,false,false];
-(function() {
+    let check =[false,false,false];
     let email_element = document.getElementById('email');
     
     email_element.addEventListener('keyup',function(e){
@@ -53,7 +52,6 @@ let check =[false,false,false];
         }
            
     });
-  })();
 
 document.getElementById('signup_button').addEventListener('click',function(e){
     const error_signup= document.getElementById('error_signup')
