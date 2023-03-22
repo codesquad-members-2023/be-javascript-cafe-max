@@ -1,41 +1,11 @@
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-
-nav button {
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 8px 16px;
-    gap: 10px;
-    width: 122px;
-    height: 32px;
-    background: #4362D0;
-    color: white;
-    border: none;
-    border-radius: 8px;
-    flex: none;
-    order: 1;
-}
-
-#frame {
-    height: 148px;
-    width: 1040px;
-}
-
-h1 {
-    height: 38px;
-}
-
 #join-form {
     width: 300px;
     margin: 20vh auto 0 auto;
     padding: 20px;
     border-radius: 4px;
     font-size: 12px;
+    margin-top: 50px;
+    margin-bottom: 50px;
 }
 
 #success-form {
@@ -44,18 +14,73 @@ h1 {
     padding: 20px;
     border-radius: 4px;
     font-size: 12px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+#posting-form {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #f8f8f8;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.5);
+    font-size: 16px;
+}
+
+#posting-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333;
+}
+
+#posting-form input[type="text"],
+#posting-form textarea,
+#posting-form input[type="date"] {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    box-sizing: border-box;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+#posting-form textarea {
+    height: 200px;
+}
+
+#posting-form input[type="submit"] {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
+
+@media only screen and (max-width: 600px) {
+    #posting-form {
+        max-width: 100%;
+        margin: 30px;
+    }
 }
 
 
 button[type="submit"] {
-    height: 40px;
-    width: 320px;
+    height: 45px;
+    width: 325px;
     border: none;
-    border-radius: 8px;
-    padding: 0 10px;
-    background-color: #4362D0;
+    border-radius: 6px;
+    padding: 10px;
+    background-color: #0064FF;
     color: white;
-    font-size: 16px;
+    font-size: 18px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
 .input-control input {
@@ -83,4 +108,107 @@ button[type="submit"] {
     color: #ff3860;
     font-size: 9px;
     height: 13px;
+}
+
+/* 전체 화면을 채우는 div에 대한 스타일 */
+body {
+    margin: 0;
+    padding: 0;
+}
+
+/* nav에 대한 스타일 */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 64px;
+    padding: 0 32px;
+    background-color: #f8f9fa;
+}
+
+nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+nav li {
+    font-size: 24px;
+    font-weight: bold;
+    color: #212529;
+}
+
+nav button {
+    display: inline-block;
+    justify-content: center;
+    align-items: center;
+    height: 40px;
+    width: auto;
+    border: none;
+    border-radius: 20px;
+    background-color: #343a40;
+    color: #fff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+/* header에 대한 스타일 */
+header {
+    background-color: #343a40;
+    color: #fff;
+}
+
+#frame {
+    /*max-width: 1024px;*/
+    margin: 0 auto;
+    padding: 64px 0 15px;
+    text-align: center;
+}
+
+h1 {
+    font-size: 36px;
+    font-weight: bold;
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 16px;
+    margin-top: 0;
+    margin-bottom: 13px;
+}
+
+/* main에 대한 스타일 */
+main {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 32px;
+    background-color: #fff;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+th,
+td {
+    padding: 8px;
+    text-align: left;
+    border-bottom: 1px solid #dee2e6;
+}
+
+.write-btn {
+    background-color: #0064FF;
+    border: none;
+    color: white;
+    padding: 12px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 16px 0;
+    cursor: pointer;
+    border-radius: 50px;
 }
