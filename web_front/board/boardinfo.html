@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../css/boardinfo.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="wrap">
+        <!-------------header_start----------------------------------->
+        <div class="nav">
+            <div class="nav_title">
+            <span style="line-height: 100%;">Hello! Java</span>
+            </div>
+            <div class="header_btn">
+            <ul>
+                <li style="margin-top: 20px;"><a href="#">멤버리스트</a></li>
+                <li><button type="button" id="header_button">마이페이지</button></li>
+                <li><button type="button" id="logout">로그아웃</button></li>
+            </ul>
+            </div> 
+        </div>
+        <!-------------header_end------------------------------------->
+
+
+        <!--                  content_start                         -->
+
+        <div class="info_area">
+
+            <div class="title_area">
+                <h1>자바 웹개발 교육 홈페이지 디자인 개발1</h1>
+            </div>
+
+            <div class="post_info">
+                <span>작성자 : user </span>
+                <span>작성일자: YYYY. MM. DD. HH:MM</span>
+                <span>조회: 0</span>
+            </div>
+
+            <div class="content_body">
+                우리는 시스템 아키텍처에 대한 일관성 있는 접근이 필요하며, 
+                필요한 모든 측면은 이미 개별적으로 인식되고 있다고 생각합니다. 
+                즉, 응답이 잘 되고, 탄력적이며 유연하고 메시지 기반으로 동작하는 시스템 입니다. 
+                우리는 이것을 리액티브 시스템(Reactive Systems)라고 부릅니다.
+                리액티브 시스템으로 구축된 시스템은 보다 유연하고, 느슨한 결합을 갖고, 확장성 이 있습니다. 이로 인해 개발이 더 쉬워지고 변경 사항을 적용하기 쉬워집니다. 
+                이 시스템은 장애 에 대해 더 강한 내성을 지니며, 비록 장애가 발생 하더라도, 재난이 일어나기 보다는 간결한 방식으로 해결합니다. 
+                리액티브 시스템은 높은 응답성을 가지며 사용자 에게 효과적인 상호적 피드백을 제공합니다.
+            </div>
+
+            <div class="reply_count">
+                <span id="reply_count">댓글 1개</span>
+            </div>
+
+            <div class="reply_list">
+
+                <div class="reply">
+                    <div class="reply_body">
+                        <span>user</span>
+                        <span >게시글에 댓글을 쓰면 이런 형식으로 보여집니다! </span>
+                        <span>YYYY. MM. DD. HH:MM</span>
+                    </div>
+                </div>
+
+                <div class="reply">
+                    <div class="reply_body">
+                        <span>user</span>
+                        <span >게시글에 댓글을 쓰면 이런 형식으로 보여집니다! </span>
+                        <span>YYYY. MM. DD. HH:MM</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="write_area">
+                <label>user</label>
+                <span><input id="reply_input" type="text"></span>
+                <button id="write_button" type="button">글작성</button>
+            </div>
+        </div>
+        <!--                    content_end                          -->
+
+
+        <!--                   footer_start                          -->
+        <div class="info_footer">
+            <div class="move_button_area">
+                <button class="move_button" type="button">이전글: {글제목} </button>
+                <button class="move_button" type="button">다음글: {글제목} </button>
+            </div>
+            <button id="exit">목록으로</button>
+        </div>
+
+        <!--                   footer_end                            -->
+
+
+
+    </div>
+    
+</body>
+</html>
