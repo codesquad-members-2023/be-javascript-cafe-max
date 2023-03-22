@@ -34,7 +34,7 @@
     </div>
     <br><br><br>
     <div class="container">
-        <table class="table table-striped table-hover text-center">
+        <table id="board_table" class="table table-striped table-hover text-center">
             <thead>
                 <tr>
                     <th style="width:40%">제목</th>
@@ -43,26 +43,6 @@
                     <th style="width:10%">조회수</th>
                 </tr>
             </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                </tr>
-                <tr>
-                    <td>1</td>
-                    <td>2</td>
-                    <td>3</td>
-                    <td>4</td>
-                </tr>
-            </tbody>
         </table>
 
         <hr/>
@@ -78,5 +58,34 @@
         </div>
     </div>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
+<script>
+    function createTableBody(data){
+        const tbody = document.createElement("tbody");
+
+        for(var i=0; i<data.length; i++){
+            const tr = document.createElement("tr");
+            for(var key in data[i]){
+                const td = document.createElement("td");
+                const text = document.createTextNode(data[i][key]);
+                td.appendChild(text);
+                tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+        }
+        return tbody;
+    }
+
+    const data = [
+        {"title":"aaaaaa", "date":"1999.01.11", "writer":"aaa", "views":3},
+        {"title":"aaabbbbbbbbbbbbbbbaaa", "date":"1999.01.11", "writer":"bbb", "hits":3},
+        {"title":"cccccccccccccc", "date":"1999.01.11", "writer":"ccc", "hits":3},
+        {"title":"ddddadadawdwadawda", "date":"1999.01.11", "writer":"ddd", "hits":3},
+        {"title":"eeeeeeeadaedaedae", "date":"1999.01.11", "writer":"eee", "hits":3}
+    ]
+
+    const table = document.getElementById("board_table");
+    const tableBody = createTableBody(data);
+    table.appendChild(tableBody);
+</script>
 </body>
 </html>
