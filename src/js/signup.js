@@ -3,9 +3,9 @@ function signUp(e) {
     e.preventDefault();
     if(!validateSignInForm()) return;
 
-    var userId = document.getElementsByName("user_id")[0].value;
-    var userEmail = document.getElementsByName("user_email")[0].value;
-    var url = "../html/signup_success.html?user_id="+userId+"&user_email="+userEmail;
+    let userId = document.getElementsByName("user_id")[0].value;
+    let userEmail = document.getElementsByName("user_email")[0].value;
+    let url = "../html/signup_success.html?user_id="+userId+"&user_email="+userEmail;
     location.href = url;
 }
 
@@ -26,8 +26,8 @@ function validateSignInForm() {
  * @returns 유효성 검사 통과 유무 boolean
  */
 function validateUserId() {
-    var userId = document.getElementsByName("user_id")[0].value;
-    var userIdReg = /^[a-zA-z0-9]{4,12}$/;
+    let userId = document.getElementsByName("user_id")[0].value;
+    let userIdReg = /^[a-zA-z0-9]{4,12}$/;
 
     if(!userIdReg.test(userId)) {
         alert("아이디는 영문, 숫자 조합 2 ~ 64자를 입력해 주세요.");
@@ -41,8 +41,8 @@ function validateUserId() {
  * @returns 유효성 검사 통과 유무 boolean
  */
 function validateUserEmail() {
-    var userEmail = document.getElementsByName("user_email")[0].value;
-    var userEmailReg = /^[\w.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
+    let userEmail = document.getElementsByName("user_email")[0].value;
+    let userEmailReg = /^[\w.%+-]+@[a-z0-9.-]+\.[a-z]{2,}$/i;
 
     if(!userEmailReg.test(userEmail)) {
         alert("올바른 이메일을 입력해 주세요.");
@@ -57,8 +57,8 @@ function validateUserEmail() {
  * @returns 유효성 검사 통과 유무 boolean
  */
 function validateUserPassword() {
-    var userPassword = document.getElementsByName("user_password")[0].value;
-    var userPasswordReg = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,32}$/;
+    let userPassword = document.getElementsByName("user_password")[0].value;
+    let userPasswordReg = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,32}$/;
 
     if(!userPasswordReg.test(userPassword)) {
         alert("비밀번호는 영어 소문자, 숫자 조합 8 ~ 32자를 입력해 주세요.");
@@ -72,8 +72,8 @@ function validateUserPassword() {
  * @returns 유효성 검사 통과 유무 boolean
  */
 function validateUserPasswordCheck() {
-    var userPassword = document.getElementsByName("user_password")[0].value;
-    var userPasswordCheck = document.getElementsByName("user_password_check")[0].value;
+    let userPassword = document.getElementsByName("user_password")[0].value;
+    let userPasswordCheck = document.getElementsByName("user_password_check")[0].value;
 
     if(!userPasswordCheck.length || !userPasswordCheck) {
         alert("비밀번호 확인란을 입력해 주세요.");

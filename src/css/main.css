@@ -1,0 +1,207 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    text-align: center;
+    background-color: #ebfef8;
+}
+
+/* Style the top navigation bar */
+.topnav {
+    overflow: hidden;
+    background-color: #a8d4c5;
+}
+
+/* Style the topnav links */
+.topnav div,
+a {
+    float: left;
+    display: block;
+    color: black;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Change color on hover */
+.topnav div:hover,
+a:hover {
+    background-color: #bfeede;
+    color: black;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* Header/Blog Title */
+.header {
+    padding: 30px;
+    text-align: center;
+    background: white;
+}
+
+.header h1 {
+    font-size: 50px;
+}
+
+/* Create three unequal columns that floats next to each other */
+.column {
+    margin: 0 auto;
+    padding: 10px;
+}
+
+/* Middle column */
+@media (min-width: 768px) {
+    .column.middle {
+        width: 55%;
+    }
+}
+
+@media (max-width: 767px) {
+    .column.middle {
+        width: 100%;
+    }
+}
+
+/* Add a card effect for articles */
+.card {
+    background-color: #ebfff8;
+    padding: 20px;
+    margin-top: 20px;
+    border-radius: .25rem;
+    box-shadow: 0 0 1px #0c3225;
+}
+
+.card-footer {
+    padding: 20px;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.vertical-form {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.login-box {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    margin: -150px 0 0 -150px;
+    width: 300px;
+    height: 300px;
+}
+
+input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    border-radius: .5rem;
+    font-weight: bold;
+    border: solid 1px #0c3225;
+}
+
+input:focus {
+    border: solid 2px #0c3225;
+}
+
+.submit-btn {
+    padding: 0.375rem 0.75rem;
+    border: 1px solid transparent;
+    border-radius: .25rem;
+    background: #007bff linear-gradient(180deg, #268fff, #007bff) repeat-x !important;
+    color: #ebfef8;
+    font-weight: bold;
+}
+
+.submit-btn:hover {
+    border: 1px solid #0c3225;
+}
+
+.text-detail {
+    text-align: left;
+    font-size: large;
+    font-weight: bold;
+    word-break: break-all
+}
+
+hr {
+    border-top: 1px solid #a8d4c5;
+}
+
+/* Table CSS */
+.crud-board-table {
+    background-color: transparent;
+    width: 100%;
+    table-layout:fixed;
+    word-break:break-all;
+    height: auto;
+    border-collapse: collapse;
+}
+
+/* 게시판 헤더 : | no | title | writer | reg date | hit | */
+.crud-board-table tr {
+    border-bottom: 1px solid #a8d4c5;
+}
+.crud-board-table tbody tr:hover {
+    background-color: #bfeede;
+    cursor: pointer;
+}
+.crud-board-table th, .crud-board-table td {
+    padding: 1rem 0.25rem;
+}
+.crud-board-table th:nth-child(1) {
+    width: 10%;
+}
+.crud-board-table th:nth-child(2) {
+    width: 50%;
+}
+.crud-board-table th:nth-child(3) {
+    width: 20%;
+}
+.crud-board-table th:nth-child(4) {
+    width: 10%;
+}
+.crud-board-table th:nth-child(5) {
+    width: 10%;
+}
+
+/* paging buttons */
+.paging-btn-group {
+    padding: 1rem 0rem;
+    display: inline-flex;
+}
+
+.paging-btn-group > button {
+    padding: 0.5rem 0.75rem;
+    border: 1px solid #bfeede;
+    border-radius: .25rem;
+    background: #bfeede linear-gradient(180deg, #bfeede, #a8d4c5) repeat-x !important;
+    color: #000000;
+    font-weight: bold;
+}
+
+.paging-btn-group > button:hover {
+    background: #a8d4c5 linear-gradient(180deg, #a8d4c5, #0c3225) repeat-x !important;
+    color: #ebfff8;
+    cursor: pointer;
+}
+
+.paging-btn-group > button.checked {
+    background: #a8d4c5 linear-gradient(180deg, #a8d4c5, #0c3225) repeat-x !important;
+    color: #ebfff8;
+    cursor: pointer;
+}
+
+.paging-btn-group > button:not(:last-child) {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+}
+.paging-btn-group > button:not(:first-child) {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+}
