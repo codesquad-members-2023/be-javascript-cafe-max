@@ -22,6 +22,22 @@ let prevButton = document.getElementById("page_prev_link")
 
 반대로 가져올 태그들이 여러개라면 jquery로 가져오는 것이 좋아보입니다.
 
+## replaceWith
+
+- 태그를 교체하는 함수입니다.
+
+```javascript
+const div = document.createElement("div");
+const p = document.createElement("p");
+div.appendChild(p);
+const span = document.createElement("span");
+
+p.replaceWith(span);
+
+console.log(div.outerHTML);
+// "<div><span></span></div>"
+```
+
 ## References
 
 - [How TO - Include HTML](https://www.w3schools.com/howto/howto_html_include.asp)
