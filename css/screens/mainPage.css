@@ -83,3 +83,14 @@
   height: 30px;
   margin-left: 10px;
 }
+
+#mainPage-bottom-left-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 왼쪽하단 버튼 css설정 */
+#page-numbers button {
+  background-color: white;
+  border: none;
+}
