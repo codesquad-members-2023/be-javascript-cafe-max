@@ -27,7 +27,7 @@
                     id="email"
                     name="email"
                     type="email"
-                    value="">
+                    value="" readonly>
             <div class="error"></div>
         </div>
 
@@ -37,11 +37,18 @@
                     id="username"
                     name="username"
                     type="text"
-                    value="">
+                    value="${username}" readonly>
             <div class="error"></div>
         </div>
         <button type="submit">지금 로그인하기</button>
     </form>
+    <script>
+        const param = new URL(location).searchParams
+        const email = document.querySelector('#email')
+        email.value = param.get("email")
+        const username = document.querySelector('#username')
+        username.value = param.get("username")
+    </script>
 </div>
 </body>
 </html>

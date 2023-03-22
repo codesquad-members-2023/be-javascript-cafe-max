@@ -1,4 +1,4 @@
-const form = document.getElementById('form');
+const form = document.getElementById('join-form');
 const username = document.getElementById('username');
 const email = document.getElementById('email');
 const password = document.getElementById('password');
@@ -41,6 +41,9 @@ const validateInputs = () => {
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
+    var flag1 = false;
+    var flag2 = false;
+    var flag3 = false;
 
     if (usernameValue === '') {
         setError(username, '닉네임을 입력해주세요');
@@ -48,6 +51,7 @@ const validateInputs = () => {
         setError(username, '닉네임은 2글자 이상 64글자 이하로 입력해주세요');
     } else {
         setSuccess(username);
+        flag1 = true;
     }
 
     if (emailValue === '') {
@@ -56,6 +60,7 @@ const validateInputs = () => {
         setError(email, '이메일 형식에 맞지 않습니다');
     } else {
         setSuccess(email);
+        flag2 =true;
     }
 
     if (passwordValue === '') {
@@ -66,9 +71,10 @@ const validateInputs = () => {
         setError(password, '비밀번호는 영어 소문자 및 숫자 반드시 포함해야 합니다');
     } else {
         setSuccess(password);
+        flag3 =true;
     }
 
-    form.action = "/register2.html";
-    form.method = "POST";
-    form.submit();
+    if (flag1 && flag2 && flag3) {
+        form.submit();
+    }
 }
