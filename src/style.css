@@ -1,0 +1,23 @@
+body {
+    font-family: Arial;
+}
+
+.box {
+    background-color: #afb9ea;
+    color: white;
+    padding-left: 20px;
+    display: grid;
+    grid-template-columns: 5fr 1fr;
+}
+
+.button {
+    font-family: sans-serif;
+    color: white;
+    border-color: white;
+    border: solid;
+    border-radius: 40px;
+    min-width: 200px;
+    margin: 1em;
+    background: #afb9ea;
+    font-weight: 600;
+  }
