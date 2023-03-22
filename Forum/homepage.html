@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <link rel="stylesheet" href="css/mystyle.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+</head>
+<head>
+    <title>로그인</title>
+    <meta charset="utf-8">
+</head>
+<div id="navbar-placeholder"></div>
+<div class="container">
+    <h2 class="mt-5">Featured Movie Critics</h2>
+    <hr>
+    <div class="row">
+        <!-- Loop through the movie critics data and create a card for each critic -->
+        <script>
+            const critics = [
+                {
+                    title: "Movie title 1",
+                    summary: "Brief summary of the movie 1."
+                },
+                {
+                    title: "Movie title 2",
+                    summary: "Brief summary of the movie 2."
+                },
+                {
+                    title: "Movie title 3",
+                    summary: "Brief summary of the movie 3."
+                }
+            ];
+
+            critics.forEach(function(critic) {
+                document.write(`
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="http://placehold.it/350x200" alt="Movie poster" class="card-img-top">
+                            <div class="card-body">
+                                <h5 class="card-title">${critic.title}</h5>
+                                <p class="card-text">${critic.summary}</p>
+                                <a href="#" class="btn btn-primary">Read Review</a>
+                            </div>
+                        </div>
+                    </div>
+                `);
+            });
+        </script>
+    </div>
+</div>
+<script src="js/registrationValidator.js"></script>
+<script src="js/navbarScript.js"></script>
+</html>
