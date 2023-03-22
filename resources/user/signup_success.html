@@ -5,22 +5,24 @@
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
   <header data-include-path="../components/head_header.html"></header>
   <script src="../static/js/jquery-3.6.4.js"></script>
-  <link href="../static/css/signup.css" rel="stylesheet">
+  <link href="../static/css/signup_success.css" rel="stylesheet">
 </head>
 <body>
 <header data-include-path="../components/header.html"></header>
 
-<div class="signup_form">
+<div class="signup_success_form">
   <div class="form_title">
-    <h4>회원가입</h4>
+    <h4>가입이 완료되었습니다.</h4>
   </div>
-  <form action="signup_success.html" method="post" name="signupForm">
+
+  <div>
     <div class="form_input">
       <div>
         <label for="email">이메일</label>
       </div>
       <div>
-        <input id="email" name="email" placeholder="이메일을 입력해주세요" type="email">
+        <input id="email" name="email" placeholder="이메일을 입력해주세요" readonly
+               type="email" value="abc@codequad.kr">
       </div>
     </div>
     <div class="form_input">
@@ -28,25 +30,17 @@
         <label for="nickname">닉네임</label>
       </div>
       <div>
-        <input id="nickname" name="nickname" placeholder="닉네임을 입력해주세요" type="text">
-      </div>
-    </div>
-
-    <div class="form_input">
-      <div>
-        <label for="pwd">비밀번호</label>
-      </div>
-      <div>
-        <input id="pwd" name="pwd" placeholder="비밀번호를 입력해주세요" type="password">
+        <input id="nickname" name="nickname" placeholder="닉네임을 입력해주세요" readonly type="text"
+               value="user">
       </div>
     </div>
 
     <div class="form_btn">
-      <button class="w-100" id="signUpBtn">회원가입</button>
+      <button class="w-100" id="loginBtn">지금 로그인하기</button>
     </div>
-  </form>
+  </div>
 </div>
 <script src="../static/js/common.js"></script>
-<script src="../static/js/signup.js"></script>
+<script src="../static/js/signup_success.js"></script>
 </body>
 </html>

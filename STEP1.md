@@ -93,6 +93,19 @@ function isPassword(value) {
 }
 ```
 
+## 그룹리뷰 피드백
+
+- 회원가입 입력 실패시 제출하지 않고 페이지 그대로 유지하기 위해서 event.preventDefault() 호출합니다.
+
+```javascript
+$(document).ready(function () {
+  $("#signUpBtn").click(function (event) {
+    event.preventDefault();
+    checkSignupForm();
+  });
+});
+```
+
 ## References
 
 - [How TO - Include HTML](https://www.w3schools.com/howto/howto_html_include.asp)

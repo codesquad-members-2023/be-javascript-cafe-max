@@ -21,7 +21,7 @@ function checkSignupForm() {
   document.signupForm.submit();
 }
 
-function isEmail(value){
+function isEmail(value) {
   const regExp = /^[\da-zA-Z]([-_.]?[\da-zA-Z])*@[\da-zA-Z]([-_.]?[\da-zA-Z])*\.[a-zA-Z]{2,3}$/i;
   return regExp.test(value);
 }
@@ -34,6 +34,13 @@ function isNickName(value) {
 
 // 소문자 및 숫자를 포함하는 8~32글자인지 검사합니다.
 function isPassword(value) {
-  const regExp = /^(?=.*[a-zA-z])(?=.*\d).{8,16}$/;
+  const regExp = /^(?=.*[a-zA-z])(?=.*\d).{8,32}$/;
   return regExp.test(value);
 }
+
+$(document).ready(function () {
+  $("#signUpBtn").click(function (event) {
+    event.preventDefault();
+    checkSignupForm();
+  });
+});
