@@ -1,0 +1,258 @@
+header {
+    width: 1040px;
+    height: 64px;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+}
+.hello-java {
+    margin-top: auto;
+    width: 96px;
+    height: 16px;
+    left: 0px;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+
+    color: #14212B;
+}
+button { /* 버튼 글자 공통 속성 */
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    /* identical to box height, or 14px */
+
+    display: flex;
+    align-items: center;
+    text-align: center;
+
+    /* White */
+
+    color: #FFFFFF;
+}
+.sign-button {
+    margin-top: auto;
+    margin-left: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 16px;
+    gap: 10px;
+
+    width: 144px;
+    height: 32px;
+
+    background: #4362D0;
+    border-radius: 8px;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0; 
+    float: right;
+}
+.title-section {
+    width: 1040px;
+    height: 148px;
+    margin-left: auto;
+    margin-top: 10%;
+
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+.title-box {
+    width: 160px;
+    height: 38px;
+    margin-bottom: auto;
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 32px;
+    line-height: 38px;
+    text-align: center;
+
+    color: #14212B;
+}
+.login-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+
+    width: 320px;
+    height: 144px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 2;
+    flex-grow: 0;
+    margin-left: auto;
+    margin-right: auto;
+}
+.input-label {
+width: 288px;
+height: 14px;
+
+/* BoldS */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 100%;
+/* identical to box height, or 14px */
+
+
+/* Gray300 */
+
+color: #4B5966;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+}
+input {
+    width: 288px;
+    height: 26px;
+
+    /* BodyR */
+
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    /* identical to box height, or 26px */
+
+
+    /* Gray200 */
+
+    color: #879298;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 1;
+    align-self: stretch;
+    flex-grow: 0;
+}
+input:focus {
+    outline: none;
+}
+.input-info {
+    /* InputInfo */
+
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 16px;
+gap: 8px;
+
+width: 320px;
+height: 64px;
+
+/* White */
+
+background: #FFFFFF;
+/* Gray100 */
+
+border: 1px solid #D2DAE0;
+border-radius: 8px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.button-section {
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    margin-top: 5%;
+    flex-direction: column;
+    align-items: center;
+    padding: 0px;
+    gap: 16px;
+
+    width: 320px;
+    height: 78px;
+
+
+    /* Inside auto layout */
+
+    flex: none;
+    order: 3;
+    flex-grow: 0;
+}
+.login-button {
+    display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+padding: 0px 10px;
+gap: 10px;
+
+width: 320px;
+height: 40px;
+
+/* Primary */
+
+background: #4362D0;
+border-radius: 8px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+.go-join {
+    width: 236px;
+height: 22px;
+
+/* BodyS */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 12px;
+line-height: 160%;
+/* or 22px */
+
+text-align: center;
+
+/* Black */
+
+color: #14212B;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+}
