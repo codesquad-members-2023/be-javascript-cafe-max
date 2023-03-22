@@ -93,7 +93,6 @@ flex-grow: 0;
     padding: 0px;
     gap: 40px;
     width: 680px;
-    height: 887px;
     flex: none;
     order: 1;
     flex-grow: 0;
@@ -191,11 +190,24 @@ flex-grow: 0;
     padding: 0px;
     gap: 24px;
     width: 680px;
-    height: 103px;
+    height: 113px;
     flex: none;
     order: 0;
     flex-grow: 0;
     border-bottom: 1px solid #D2DAE0;
+}
+
+.reply_body button{
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 100%;
+    border-radius: 8px;
+    color: #D2DAE0;
+    background: #fff;
+    border-radius: 8px;
+    border: none;
 }
 .reply_body{
     display: flex;
@@ -251,6 +263,9 @@ color: #14212B;
     order: 5;
     flex-grow: 0;
 }
+#form{
+    height: 130px;
+}
 label {
     width: 640px;
     height: 14px;
@@ -278,11 +293,13 @@ flex: none;
 order: 1;
 flex-grow: 0;
 border: none;
+margin-bottom: 20px;
 }
 
 #write_button{
     display: flex;
     border: none;
+    float: right;
 flex-direction: row;
 justify-content: center;
 align-items: center;
@@ -388,3 +405,5 @@ text-align: center;
 
 color: #FFFFFF;
 }
+
+input:focus {outline:none;}

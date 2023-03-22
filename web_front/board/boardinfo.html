@@ -50,7 +50,7 @@
             </div>
 
             <div class="reply_count">
-                <span id="reply_count">댓글 1개</span>
+                <span id="reply_count">댓글 2개</span>
             </div>
 
             <div class="reply_list">
@@ -71,12 +71,15 @@
                     </div>
                 </div>
             </div>
-
+          
             <div class="write_area">
+                <form id="form">
                 <label>user</label>
                 <span><input id="reply_input" type="text"></span>
-                <button id="write_button" type="button">글작성</button>
+                <button id="write_button" type="button" onclick="writeReply()">글작성</button>
+                </form>
             </div>
+            
         </div>
         <!--                    content_end                          -->
 
@@ -95,6 +98,7 @@
 
 
     </div>
+    <script src="../js/boardinfo.js"></script>
     
 </body>
 </html>
