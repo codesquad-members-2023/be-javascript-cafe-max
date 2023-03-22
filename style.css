@@ -1,0 +1,108 @@
+.form-wrapper {
+    margin: 10px;
+    padding: 20px;
+    background-color: #f5f5f5;
+    border-radius: 10px;
+}
+label {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    font-family: 'Noto Sans KR', sans-serif;
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+body {
+    background-color: #fff;
+}
+
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    display: block;
+    width: 95%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    background-color: #4362D0;
+    color: #fff;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #5c7ae7;
+}
+header {
+    font-family: 'Noto Sans KR', sans-serif;
+}
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+nav a {
+    padding-left: 10px;
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: #4362D0;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 5px;
+}
+nav div {
+    padding-right: 10px;
+}
+.main {
+    text-align: center;
+}
+
+.main h1 {
+    font-family: 'Noto Sans KR', sans-serif;
+    width: 111px;
+    height: 38px;
+    font-weight: 500;
+    font-size: 32px;
+    margin: auto;
+}
+p {
+    font-family: 'Noto Sans KR', sans-serif;
+    text-align: center;
+    width: 400px;
+    height: 38px;
+    font-weight: 300;
+    font-size: 25px;
+    margin: auto;
+}
+
