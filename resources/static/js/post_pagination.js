@@ -1,9 +1,9 @@
 class Page {
-  constructor(pageCount, dataLimit) {
-    this.currentPage = 1; // 현재 페이지 번호
-    // 한 화면에 나타날 페이지 버튼의 개수
-    this.dataLimit = dataLimit;
-    this.pageCount = pageCount; // 한 페이지에 보여줄 데이터 개수
+  constructor(currentPage, pageCount, dataLimit, totalCountOfData) {
+    this.currentPage = currentPage; // 현재 페이지 번호
+    this.pageCount = pageCount; // 한 화면에 나타날 페이지 버튼의 개수
+    this.dataLimit = dataLimit; // 한 페이지에 보여줄 데이터 개수
+    this.totalCountOfData = totalCountOfData // 전체 데이터 개수
   }
 
   getCurrentPage() {
@@ -33,11 +33,10 @@ class Page {
   /**
    * 전체 페이지 개수 계산
    * ex, count = 63, dataLimit = 10, Math.ceil(63 / 10) = 7
-   * @param count 전체 데이터 개수
    * @returns {number} 전체 페이지
    */
-  getTotalPage(count) {
-    return Math.ceil(count / this.dataLimit)
+  getTotalPage() {
+    return Math.ceil(this.totalCountOfData / this.dataLimit)
   }
 
   /**
@@ -57,11 +56,10 @@ class Page {
    * 현재 페이지 번호가 속한 그룹의 마지막 번호를 계산합니다.
    * ex, 현재 페이지 번호 = 1페이지, 1페이지가 속한 그룹은 1 그룹입니다.
    * 1그룹에 속한 마지막 번호는 5가 됩니다.
-   * @param count 전체 게시글 개수
    * @returns {number} 페이지 그룹의 마지막 번호
    */
-  getLastNumber(count) {
-    let totalPage = this.getTotalPage(count)
+  getLastNumber() {
+    let totalPage = this.getTotalPage()
     let lastNumber = this.getPageGroup() * this.pageCount
     if (lastNumber > totalPage) {
       lastNumber = totalPage
@@ -73,25 +71,28 @@ class Page {
    * 현재 페이지 번호가 속한 그룹의 첫번째 번호를 계산합니다.
    * ex, 현재 페이지 번호 = 3페이지, 3페이지가 속한 그룹은 1 그룹입니다.
    * 1그룹에 속한 첫번째 번호는 1이 됩니다.
-   * @param count 전체 게시글 개수
    * @returns {number} 페이지 그룹의 첫번째 번호
    */
   getFirstNumber() {
     return ((this.getPageGroup() - 1) * this.pageCount) + 1
   }
-
-  setCurrentPage(pageNumber) {
-    this.currentPage = pageNumber
-  }
 }
 
 window.onload = function () {
   const posts = generate_post()
-  const page = new Page(5, 10)
+  const currentPage = getCurrentPage()
+  const page = new Page(currentPage, 5, 10, posts.length)
+  // 게시글 출력
   document.querySelector("#board_table tbody")
   .replaceWith(buildBoard(posts, page))
-
+  // 페이지 버튼 출력
   buildPage(posts, page)
+  document.querySelector("#countOfPost").textContent = posts.length // 전체글 개수 설정
+}
+
+function getCurrentPage() {
+  let params = new URLSearchParams(location.search);
+  return params.get("page")
 }
 
 /**
@@ -131,23 +132,17 @@ function createPost(postData) {
 
 /**
  * 현재 페이지에 따른 페이지 버튼들을 생성합니다.
- * @param posts json 형식의 게시글 데이터들
- * @param currentPage 현재 페이지
+ * @param posts json 형식이 게시글 데이터들
+ * @param page 페이지 정보를 가진 객체
  */
 function buildPage(posts, page) {
-  // 첫번째 그룹 기준 1(firstNumber)~5(lastNumber)만큼 페이지네이션을 그려줍니다.
-  // ex, < 1 2 3 4 5 >
-  renderPageItems(posts, page)
-}
-
-function renderPageItems(posts, page) {
-  const totalPage = page.getTotalPage(posts.length)
+  const totalPage = page.getTotalPage()
   const firstNumber = page.getFirstNumber()
-  const lastNumber = page.getLastNumber(posts.length)
+  const lastNumber = page.getLastNumber()
   const prev = firstNumber - 1
   const next = lastNumber + 1
   let pagination = document.querySelector("#board_pagination")
-  pagination.innerHTML = createPageButtons(page, firstNumber, lastNumber)
+  pagination.innerHTML = createPageButtons(page)
 
   // 페이지 번호 버튼에 이벤트 등록
   let buttons = $(".page_num_link").get()
@@ -174,8 +169,14 @@ function renderPageItems(posts, page) {
   }
 }
 
-// 게시판의 페이지 버튼들을 생성합니다.
-function createPageButtons(page, firstNumber, lastNumber) {
+/**
+ * 페이지 버튼 태그들을 생성하여 반환합니다.
+ * @param page 페이지 객체
+ * @returns {string} 페이지 버튼들로 구성된 태그
+ */
+function createPageButtons(page) {
+  const firstNumber = page.getFirstNumber()
+  const lastNumber = page.getLastNumber()
   let pageItems = ''
 
   // 이전 페이지 버튼 생성
@@ -196,13 +197,17 @@ function createPageButtons(page, firstNumber, lastNumber) {
   return pageItems
 }
 
-// 페이지 버튼에 대한 이벤트 생성
+/**
+ * 게시글과 페이지 버튼을 렌더링하는 함수를 생성하여 반환합니다.
+ * @param posts json 형식의 게시글 데이터들
+ * @param page 페이지 객체
+ * @param pageNumber 페이지 번호
+ * @returns {(function(): void)|*} 게시글과 페이지버튼을 렌더링하는 함수
+ */
 function createPageButtonEvent(posts, page, pageNumber) {
+  const pathOfURI = window.location.pathname
   return function () {
-    page.setCurrentPage(pageNumber)
-    document.querySelector("#board_table tbody")
-    .replaceWith(buildBoard(posts, page))
-    buildPage(posts, page)
+    location.href = pathOfURI + "?page=" + pageNumber
   }
 }
 
