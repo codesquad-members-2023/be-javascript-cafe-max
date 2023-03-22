@@ -6,29 +6,25 @@ const password = document.getElementById('SIGN_PASSWORD');
 
 function signUp(){
     alert("a");
-    isValidUserNameLength();
-    isValidEmail();
+    validateUserNameLength();
+    validateEmail();
     validateUserPassword();
 }
 
-function isValidUserNameLength(){
-    if(userName.value.length > 2 && userName.value.length < 32){
-        alert("굳");
+function validateUserNameLength(){
+    if(userName.value.length >= 2 && userName.value.length < 32){
+        alert("이름 굳");
     }
 }
-function isValidEmail(){
+function validateEmail(){
     if(email.value.length > 0 && email.value.indexOf("@") != -1){
-        alert("굳")
+        alert("이메일 굳")
     }
 }
 
 function validateUserPassword() {
-
     var reg = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$%^&*-]).{8,}$/;
-
-    if(reg.test){
-        alert("굳");
+    if(reg.test(password.value)){
+        alert("패스워드 굳");
     }
-
-    
 }
