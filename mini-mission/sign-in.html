@@ -21,17 +21,19 @@
             <input name="email" type="email" placeholder="이메일을 입력해주세요">
         </div>
         <div class="input-info">
-            <label>닉네임</label>
-            <input name="username" type="text" placeholder="닉네임을 입력해주세요" required minlength="2" maxlength="64">
+            <label>이름</label>
+            <input name="username" type="text" placeholder="이름을 입력해주세요">
         </div>
         <div class="input-info">
             <label>비밀번호</label>
-            <input name="password" type="password" placeholder="비밀번호를 입력해주세요" required minlength="8" maxlength="32">
+            <input name="password" type="password" placeholder="비밀번호를 입력해주세요">
         </div>
+        <p id="access-denied-text"></p>
         <div id="submit">
             <input type="submit" value="회원가입">
         </div>
     </form>
     <div></div>
+    <script src="js/sign-in.js"></script>
 </body>
 </html>
