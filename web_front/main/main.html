@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/main.css">
+</head>
+<body>
+    <div class="wrap">
+        <!-------------header_start----------------------------------->
+        <div class="nav">
+            <div class="nav_title">
+            <span style="line-height: 100%;">Hello! Java</span>
+            </div>
+            <div class="header_btn">
+            <ul>
+                <li style="margin-top: 20px;"><a href="#">멤버리스트</a></li>
+                <li><button type="button" id="header_button">마이페이지</button></li>
+                <li><button type="button" id="logout">로그아웃</button></li>
+            </ul>
+            </div> 
+        </div>
+        <!-------------header_end----------------------------------->
+
+
+        <!-------------title_start(파란상자부분)----------------------------------->
+        <div class="title_area">
+            <div class="first_title">코드스쿼드 백엔드 교육용 페이지</div>
+            <div class="second_title">HELLO JAVA! 입니다.</div>
+        </div>
+        <!-------------title_end(파란상자부분)----------------------------------->
+
+
+        <!-------------content_start----------------------------------->
+        
+        <div class="table_area">
+
+            <div class="count">
+                <span id="count_post"></span>
+            </div>
+            <!-----------------글 목록 테이블_start--------------------------------------->    
+            <table class="table" id="list">
+                <tr class="thead">
+                    <th id="title" >제목</th>
+                    <th id="user" >작성자</th>
+                    <th id="date" >작성일자</th>
+                    <th id="view_count" >조회수</th>
+                </tr>
+                <!-- js 에서 json 활용하여 여기 부터 붙혀 넣음-->
+            </table>
+            <!-----------------글 목록 테이블_end--------------------------------------->    
+
+
+            <div class="table_footer">
+                <div class="page_area"> 
+                    <ul>
+                        <li><a href="#"> < </a></li>
+                        <li><a href="#">1</a></li>
+                        <li><a href="#">2</a></li>
+                        <li><a href="#">3</a></li>
+                        <li><a href="#">4</a></li>
+                        <li><a href="#">5</a></li>
+                        <li><a href="#"> > </a> </li>
+                    </ul>
+                </div>
+                <div class="search_area">
+                    <span> <input id="search_input" type="text"></span>
+                    <span id="search_icon">🔍</span>
+                    <span><button type="button" id="write" onclick="location.href='../board/boardwrite.html'">글쓰기</button></span>
+                </div>
+
+        </div>
+
+        </div>
+        <!-------------content_end----------------------------------->
+
+
+     
+
+    </div>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
