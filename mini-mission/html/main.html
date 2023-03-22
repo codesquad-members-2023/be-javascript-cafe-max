@@ -5,32 +5,66 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jian's Mini Mission</title>
+    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20,300,0,0" />
 </head>
 <body>
-    <div>
-        <div>
-            <span>Jian's Mini Mission</span>
-        </div>
-        <div>
-            <div>멤버 리스트</div>
-            <div>마이 페이지</div>
-            <div>로그아웃</div>
+    <div class="navigation">
+        <p>Hello Java!</p>
+        <div id="navigation-status">
+            <p>멤버리스트</p>
+            <button class="small button">마이페이지</button>
+            <button class="small button">로그아웃</button>
         </div>
     </div>
-    <div>
-        <span>코드 스쿼드 백엔드 교육용 페이지</span>
-        <span>Jian's Mini Mission 입니다.</span>
-    </div>
-    <div>
-        <div>전체 글 60개</div>
-        <div></div>
-        <div>
-            <div>페이지 번호</div>
-            <div>
-                <div>검색어</div>
-                <div>글쓰기</div>
+    <header>
+        <span id="category">코드 스쿼드 백엔드 교육용 페이지</span>
+        <span id="title">Jian's Mini Mission 입니다.</span>
+    </header>
+    <div id="post-table">
+        <span id="post-count">전체 글 60개</span>
+        <div id="table">
+            <p class="line"></p>
+            <div class="post-table-elements">
+                <div class="text">
+                    <p class="title">제목</p>
+                    <p class="writer">작성자</p>
+                    <p class="date">작성일자</p>
+                    <p class="view">조회수</p>
+                </div>
+                <p class="line"></p>
+            </div>
+            <!-- TODO: 글을 작성하면 table 생성하게 만들기 -->
+            <div class="post-table-elements" >
+                <div class="text">
+                    <p class="user-create-title">게시물 제목</p>
+                    <p class="user-create-writer">이름</p>
+                    <p class="user-create-date">YYYY.MM.DD</p>
+                    <p class="user-create-view">0</p>
+                </div>
+                <p class="line"></p>
+            </div>
+            <!-- <div class="post-table-elements">빈페이지</div> -->
+        </div>
+        <div id="feature">
+            <ul id="pagenation">
+                <li><a href="#"> < </a></li>
+                <li><a href="#">1</a></li>
+                <li><a href="#">2</a></li>
+                <li><a href="#">3</a></li>
+                <li><a href="#">4</a></li>
+                <li><a href="#">5</a></li>
+                <li><a href="#"> > </a></li>
+            </ul>
+            <div id="button-and-search">
+                <div id="search-bar">
+                    <input placeholder="검색어를 입력하세요" type="text">
+                    <span class="material-symbols-outlined">search</span>
+                </div>
+                <button class="small-button">글쓰기</button>
             </div>
         </div>
     </div>
+    <script src="../js/main.js"></script>
 </body>
 </html>
