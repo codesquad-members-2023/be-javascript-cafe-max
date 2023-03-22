@@ -76,8 +76,8 @@ class Page {
    * @param count 전체 게시글 개수
    * @returns {number} 페이지 그룹의 첫번째 번호
    */
-  getFirstNumber(count) {
-    return this.getLastNumber(count) - (this.pageCount - 1)
+  getFirstNumber() {
+    return ((this.getPageGroup() - 1) * this.pageCount) + 1
   }
 
   setCurrentPage(pageNumber) {
@@ -85,10 +85,8 @@ class Page {
   }
 }
 
-let posts;
-
 window.onload = function () {
-  posts = generate_post()
+  const posts = generate_post()
   const page = new Page(5, 10)
   document.querySelector("#board_table tbody")
   .replaceWith(buildBoard(posts, page))
@@ -144,7 +142,7 @@ function buildPage(posts, page) {
 
 function renderPageItems(posts, page) {
   const totalPage = page.getTotalPage(posts.length)
-  const firstNumber = page.getFirstNumber(posts.length)
+  const firstNumber = page.getFirstNumber()
   const lastNumber = page.getLastNumber(posts.length)
   const prev = firstNumber - 1
   const next = lastNumber + 1
@@ -154,22 +152,25 @@ function renderPageItems(posts, page) {
   // 페이지 번호 버튼에 이벤트 등록
   let buttons = $(".page_num_link").get()
   buttons.forEach(button => button.addEventListener('click',
-      createPageButtonEvent(page, button.textContent)))
+      createPageButtonEvent(posts, page, button.textContent)))
 
   // 페이지 이전 버튼에 이벤트 등록
   let prevButton = document.getElementById("page_prev_link")
   if (prev > 0) {
-    prevButton.addEventListener("click", createPageButtonEvent(page, prev))
+    prevButton.addEventListener("click",
+        createPageButtonEvent(posts, page, prev))
   } else {
-    prevButton.addEventListener("click", createPageButtonEvent(page, 1))
+    prevButton.addEventListener("click", createPageButtonEvent(posts, page, 1))
   }
 
   // 페이지 이후 버튼에 이벤트 등록
   let nextButton = document.getElementById("page_next_link")
   if (next <= totalPage) {
-    nextButton.addEventListener("click", createPageButtonEvent(page, next))
+    nextButton.addEventListener("click",
+        createPageButtonEvent(posts, page, next))
   } else {
-    nextButton.addEventListener("click", createPageButtonEvent(page, totalPage))
+    nextButton.addEventListener("click",
+        createPageButtonEvent(posts, page, totalPage))
   }
 }
 
@@ -184,8 +185,8 @@ function createPageButtons(page, firstNumber, lastNumber) {
   for (let i = firstNumber; i <= lastNumber; i++) {
     pageItems +=
         `<li class="page-item">
-          <button class="board_page_link page_num_link ${page.getCurrentPage()
-        === i ? 'active' : ''}">${i}</button>
+          <button class="board_page_link page_num_link ${parseInt(
+            page.getCurrentPage()) === i ? 'active' : ''}">${i}</button>
           </li>`
   }
 
@@ -196,7 +197,7 @@ function createPageButtons(page, firstNumber, lastNumber) {
 }
 
 // 페이지 버튼에 대한 이벤트 생성
-function createPageButtonEvent(page, pageNumber) {
+function createPageButtonEvent(posts, page, pageNumber) {
   return function () {
     page.setCurrentPage(pageNumber)
     document.querySelector("#board_table tbody")
