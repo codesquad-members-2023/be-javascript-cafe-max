@@ -72,6 +72,16 @@ input::placeholder {
     font-style: sans-serif;
   }
 
+  input:focus {
+    outline: none;
+}
+
   a:hover {
     color: #a289bb;
+  }
+
+  .message {
+    font-family: sans-serif;
+    text-align: center;
+    font-size: small;
   }

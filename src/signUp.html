@@ -1,9 +1,10 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>login</title>
+        <title>signUp</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
+        <script src="dataValidation.js"></script>
     </head>
     <body>
         <div class="header">
@@ -12,10 +13,14 @@
         </div>
         <div class="box keyword"><strong>회원가입</strong></div>
         <div>
-            <div class="box"><input type="email" placeholder="이메일" autofocus></div>
-            <div class="box"><input type="text" placeholder="닉네임"></div>
-            <div class="box"><input type="password" placeholder="비밀번호"></div>
-            <div class="box"><button class="body button" data-text="회원가입" onclick="window.location.href='signUpCompleted.html'">회원가입</button></div>
+            <div class="box"><input type="email" id="email" placeholder="이메일" autofocus onkeyup="verifyEmail()"></div>
+            <div id="emailMessage" class="message"></div>
+            <div class="box"><input type="text" id="nickname" placeholder="닉네임" onkeyup="verifyNickname()"></div>
+            <div id="nicknameMessage" class="message"></div>
+            <div class="box"><input type="password" id="password" placeholder="비밀번호" onkeyup="verifyPassword()"></div>
+            <div id="passwordMessage" class="message"></div>
+            <div class="box"><button class="body button" onclick="validateData()">회원가입</button></div>
+            <div id="allMessage" class="message"></div>
         </div>
     </body>
 </html>
