@@ -1,4 +1,5 @@
 const check = [false, false, false];
+var user = {};
 
 function verifyEmail() {
     const email = document.getElementById("email").value;
@@ -9,6 +10,7 @@ function verifyEmail() {
         document.querySelector('#email').style.border = "2px solid rgb(186, 75, 238)";
         document.querySelector('#emailMessage').style.color = "rgb(186, 75, 238)";
         check[0] = true;
+        user.email = email;
     } else {
         document.getElementById('emailMessage').innerText = "잘못된 이메일 형식입니다.";
         document.querySelector('#email').style.border = "2px solid red";
@@ -25,6 +27,7 @@ function verifyNickname() {
         document.querySelector('#nickname').style.border = "2px solid rgb(186, 75, 238)";
         document.querySelector('#nicknameMessage').style.color = "rgb(186, 75, 238)";
         check[1] = true;
+        user.nickname = nickname;
     } else {
         document.getElementById('nicknameMessage').innerText = "닉네임은 2글자 이상 64글자 이하여야 합니다.";
         document.querySelector('#nickname').style.border = "2px solid red";
@@ -42,6 +45,7 @@ function verifyPassword() {
         document.querySelector('#password').style.border = "2px solid rgb(186, 75, 238)";
         document.querySelector('#passwordMessage').style.color = "rgb(186, 75, 238)";
         check[2] = true;
+        user.password = password;
     } else {
         document.getElementById('passwordMessage').innerText = "비밀번호는 8글자 이상 32글자 이하, 영어 소문자 및 숫자를 반드시 포함해야합니다.";
         document.querySelector('#password').style.border = "2px solid red";
@@ -52,6 +56,7 @@ function verifyPassword() {
 
 function validateData() {
     if(check[0] && check[1] && check[2]) {
+        localStorage.setItem("user", JSON.stringify(user));
         window.location.href='signUpCompleted.html'
     } else {
         document.getElementById('allMessage').innerText = "모든 사항을 올바르게 기입해주세요.";
