@@ -1,7 +1,4 @@
 const btn = document.querySelector("button");
-const email = document.querySelector("input[name=email]");
-const username = document.querySelector("input[name=username]");
-const password = document.querySelector("input[name=password]");
 const form = document.querySelector("form");
 const submit = document.querySelector("input[type=submit]");
 
@@ -13,18 +10,21 @@ btn.addEventListener("click", function(){
 // 유효한 이메일인지 확인.
 function validate_email(){
     const reg = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+    const email = document.querySelector("input[name=email]");
     return reg.test(email.value);
 }
 
 // 사용자 이름이 유효한지 확인
 function validate_username(){
     const reg = /^[ㄱ-ㅎ가-힣a-zA-Z0-9]{2,64}$/;
+    const username = document.querySelector("input[name=username]");
     return reg.test(username.value);
 }
 
 // 유효한 패드워드인지 확인.
 function validate_password() {
     const reg = /^(?=.*[a-z])(?=.*\d)[a-z\d]{8,32}$/;
+    const password = document.querySelector("input[name=password]");
     return reg.test(password.value);
 };
 
