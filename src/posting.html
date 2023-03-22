@@ -17,15 +17,24 @@
         </form>
     </div>
 </nav>
-<form id="posting-form" action="submit_post.php" method="post">
-    <label for="title">제목:</label>
-    <input type="text" id="title" name="title"><br>
+<form id="posting-form" action="submit_post.php" method="POST">
+    <div class="input-control">
+        <label for="title">제목:</label>
+        <input type="text" id="title" name="title">
+        <div class="error"></div><br>
+    </div>
 
-    <label for="author">작성자:</label>
-    <input type="text" id="author" name="author"><br>
+    <div class="input-control">
+        <label for="author">작성자:</label>
+        <input type="text" id="author" name="author">
+        <div class="error"></div><br>
+    </div>
 
-    <label for="content">본문:</label>
-    <textarea id="content" name="content"></textarea><br>
+    <div class="input-control">
+        <label for="content">본문:</label>
+        <textarea id="content" name="content"></textarea>
+        <div class="error"></div><br>
+    </div>
 
     <label for="date">작성일:</label>
     <input type="datetime-local" id="date" name="date" readonly><br>
@@ -33,7 +42,69 @@
     <input type="submit" value="작성">
 </form>
 <script>
-    document.getElementById('date').value= new Date().toISOString().slice(0, -1);
+    document.getElementById('date').value = new Date().toISOString().slice(0, -1);
+
+    const form = document.getElementById('posting-form');
+    const title = document.getElementById('title');
+    const author = document.getElementById('author');
+    const content = document.getElementById('content');
+
+    form.addEventListener('submit', e => {
+        e.preventDefault();
+        validatePostingInputs();
+    });
+
+    const setError = (element, message) => {
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector('.error');
+
+        errorDisplay.innerText = message;
+        inputControl.classList.add('error');
+        inputControl.classList.remove('success');
+    }
+
+    const setSuccess = element => {
+        const inputControl = element.parentElement;
+        const errorDisplay = inputControl.querySelector('.error');
+
+        errorDisplay.innerText = '';
+        inputControl.classList.add('success');
+        inputControl.classList.remove('error');
+    }
+
+    const validatePostingInputs = () => {
+        const authorValue = author.value.trim();
+        const titleValue = title.value.trim();
+        const contentValue = content.value.trim();
+
+        var authorFlag = false
+        var titleFlag = false
+        var contentFlag = false
+
+        if (titleValue === '') {
+            setError(title, '제목을 입력해주세요.')
+        } else {
+            setSuccess(title)
+            titleFlag = true;
+        }
+
+        if (authorValue === '') {
+            setError(author, '작성자를 입력해주세요.')
+        } else {
+            setSuccess(author)
+            authorFlag = true;
+        }
+
+        if (contentValue.length < 3 || contentValue.length > 1000) {
+            setError(content, '내용은 3자 이상 1,000자 이하로 작성해주세요.')
+        } else {
+            contentFlag = true;
+        }
+
+        if (authorFlag && titleFlag && contentFlag) {
+            form.submit();
+        }
+    }
 </script>
 </body>
 </html>

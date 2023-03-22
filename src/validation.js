@@ -5,8 +5,7 @@ const password = document.getElementById('password');
 
 form.addEventListener('submit', e => {
     e.preventDefault();
-
-    validateInputs();
+    validateJoinInputs();
 });
 
 const setError = (element, message) => {
@@ -37,7 +36,7 @@ const isValidPassword = password => {
     return regex.test(String(password));
 }
 
-const validateInputs = () => {
+const validateJoinInputs = () => {
     const usernameValue = username.value.trim();
     const emailValue = email.value.trim();
     const passwordValue = password.value.trim();
@@ -60,7 +59,7 @@ const validateInputs = () => {
         setError(email, '이메일 형식에 맞지 않습니다');
     } else {
         setSuccess(email);
-        flag2 =true;
+        flag2 = true;
     }
 
     if (passwordValue === '') {
@@ -71,7 +70,7 @@ const validateInputs = () => {
         setError(password, '비밀번호는 영어 소문자 및 숫자 반드시 포함해야 합니다');
     } else {
         setSuccess(password);
-        flag3 =true;
+        flag3 = true;
     }
 
     if (flag1 && flag2 && flag3) {

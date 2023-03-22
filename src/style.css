@@ -108,6 +108,7 @@ button[type="submit"] {
     color: #ff3860;
     font-size: 9px;
     height: 13px;
+    margin-bottom: 10px;
 }
 
 /* 전체 화면을 채우는 div에 대한 스타일 */
