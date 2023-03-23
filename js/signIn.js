@@ -35,7 +35,11 @@ function signIn(event) {
 
     for (let member of members) {
         if (member.email === inputEmail || member.password === inputPassword) {
-            localStorage.setItem('loginMember', inputEmail);
+            const loginMember = {
+                "email": member.email,
+                "nickName": member.nickName
+            };
+            localStorage.setItem('loginMember', JSON.stringify(loginMember));
             return;
         }
     }

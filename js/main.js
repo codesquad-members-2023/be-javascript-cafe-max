@@ -1,15 +1,22 @@
-function initialization() {
-    fetch("../json/posts.json")
-    .then((file) => {
-        return file.json()})
-    .then((json) => {
-        const urlParams = new URL(location.href).searchParams;
-        const pageNationNumber = urlParams.get('pageNation') === null ? 1 : Number(urlParams.get('pageNation'));
-        addPageNation(pageNationNumber, json.length);
-        addPosts(pageNationNumber, json);
-    });
+async function initialization() {
+    let posts = localStorage.getItem('posts');
+
+    if (posts === null) {
+        let posts = JSON.stringify(await getFilePosts());
+        localStorage.setItem('posts', posts);
+    }
+
+    posts = JSON.parse(localStorage.getItem('posts'));
+    const urlParams = new URL(location.href).searchParams;
+    const pageNationNumber = urlParams.get('pageNation') === null ? 1 : Number(urlParams.get('pageNation'));
+    addPageNation(pageNationNumber, posts.length);
+    addPosts(pageNationNumber, posts);
 }
 
+async function getFilePosts() {
+    let result = await fetch("../json/posts.json");
+    return result.json();
+}
 function addPageNation(pageNationNumber, postsLength) {
     const pageNation = document.querySelector('ul[class="pagination"]');
     const maxPageNumber = parseInt(postsLength / 10) + (postsLength % 10 === 0 ? 0 : 1);
