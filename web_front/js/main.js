@@ -1,6 +1,6 @@
-(function() {
-		
-    // 리스트 생성
+const loginInfo = localStorage.getItem("loginInfo");
+console.log(loginInfo);
+(function() {		
     let jsonList = new Array() ;
     for(let i=1; i<=7; i++){        
         let data = new Object() ;
@@ -17,12 +17,23 @@
         jsonList.push(data) ;
     }
     let jsonData = JSON.stringify(jsonList);    
-   
-    console.log( jsonList.length);
     getList(jsonList);
 })();
 
+function getlogOut(){
+   const name =  localStorage.getItem("loginInfo")
+    if(localStorage.getItem("loginInfo")!= null) {
+        document.getElementById('logout').innerHTML = name.split("@")[0]+" 로그아웃";
+    }
+}
+
+document.getElementById('logout').addEventListener('click',function(){
+    localStorage.removeItem("loginInfo");
+    location.href="main.html"
+});
+
 function getList(jsonList) {
+    getlogOut();
     let html = "";
     for(let i = 0; i<jsonList.length; i++) {
         html +=
@@ -35,4 +46,6 @@ function getList(jsonList) {
     }
     document.getElementById('count_post').innerHTML = "전체 글 : "+jsonList.length;
     document.getElementById('list').innerHTML += html;
+
+
 }
