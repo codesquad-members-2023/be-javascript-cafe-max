@@ -11,8 +11,23 @@ body {
     grid-template-columns: 5fr 1fr;
 }
 
+.headerMember {
+    background-color: #afb9ea;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr 1fr;
+}
+
 .head {
     min-width: 200px;
+    max-height: 40px;
+    margin: 1em;
+}
+
+.headMember {
+    min-width: 130px;
     max-height: 40px;
     margin: 1em;
 }
@@ -39,7 +54,7 @@ body {
     font-weight: 600;
   }
 
-.button:hover, .move:hover {
+.button:hover, .move:hover, #buttonwrite:hover {
     border-color:#a289bb;
     color: #a289bb;
     transition: 0.7s;
@@ -79,11 +94,11 @@ input::placeholder {
     font-style: sans-serif;
   }
 
-  input:focus {
+input:focus {
     outline: none;
 }
 
-  a:hover {
+a:hover {
     color: #a289bb;
   }
 
@@ -126,13 +141,134 @@ h1, h5 {
     padding-left: 100px;
     padding-right: 100px;
     background-color: #afb9ea;
-    width: 400px;
+    width: 800px;
     height: 200px;
     display: table;
     margin-top: 20px;
+    margin-bottom: 20px;
 }
 
 .inbox {
     display: table-cell;
     vertical-align: middle;
+}
+
+.board {
+    width: 1000px;
+    margin: 50px auto;
+}
+
+.countOfpost p {
+    margin-top: 5px;
+    font-size: 15px;
+}
+
+.list {
+    width: 100%;
+    border-top: 2px solid black;
+}
+
+.list > div {
+    border-bottom: 1px solid #d8d7d7;
+    font-size: 0;
+}
+
+.list > div.top {
+    border-bottom: 1px solid #9a9898;
+}
+
+.list > div:last-child {
+    border-bottom: 1px solid black;
+}
+
+.list > div > div {
+    display: inline-block;
+    vertical-align: middle;
+    text-align: center;
+    padding: 15px 0;
+    font-size: 15px;
+}
+
+.board a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.list > div.top > div {
+    font-weight: 600;
+}
+
+.list .title {
+    width: 60%;
+    text-align: left;
+}
+
+.list .top .title {
+    text-align: center;
+}
+
+.list .writer {
+    width: 10%;
+}
+
+.list .date {
+    width: 20%;
+}
+
+.list .hits {
+    width: 10%;
+}
+
+.page {
+    margin-top: 30px;
+    font-size: 0;
+}
+
+.page a {
+    display: inline-block;
+    width: 30px;
+    height: 30px;
+    font-size: small;
+}
+
+.page a.num.on {
+    color: #cad1f3;
+}
+
+.tail {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1fr;
+}
+
+#searchInput {
+    border: none;
+    border-radius: 0;
+    border-bottom: 1px solid #9a9898;
+    background-color: white;
+    color: black;
+    width: 180px;
+}
+
+.readingglass {
+    position: relative;
+    right: 20px;
+}
+
+.write {
+    margin-top: 20px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+#buttonwrite {
+    font-family: sans-serif;
+    color: white;
+    border-color: white;
+    border: solid;
+    border-radius: 40px;
+    background: #afb9ea;
+    font-weight: 600;
+    text-align: center;
+    width: 100px;
+    height: 30px;
 }

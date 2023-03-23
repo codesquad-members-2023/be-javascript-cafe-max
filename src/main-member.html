@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>main-guest</title>
+        <title>main-member</title>
         <meta charset="utf-8">
         <link rel="stylesheet" href="style.css">
     </head>
     <body>
-        <div class="header">
-            <button class="move" type="button" onclick="window.location.href='main-guest.html'"><h2>HELLO JAVA!</h2></button>
-            <button class="head button" type="button" data-text="로그인/회원가입" onclick="window.location.href='login.html'"><span>로그인/회원가입</span></button>
+        <div class="headerMember">
+            <button class="move" type="button" onclick="window.location.href='main-member.html'"><h2>HELLO JAVA!</h2></button>
+            <button class="headMember button" type="button" onclick="window.location.href='memberList.html'"><span>멤버리스트</span></button>
+            <button class="headMember button" type="button" onclick="window.location.href='myPage.html'"><span>마이페이지</span></button>
+            <button class="headMember button" type="button" onclick="window.location.href='main-guest.html'"><span>로그아웃</span></button>
         </div>
         <div></div>
         <div class="description">
@@ -48,16 +50,24 @@
                         <div class="hits">0</div>
                     </div>
                 </div>
-                <div class="page">
-                    <a href="#" class="first"><<</a>
-                    <a href="#" class="prev"><</a>
-                    <a href="#" class="num on">1</a>
-                    <a href="#" class="num">2</a>
-                    <a href="#" class="num">3</a>
-                    <a href="#" class="num">4</a>
-                    <a href="#" class="num">5</a>
-                    <a href="#" class="next">></a>
-                    <a href="#" class="last">>></a>
+                <div class="tail">
+                    <div class="page">
+                        <a href="#" class="first"><<</a>
+                        <a href="#" class="prev"><</a>
+                        <a href="#" class="num on">1</a>
+                        <a href="#" class="num">2</a>
+                        <a href="#" class="num">3</a>
+                        <a href="#" class="num">4</a>
+                        <a href="#" class="num">5</a>
+                        <a href="#" class="next">></a>
+                        <a href="#" class="last">>></a>
+                    </div>
+                    <div></div>
+                    <div class="write">
+                        <input type="text" id="searchInput">
+                        <span class="readingglass">🔍</span>
+                        <button id="buttonwrite" type="button" onclick="window.location.href='posting.html'">글쓰기</button>
+                    </div>
                 </div>
             </div>
         </div>
