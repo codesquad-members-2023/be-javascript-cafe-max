@@ -293,12 +293,3 @@ h1, h5 {
     width: 100px;
     height: 30px;
 }
-
-.title-form {
-    display: grid;
-    grid-template-rows: auto;
-}
-
-#title {
-    border: none;
-}

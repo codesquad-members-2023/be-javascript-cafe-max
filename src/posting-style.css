@@ -115,3 +115,9 @@ input:focus, textarea:focus {
     width: 100px;
     height: 30px;
 }
+
+.message {
+    text-align: center;
+    font-size: small;
+    padding-top: 5px;
+  }
