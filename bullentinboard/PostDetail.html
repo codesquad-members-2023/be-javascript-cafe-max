@@ -21,7 +21,7 @@
             <div class="nav" id="logout">
                 <a class="btn btn-primary" href="Login.html" type="submit" role="button">로그아웃</a>
             </div>
-        </div>
+        </div>가
     </div>
 </nav>
 <div class="row justify-content-center">
@@ -101,10 +101,13 @@
             <div class="form-control">
                 <label for="comment" class="fs-5">user</label>
                 <textarea class="form-control-plaintext" placeholder="Leave a comment here" id="comment"
-                          style="height: 100px;resize: none;"></textarea>
+                          style="height: 100px;resize: none;" onmouseover="commentMouseoverEvent()"
+                          onmouseout="commentMouseOutEvent()"></textarea>
                 <div class="row justify-content-end row-cols-auto">
                     <div class="col">
-                        <button class="btn btn-primary disabled" type="submit" role="button">제출</button>
+                        <button class="btn btn-primary disabled" type="submit" role="button" id="commentPost">
+                            제출
+                        </button>
                     </div>
                 </div>
             </div>
@@ -115,15 +118,15 @@
     <div class="col-6 row row-cols-auto justify-content-between">
         <div class="container  row row-cols-auto">
             <div class="nav ms-3" id="beforePost">
-                <a class="btn btn-primary" href="Login.html" type="submit" role="button">이전 글:{글제목}</a>
+                <button class="btn btn-primary" type="submit" role="button">이전 글:{글제목}</button>
             </div>
             <div class="nav" id="afterPost">
-                <a class="btn btn-primary" href="Login.html" type="submit" role="button">다음 글:{글제목}</a>
+                <button class="btn btn-primary" type="submit" role="button">다음 글:{글제목}</button>
             </div>
         </div>
         <div class="container  row row-cols-auto">
             <div class="nav" id="list">
-                <a class="btn btn-primary" href="Login.html" type="submit" role="button">목록으로</a>
+                <button class="btn btn-primary" type="submit" role="button">목록으로</button>
             </div>
         </div>
     </div>
@@ -134,7 +137,15 @@
 </footer>
 </body>
 <script>
+    function commentMouseoverEvent() {
+        let element = document.getElementById("commentPost");
+        element.className = "btn btn-primary";
+    }
 
+    function commentMouseOutEvent() {
+        let element = document.getElementById("commentPost");
+        element.className = "btn btn-primary disabled";
+    }
 </script>
 
 </html>
