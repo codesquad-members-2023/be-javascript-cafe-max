@@ -14,13 +14,68 @@ var quill = new Quill('#quillEditor', {
 /**
  * 에디터의 글자수 제한 표시
  */
-const limit = 1000;
+const minContentLength = 3;
+const maxContentLength = 1000;
 const htmlTag = document.getElementById("maxLength");
 quill.on('text-change', function (delta, old, source) {
     let textLength = quill.getLength() - 1;
     htmlTag.style.color = "green";
     htmlTag.innerHTML = "글자수: " + textLength + "/1000";
-    if (textLength > limit) {
+    if (textLength > maxContentLength) {
         htmlTag.style.color = "red";
     }
 });
+
+/**
+ * 작성자 검증
+ */
+function validateWriter() {
+    const writer = document.getElementsByName("writer")[0].value;
+    if(writer.length <= 0) {
+        alert("작성자를 입력해 주세요.")
+        return false;
+    }
+    if(writer.length > 64) {
+        alert("작성자는 64글자 이하입니다.");
+    }
+    return true;
+}
+
+/**
+ * 제목 검증
+ */
+function validateTitle() {
+    const title = document.getElementsByName("title")[0].value;
+    if(title.length <= 0) {
+        alert("제목을 입력해 주세요.")
+        return false;
+    }
+    if(title.length > 100) {
+        alert("제목은 100글자 이하로 입력해 주세요.")
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 본문 검증
+ */
+function validateContent() {
+    const contentLength = quill.getLength() - 1;
+    if(contentLength < minContentLength || contentLength > maxContentLength) {
+        alert("본문은 3글자 이상 1000자 이하로 작성해 주세요.")
+        return false;
+    }
+    return true;
+}
+
+/**
+ * 글 작성
+ */
+function writePost() {
+    if(!validateWriter() || !validateTitle() || !validateContent()) {
+        return;
+    }
+
+
+}
