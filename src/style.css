@@ -256,6 +256,10 @@ h1, h5 {
     color: #cad1f3;
 }
 
+.column:hover {
+    background-color: lightgrey;
+}
+
 .tail {
     display: grid;
     grid-template-columns: 3fr 1fr 1fr;
