@@ -4,6 +4,38 @@
 <head>
     <meta charset="utf-8">
     <title>회원가입 페이지</title>
+    <script language="javascript">
+        function validate() {
+            var email = document.getElementById("email");
+            var nickname = document.getElementById("nickname");
+            var password = document.getElementById("password");
+            var emailFormat = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            var passwordFormat = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,32}$/;
+            var flag = true;
+
+            if (!emailFormat.test(email.value)) {
+                alert("이메일 형식이 올바르지 않습니다.");
+                flag = false;
+            }
+
+            if (nickname.value.length < 2 || nickname.value.length > 64) {
+                alert("닉네임은 2~64자 여야 합니다.");
+                flag = false;
+            }
+
+            if (!passwordFormat.test(password.value)) {
+                alert("패스워드 형식이 올바르지 않습니다.");
+                flag = false;
+            }
+
+            if (flag) {
+                alert("회원 가입이 되었습니다.");
+            }
+            else {
+                alert("회원 가입에 실패했습니다.")
+            }
+        }
+    </script>
     <style>
         body {
             display: flex;
@@ -361,7 +393,7 @@
                 <div class="Label">비밀번호</div>
                 <input id="password" , type="text" , placeholder="비밀번호를 입력해 주세요">
             </div>
-            <button type="button" , onclick="alert('실험용')">
+            <button type="button" , onclick="validate()">
                 <div class="Text3">회원가입</div>
             </button>
         </form>
