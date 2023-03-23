@@ -17,8 +17,7 @@ function validateIdAndPassword(event) {
     event.preventDefault();
     event.stopPropagation();
     const password = document.querySelector('#password');
-    const validateText = document.querySelector(
-        '#validationPasswordFeedback');
+    const validateText = document.querySelector('#validationPasswordFeedback');
     validateText.textContent = '아이디나 비밀번호가 틀립니다.';
     password.className = 'form-control is-invalid';
 }
@@ -34,7 +33,7 @@ function signIn(event) {
     }
 
     for (let member of members) {
-        if (member.email === inputEmail || member.password === inputPassword) {
+        if (member.email === inputEmail && member.password === inputPassword) {
             const loginMember = {
                 "email": member.email,
                 "nickName": member.nickName
