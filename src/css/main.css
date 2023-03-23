@@ -87,6 +87,11 @@ a:hover {
     padding: 20px;
 }
 
+.card-title {
+    font-size: x-large;
+    font-weight: bold;
+}
+
 .text-center {
     text-align: center;
 }
