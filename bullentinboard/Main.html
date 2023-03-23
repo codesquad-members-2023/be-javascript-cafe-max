@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+</head>
+<body>
+<nav class="navbar navbar-expand bg-body-tertiary justify-content-center row-cols-auto">
+    <div class="col-10 row row-cols-auto justify-content-between">
+        <div class="nav align-self-center ms-3 ">
+            HELLO JAVA!
+        </div>
+        <div class="container  row row-cols-auto">
+            <div class="nav align-self-center">
+                맴버리스트
+            </div>
+            <div class="nav" id="login">
+                <a class="btn btn-primary" href="Login.html" type="submit" role="button">마이페이지</a>
+            </div>
+            <div class="nav" id="logout">
+                <a class="btn btn-primary" href="Login.html" type="submit" role="button">로그아웃</a>
+            </div>
+        </div>
+    </div>
+</nav>
+<div class="container-fluid row-gap-3 mt-5 mb-5">
+    <div class="row justify-content-center">
+        <div class="bg-primary col-10 card">
+            <div class=" text-white mt-5 ms-4">
+                코드스쿼드 백엔드 교육용 페이지
+            </div>
+            <div class="fs-4 text-white mb-5 ms-4">
+                HELLO JAVA! 입니다.
+            </div>
+        </div>
+    </div>
+</div>
+<div class="container-fluid">
+    <div class="row justify-content-center text-light-emphasis">
+        <div class="col-10 row ">
+            전체 글 60개
+        </div>
+        <div class="text-success col-10 row mt-1">
+            <hr>
+        </div>
+        <div class="row col-10 text-center">
+            <div class=" col-6">
+                제목
+            </div>
+            <div class=" col-2">
+                작성자
+            </div>
+            <div class=" col-2">
+                작성일자
+            </div>
+            <div class=" col-2">
+                조회수
+            </div>
+        </div>
+        <div class="text-success col-10 row mt-3">
+            <hr>
+        </div>
+        <div class="row col-10">
+            <ol class="justify-content-center" id="bookList">
+            </ol>
+            <script type="module">
+                import data from './data.json' assert {type: 'json'};
+
+                const books = data.bookList;
+                let book = document.getElementById('bookList');
+                for (let i = 0; i < 10; i++) {
+                    let li = document.createElement('li');
+                    li.className = "row text-center";
+                    let divCol6 = document.createElement('div');
+                    divCol6.className = "col-6";
+                    let writerDiv = document.createElement('div');
+                    writerDiv.className = "col-2";
+                    let dataOfIssueDiv = document.createElement('div');
+                    dataOfIssueDiv.className = "col-2";
+                    let viewsDiv = document.createElement('div');
+                    viewsDiv.className = "col-2";
+                    let divText = document.createElement('div');
+                    divText.className = "text-success row mt-3";
+                    let hr = document.createElement('hr');
+                    let element = book.appendChild(li);
+
+
+                    divCol6.textContent = books[i].title;
+                    element.appendChild(divCol6)
+                    writerDiv.textContent = books[i].writer;
+                    element.appendChild(writerDiv)
+                    dataOfIssueDiv.textContent = books[i].dateOfIssue;
+                    element.appendChild(dataOfIssueDiv)
+                    viewsDiv.textContent = books[i].views.toString();
+                    element.appendChild(viewsDiv);
+                    let divChildText = book.appendChild(divText);
+                    divChildText.appendChild(hr);
+                }
+            </script>
+        </div>
+        <div class="col-10 row justify-content-between">
+            <div class="col">
+                <ul class="pagination col-5">
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Previous">
+                            <span aria-hidden="true">&laquo;</span>
+                        </a>
+                    </li>
+                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                    <li class="page-item"><a class="page-link" href="#">2</a></li>
+                    <li class="page-item"><a class="page-link" href="#">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link" href="#" aria-label="Next">
+                            <span aria-hidden="true">&raquo;</span>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="col row justify-content-end">
+                <div class="col-5">
+                    <form class="d-flex" role="search">
+                        <input class="form-control me-2" type="search" placeholder="검색어를 입력하세요" aria-label="Search">
+                        <button class="btn btn-outline-success" type="submit">
+                            <i class="bi bi-search"></i>
+                        </button>
+                    </form>
+                </div>
+                <div class="col-2">
+                    <a class="btn btn-primary" href="Posting.html" type="submit">글쓰기</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<footer class="container-fluid mt-auto bg-light py-3">
+
+</footer>
+</body>
+
+</html>

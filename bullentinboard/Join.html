@@ -6,12 +6,16 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
 </head>
 <body>
-<nav class="navbar navbar-expand bg-body-tertiary row row-cols-auto">
-    <div class="nav col-10 justify-content-start ms-5">
-        <p class="navbar-brand">Hello JAVA!</p>
-    </div>
-    <div class="nav justify-content-end" id="login">
-        <a class="btn btn-primary" href="Login.html" type="submit" role="button">로그인/회원가입</a>
+<nav class="navbar navbar-expand bg-body-tertiary justify-content-center row-cols-auto">
+    <div class="col-10 row row-cols-auto justify-content-between">
+        <div class="nav align-self-center ms-3 ">
+            HELLO JAVA!
+        </div>
+        <div class="container  row row-cols-auto">
+            <div class="nav" id="login">
+                <a class="btn btn-primary" href="Login.html" type="submit" role="button">로그인/회원가입</a>
+            </div>
+        </div>
     </div>
 </nav>
 <div class="container-fluid row-gap-3 mt-5 mb-5">
@@ -21,9 +25,9 @@
         </div>
     </div>
 </div>
-<form class="needs-validation" id="joinForm" novalidate>
+<form id="joinForm" action="Login.html" novalidate>
     <div class="row justify-content-center mb-3">
-        <div class="col-3 has-validation">
+        <div class="col-3">
             <label for="email" class="form-label">이메일</label>
             <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요" required>
             <div class="invalid-feedback">
@@ -53,7 +57,7 @@
     </div>
     <div class="row justify-content-center mb-3">
         <div class="d-grid col-3">
-            <button type="submit" class="btn btn-primary text-center" id="join">회원가입</button>
+            <button type="submit"  class="btn btn-primary text-center" id="join">회원가입</button>
         </div>
     </div>
 </form>
