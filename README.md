@@ -15,10 +15,10 @@
 ## 학습 계획
 ### 2023.03.20
 - [ ] ddd 알아보기
-- [ ] 생활코딩 web1 - html 수강
-- [ ] step1 html 5 layer로 회원가입 폼 만들기
-- [ ] 생활코딩 web2 - js 강의 필요한 부분 수강
-- [ ] step1 유효성 검증 로직 구현
+- [x] 생활코딩 web1 - html 수강
+- [x] step1 html 5 layer로 회원가입 폼 만들기
+- [x] 생활코딩 web2 - js 강의 필요한 부분 수강
+- [x] step1 유효성 검증 로직 구현
   - name, email, password
 - [ ] 스프링 게시판 레퍼런스 코드 분석
 
