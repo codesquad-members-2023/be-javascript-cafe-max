@@ -43,7 +43,7 @@ function validatePassword() {
     return true;
 }
 
-function validate(event) {
+function signUp(event) {
     const isValidateId = validateId();
     const isValidateName = validateName();
     const isValidatePassword = validatePassword();
@@ -51,9 +51,30 @@ function validate(event) {
     if (isValidateId || isValidateName || isValidatePassword) {
         event.preventDefault();
         event.stopPropagation();
+        return;
     }
+
+    addMember();
+}
+
+function addMember() {
+    const member = {
+        id: document.querySelector('#email').value,
+        password: document.querySelector('#password').value
+    };
+
+    let users = localStorage.getItem('users');
+
+    if (users === null) {
+        let arr = [member];
+        localStorage.setItem('users', JSON.stringify(arr));
+        return;
+    }
+
+    users.push(member);
+    localStorage.setItem('users', users);
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    document.querySelector('form').addEventListener('submit', validate);
+    document.querySelector('form').addEventListener('submit', signUp);
 });
