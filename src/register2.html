@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO JAVA!</title>
+    <link rel="stylesheet" href="/style.css">
+</head>
+<body>
+<nav>
+    <ul style="list-style: none">
+        <li>HELLO JAVA!</li>
+    </ul>
+    <div>
+        <form action="/login.html" method="GET">
+            <button type="button">로그인/회원가입</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <div id="frame">
+        <h1>가입이 완료되었습니다!</h1>
+    </div>
+    <form id="success-form" action="/login.html" method="GET">
+        <div class="input-control">
+            <label for="email">이메일</label>
+            <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    value="" readonly>
+            <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="username">닉네임</label>
+            <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    value="${username}" readonly>
+            <div class="error"></div>
+        </div>
+        <button type="submit">지금 로그인하기</button>
+    </form>
+    <script>
+        const param = new URL(location).searchParams
+        const email = document.querySelector('#email')
+        email.value = param.get("email")
+        const username = document.querySelector('#username')
+        username.value = param.get("username")
+    </script>
+</div>
+</body>
+</html>

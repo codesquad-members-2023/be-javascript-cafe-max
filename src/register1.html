@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HELLO JAVA! | JOIN</title>
+    <link rel="stylesheet" href="/style.css">
+    <script defer src="/validation.js"></script>
+</head>
+<body>
+<nav>
+    <ul style="list-style: none">
+        <li>HELLO JAVA!</li>
+    </ul>
+    <div>
+        <form action="/login.html" method="GET">
+            <button type="button">로그인/회원가입</button>
+        </form>
+    </div>
+</nav>
+<div class="container">
+    <div id="frame">
+        <h1>회원가입</h1>
+    </div>
+    <form id="join-form" action="register2.html" method="GET">
+        <div class="input-control">
+            <label for="email">이메일</label>
+            <input
+                    id="email"
+                    name="email"
+                    type="email"
+                    placeholder="이메일을 입력해주세요">
+            <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="username">닉네임</label>
+            <input
+                    id="username"
+                    name="username"
+                    type="text"
+                    placeholder="닉네임을 입력해주세요">
+            <div class="error"></div>
+        </div>
+
+        <div class="input-control">
+            <label for="password">비밀번호</label>
+            <input
+                    id="password"
+                    name="password"
+                    type="password"
+                    placeholder="비밀번호를 입력해주세요">
+            <div class="error"></div>
+        </div>
+        <button type="submit">회원가입</button>
+    </form>
+</div>
+</body>
+</html>
