@@ -108,3 +108,31 @@ input::placeholder {
     line-height: 180%;
     margin-top: 10px;
 }
+
+h1, h5 {
+    font-family: sans-serif;
+    text-align: center;
+    background: #afb9ea;
+    color: white;
+    margin: 0;
+}
+
+.description {
+    margin: 0 auto;
+    border-color: white;
+    border: solid;
+    border-radius: 20px;
+    color: white;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #afb9ea;
+    width: 400px;
+    height: 200px;
+    display: table;
+    margin-top: 20px;
+}
+
+.inbox {
+    display: table-cell;
+    vertical-align: middle;
+}
