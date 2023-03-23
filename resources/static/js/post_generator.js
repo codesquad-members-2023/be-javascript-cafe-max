@@ -20,4 +20,3 @@ function generate_post() {
   }
   return result;
 }
-

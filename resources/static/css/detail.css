@@ -1,0 +1,76 @@
+.detail_container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.detail_container .detail_header {
+  padding: 40px 0;
+
+}
+
+.detail_container .detail_header h4 {
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.detail_container .detail_writer_info {
+  border-bottom: 1px #D2DAE0 solid;
+  border-top: 1px #D2DAE0 solid;
+  padding: 20px 0;
+}
+
+.detail_container .detail_content {
+  padding: 45px 0;
+  font-size: 20px;
+  border-bottom: 1px #D2DAE0 solid;
+}
+
+.detail_container .detail_comment_count {
+  padding: 20px 0;
+}
+
+.detail_container .comment_item {
+  border-bottom: 1px #D2DAE0 solid;
+  padding: 30px 0;
+}
+
+.detail_container .comment_item .comment_item_writer {
+  color: blue;
+}
+
+.detail_container .comment_item .comment_item_content {
+  font-size: 20px;
+}
+
+.detail_container .comment_item .comment_item_regdate {
+  font-size: 20px;
+  color: gray;
+}
+
+.detail_container .detail_comment_form {
+  border: 1px #D2DAE0 solid;
+  border-radius: 5px;
+  padding: 20px;
+  margin: 40px 0;
+}
+
+.detail_container .detail_comment_form textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+}
+
+.detail_container .detail_comment_form .comment_content_btn {
+  display: flex;
+  justify-content: right;
+}
+
+.detail_container .detail_btn {
+  display: flex;
+  justify-content: space-between;
+}
+
+
+.detail_container .detail_btn button {
+  border-radius: 5px;
+}
