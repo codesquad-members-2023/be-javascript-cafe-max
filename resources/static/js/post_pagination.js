@@ -92,6 +92,9 @@ window.onload = function () {
 
 function getCurrentPage() {
   let params = new URLSearchParams(location.search);
+  if (params.get("page") < 0) {
+    return 1
+  }
   return params.get("page")
 }
 
@@ -183,6 +186,7 @@ function createPageButtons(page) {
   pageItems += `<li class="page-item"><button class="board_page_link" id="page_prev_link">〈</button></li>`
 
   // 페이지 버튼을 firstNumber번 ~ lastNumber번 생성
+  console.log(firstNumber + ", " + lastNumber)
   for (let i = firstNumber; i <= lastNumber; i++) {
     pageItems +=
         `<li class="page-item">
@@ -205,8 +209,8 @@ function createPageButtons(page) {
  * @returns {(function(): void)|*} 게시글과 페이지버튼을 렌더링하는 함수
  */
 function createPageButtonEvent(posts, page, pageNumber) {
-  const pathOfURI = window.location.pathname
   return function () {
+    const pathOfURI = window.location.pathname
     location.href = pathOfURI + "?page=" + pageNumber
   }
 }
