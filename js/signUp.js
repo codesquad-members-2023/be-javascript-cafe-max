@@ -13,18 +13,18 @@ function validateId() {
     return true;
 }
 
-function validateName() {
+function validateNickName() {
     const regex = new RegExp('[a-z0-9]{2,64}$');
-    const name = document.querySelector('#name');
-    const validateText = document.querySelector('#validationNameFeedback');
+    const nickName = document.querySelector('#nickName');
+    const validateText = document.querySelector('#validationNickNameFeedback');
 
-    if (regex.test(name.value)) {
-        name.className = 'form-control is-valid';
+    if (regex.test(nickName.value)) {
+        nickName.className = 'form-control is-valid';
         return false;
     }
 
     validateText.textContent = '최소 2글자에서 최대 64글자입니다.';
-    name.className = 'form-control is-invalid';
+    nickName.className = 'form-control is-invalid';
     return true;
 }
 
@@ -45,7 +45,7 @@ function validatePassword() {
 
 function signUp(event) {
     const isValidateId = validateId();
-    const isValidateName = validateName();
+    const isValidateName = validateNickName();
     const isValidatePassword = validatePassword();
 
     if (isValidateId || isValidateName || isValidatePassword) {
@@ -57,22 +57,31 @@ function signUp(event) {
     addMember();
 }
 
+function getDateNow() {
+    const now = new Date();
+    const month = (now.getMonth()+1).toString().padStart(2, '0');
+    const day = now.getDate().toString().padStart(2, '0');
+    return `${now.getFullYear()}.${month}.${day}`;
+}
+
 function addMember() {
     const member = {
-        id: document.querySelector('#email').value,
-        password: document.querySelector('#password').value
+        email: document.querySelector('#email').value,
+        password: document.querySelector('#password').value,
+        nickName: document.querySelector('#nickName').value,
+        signUpDate: getDateNow()
     };
 
-    let users = localStorage.getItem('users');
+    let members = JSON.parse(localStorage.getItem('members'));
 
-    if (users === null) {
+    if (members === null) {
         let arr = [member];
-        localStorage.setItem('users', JSON.stringify(arr));
+        localStorage.setItem('members', JSON.stringify(arr));
         return;
     }
 
-    users.push(member);
-    localStorage.setItem('users', users);
+    members.push(member);
+    localStorage.setItem('members', JSON.stringify(members));
 }
 
 document.addEventListener("DOMContentLoaded", function () {

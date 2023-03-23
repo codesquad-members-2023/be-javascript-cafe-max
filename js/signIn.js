@@ -24,17 +24,18 @@ function validateIdAndPassword(event) {
 }
 
 function signIn(event) {
-    const users = JSON.parse(localStorage.getItem('users'));
-    const inputId = document.querySelector('#email').value;
+    const members = JSON.parse(localStorage.getItem('members'));
+    const inputEmail = document.querySelector('#email').value;
     const inputPassword = document.querySelector('#password').value;
 
-    if (users === null) {
+    if (members === null) {
         validateIdAndPassword(event);
+        return;
     }
 
-    for (let user of users) {
-        if (user.id === inputId || user.password === inputPassword) {
-            localStorage.setItem('loginMember', inputId);
+    for (let member of members) {
+        if (member.email === inputEmail || member.password === inputPassword) {
+            localStorage.setItem('loginMember', inputEmail);
             return;
         }
     }
