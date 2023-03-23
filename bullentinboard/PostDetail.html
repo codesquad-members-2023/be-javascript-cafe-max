@@ -21,7 +21,8 @@
             <div class="nav" id="logout">
                 <a class="btn btn-primary" href="Login.html" type="submit" role="button">로그아웃</a>
             </div>
-        </div>가
+        </div>
+        가
     </div>
 </nav>
 <div class="row justify-content-center">
@@ -86,7 +87,7 @@
 </div>
 <div class="row justify-content-center mb-5">
     <div class="col-6 row text-secondary">
-        <ul class="list-group list-group-flush">
+        <ul class="list-group list-group-flush" id="comments">
             <li class="list-group-item">
                 <p class="text-primary">user</p>
                 <p>게시글에 댓글을 쓰면 이런 형식으로 보여집니다!</p>
@@ -97,14 +98,13 @@
 </div>
 <div class="row justify-content-center mb-5">
     <div class="col-6 row text-secondary">
-        <form>
+        <form id="commentForm">
             <div class="form-control">
                 <label for="comment" class="fs-5">user</label>
                 <textarea class="form-control-plaintext" placeholder="Leave a comment here" id="comment"
-                          style="height: 100px;resize: none;" onmouseover="commentMouseoverEvent()"
-                          onmouseout="commentMouseOutEvent()"></textarea>
+                          style="height: 100px;resize: none;"></textarea>
                 <div class="row justify-content-end row-cols-auto">
-                    <div class="col">
+                    <div class="col" onmousemove="commentMouseoverEvent()" onmouseout="commentMouseOutEvent()">
                         <button class="btn btn-primary disabled" type="submit" role="button" id="commentPost">
                             제출
                         </button>
@@ -146,6 +146,15 @@
         let element = document.getElementById("commentPost");
         element.className = "btn btn-primary disabled";
     }
+
+    function addComment() {
+        let comments = document.getElementById("comments");
+
+
+    }
+
+    let commentForm = document.getElementById("commentForm");
+
 </script>
 
 </html>
