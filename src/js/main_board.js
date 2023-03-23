@@ -71,7 +71,6 @@ function initialBoardConfiguration() {
 function buildBoard() {
     const table = document.getElementById('crudBoard').getElementsByTagName("tbody")[0];
 
-
     for (var i = firstPostIdxInCurrentPage - postNumberPerPage; i < firstPostIdxInCurrentPage; i++) {
         if(i < 0) continue;
 
