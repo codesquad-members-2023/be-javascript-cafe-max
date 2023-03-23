@@ -1,0 +1,44 @@
+.write_container {
+  width: 1000px;
+  margin: 0 auto;
+}
+
+.write_header {
+  padding: 20px;
+}
+
+.write_title {
+  border: 1px #eee solid;
+  padding: 10px;
+}
+
+.write_title input {
+  width: 100%;
+  border: none;
+}
+
+.write_title input:focus {
+  outline: none;
+}
+
+.write_content {
+  border: 1px #eee solid;
+  padding: 10px;
+  margin-top: 50px;
+}
+
+.write_content textarea {
+  width: 100%;
+  border: none;
+  resize: none;
+}
+
+.write_content textarea:focus {
+  outline: none;
+}
+
+.write_btn {
+  display: flex;
+  justify-content: right;
+  margin-top: 50px;
+}

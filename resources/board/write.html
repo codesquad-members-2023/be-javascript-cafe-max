@@ -1,0 +1,48 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+  <title>Hello JAVA!</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <header data-include-path="/cafe/resources/components/head_header.html"></header>
+  <script src="/cafe/resources/static/js/jquery-3.6.4.js"></script>
+  <link href="/cafe/resources/static/css/write.css" rel="stylesheet">
+</head>
+<body>
+<header data-include-path="/cafe/resources/components/header.html"></header>
+
+<div class="write_container">
+  <div class="write_header">
+    <h4>글쓰기</h4>
+  </div>
+
+  <form action="/cafe/resources/index.html" method="post" name="write_form">
+    <div class="write_title">
+      <div>
+        <label for="title">제목</label>
+      </div>
+      <div>
+        <input id="title" name="title" placeholder="글의 제목을 입력하세요" type="text">
+      </div>
+    </div>
+
+    <div class="write_content">
+      <div>
+        <label for="content">내용</label>
+      </div>
+      <div>
+        <textarea id="content" maxlength="1000" minlength="3" name="content"
+                  placeholder="글의 내용을 입력하세요" rows="15"></textarea>
+      </div>
+    </div>
+
+    <div class="write_btn">
+      <button class="btn btn-primary" id="writeBtn">작성완료</button>
+    </div>
+  </form>
+
+</div>
+
+<script src="/cafe/resources/static/js/common.js"></script>
+<script src="/cafe/resources/static/js/write.js"></script>
+</body>
+</html>
