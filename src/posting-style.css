@@ -77,17 +77,21 @@
 
 label {
     font-size: 13px;
+    padding-top: 2px;
+    padding-left: 10px;
 }
 
 input {
     font-size: 15px;
     margin-bottom: 5px;
+    padding-left: 10px;
 }
 
 textarea {
     resize: none;
     font-size: 15px;
     height: 370px;
+    padding-left: 10px;
 }
 
 input:focus, textarea:focus {
