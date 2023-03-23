@@ -83,7 +83,7 @@ a:hover {
     box-shadow: 0 0 1px #0c3225;
 }
 
-.card-footer {
+.card-header, .card-footer {
     padding: 20px;
 }
 
