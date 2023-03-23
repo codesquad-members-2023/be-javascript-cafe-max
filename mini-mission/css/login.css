@@ -1,3 +1,17 @@
+.navigation #login-out {
+    width: 122px;
+    height: 32px;
+    right: 0px;
+
+    border: none;
+    color: #FFFFFF;
+
+    /* Primary */
+
+    background: #4362D0;
+    border-radius: 8px;
+}
+
 header {
     width: 1040px;
     height: 148px;

@@ -7,8 +7,14 @@
 3. spring 공부하기 - 강의 보기
 
 ### 3/20 (월)
-- [ ] HTMI, CSS, JavaScript 틀 만들기
+- [x] HTMI, CSS, JavaScript 틀 만들기
     1. 파일 나누기
     2. 로그인 페이지 만들기
-- [ ] BootStrap이나 TailWind 같은 라이브러리를 사용하기
-- [ ] 디자인 참고는 Figma 자료 보기.
+- [x] 디자인 참고는 Figma 자료 보기.
+
+### 3/21 (화)
+- [x] HTML로 구현한 이벤트 기능 JS로 옮기기
+- [x] 마우스 hover시에 submit 버튼 색상 변경하기
+
+### 3/22 (수)
+- [x] 멤버 메인 페이지 틀 만들기

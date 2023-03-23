@@ -1,20 +1,33 @@
 @import "root.css";
 @import "login.css";
+@import "main.css";
 
 body {
+    /* Main-member */
+
+
+    /* Auto layout */
+
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding: 0px 0px 80px;
+    gap: 40px;
+
+    /* White */
+
+    background: #FFFFFF;
 }
 
 .navigation {
     display: flex;
     justify-content: space-between;
+    align-items: center;
     width: 1040px;
     height: 64px;
 }
 
-.navigation p {
+.navigation > p {
     width: 96px;
     height: 16px;
     left: 0px;
@@ -27,24 +40,6 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
-    /* identical to box height, or 16px */
-
-
-    /* Black */
 
     color: #14212B;
-}
-
-.navigation button {
-    width: 122px;
-    height: 32px;
-    right: 0px;
-
-    border: none;
-    color: #FFFFFF;
-
-    /* Primary */
-
-    background: #4362D0;
-    border-radius: 8px;
 }
