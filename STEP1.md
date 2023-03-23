@@ -106,8 +106,24 @@ $(document).ready(function () {
 });
 ```
 
+## 데이터를 가지고 리다이렉트 하기
+
+## 그룹리뷰 피드백
+
+- 회원가입 입력 실패시 제출하지 않고 페이지 그대로 유지하기 위해서 event.preventDefault() 호출합니다.
+
+```javascript
+$(document).ready(function () {
+  $("#signUpBtn").click(function (event) {
+    event.preventDefault();
+    checkSignupForm();
+  });
+});
+```
+
 ## References
 
 - [How TO - Include HTML](https://www.w3schools.com/howto/howto_html_include.asp)
 - [일반 HTML 파일에 HTML include/imports 하는 방법](https://kyung-a.tistory.com/18)
 - [JavaScript 자주 쓰는 정규식 모음 (아이디, 이메일, 비밀번호)](https://rateye.tistory.com/468)
+- [데이터를 가지고 리다이렉트 하기](https://minhanpark.github.io/today-i-learned/redirect-with-data/)
