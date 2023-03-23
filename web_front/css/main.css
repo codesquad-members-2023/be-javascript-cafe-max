@@ -24,7 +24,6 @@ a {
     text-decoration: none;
     color: #4B5966;
     font-size: 14px;
-
 }
 
 ul {
@@ -218,6 +217,10 @@ th{
     flex: none;
     order: 0;
     flex-grow: 0;
+}
+
+.td_line:hover{
+    background-color: #eee;
 }
 
 #title {
@@ -430,4 +433,8 @@ font-size: 14px;
 line-height: 100%;
 /* identical to box height, or 14px */
 color: #FFFFFF;
+}
+
+#write:hover {
+    background-color: #000;
 }

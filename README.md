@@ -36,7 +36,49 @@ html/css/js 모두 오랜만에 해서 생각보다 오래 걸렸던 것 같다.
 # 3일차 Step-3
 
 ## TODO
-- [ ] Step-3 화면 구현 대충?하기
-- [ ] 기능 구현
+- [x] Step-3 화면 구현 대충?하기
+- [x] 기능 구현
 - [ ] 스프링 강의 듣기
+
+## 구현 내용
+
+![image](https://user-images.githubusercontent.com/100547825/226831596-bd981381-42dd-4d04-8012-9390b2548d2d.png)
+
+<img width="702" alt="image" src="https://user-images.githubusercontent.com/100547825/227005739-e1419a4b-f173-493f-bcb3-2f6e355c0571.png">
+
+<img width="702" alt="image" src="https://user-images.githubusercontent.com/100547825/227010369-4746abef-7bf4-427a-83db-ad3a0eb4faed.png">
+
+<img width="702" alt="image" src="https://user-images.githubusercontent.com/100547825/227010632-1fa6faa7-7f8f-4b55-b9f5-ab38c9f00e2d.png">
+
+<img width="702" alt="image" src="https://user-images.githubusercontent.com/100547825/227011923-520405e0-5360-4d65-90d8-5d28c7207dba.png">
+
+
+step-3 화면 구현
+댓글 추가, 삭제 구현
+
+댓글 등록
+
+유저 번호는 댓글을 작성할 때마다 카운트를 +1 해주었고 댓글 내용은 html에 있는 input 값을 가져왔고, 시간은 js 내에서 현재 시간을 구했다.
+값들을 전부 구한 후에 댓글 작성을 누르면 js에서 html을 작성해 html에 그려주었다.
+댓글이 추가되면 댓글 수를 +1 해줬다.
+
+댓글 삭제
+
+유저 번호를 부여하면서 삭제 버튼 id에 num+유저 번호를 따로 주어 댓글을 식별할 수 있게 만들었다.
+삭제를 클릭하게 되면 식별하기 위해 붙여놓은 삭제 버튼 id를 통해 해당 요소의 부모 요소에 접근하여 댓글 div 전체가 삭제된다.
+댓글이 삭제되면 댓글 수를 -1 해줬다.
+
+오늘은 어제보다 화면 구현을 빨리해서 다른 공부를 할 수 있었는데 농땡이 피우다 저녁 먹고 자버려서 댓글 구현을 늦게 하고 너무 늦게 끝마쳤다.
+내일은 쉬는 시간 줄여서 공부할 생각이다.
+
+
+# 4일차 Step-4?
+
+## TODO
+- [ ] Step-4?
+- [ ] 스프링 강의 듣기?
+
+
+
+
 
