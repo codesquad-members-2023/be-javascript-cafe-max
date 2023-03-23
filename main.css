@@ -123,6 +123,10 @@
     text-align: center;
 }
 
+#mainForum > table > tbody > tr > td:first-child {
+    text-align: left;
+}
+
 th, td {
     border-bottom: 1px solid #D2DAE0;
 }
