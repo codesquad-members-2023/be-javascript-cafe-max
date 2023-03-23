@@ -72,10 +72,19 @@ function validateContent() {
 /**
  * 글 작성
  */
-function writePost() {
+function writePost(e) {
+    e.preventDefault();
     if(!validateWriter() || !validateTitle() || !validateContent()) {
         return;
     }
 
+    const writeForm = document.getElementsByName("writeForm")[0];
+	writeForm.method = "post";
+	writeForm.action = "main_board.html";
 
+    const content = document.getElementsByName("content")[0];
+    const editor = document.getElementsByClassName("ql-editor")[0];
+    content.value = editor.innerHTML;
+
+    writeForm.submit();
 }

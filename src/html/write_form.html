@@ -29,17 +29,22 @@
                 <div class="card-header">
                     <div class="card-title">글쓰기</div>
                 </div>
-                <div>
-                    <input type="text" name="writer" class="vertical-input" placeholder="작성자" autocomplete="off">
-                    <input type="text" name="title" class="vertical-input" placeholder="제목" autocomplete="off">
-                </div>
-                <div class="editor">
-                    <div id="quillEditor"></div>
-                    <div id="maxLength" class="text-notice">글자수: 0/1000</div>
-                </div>
-                <div class="card-footer">
-                    <button class="submit-btn" onclick="writePost()">글쓰기</button>
-                </div>
+                <form name="writeForm">
+                    <div>
+                        <input type="text" name="writer" class="vertical-input" placeholder="작성자" required
+                            maxlength="64" autocomplete="off">
+                        <input type="text" name="title" class="vertical-input" placeholder="제목" required maxlength="100"
+                            autocomplete="off">
+                    </div>
+                    <div class="editor">
+                        <div id="quillEditor"></div>
+                        <textarea name="content" style="display:none"></textarea>
+                        <div id="maxLength" class="text-notice">글자수: 0/1000</div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="submit-btn" onclick="writePost(event)">글쓰기</button>
+                    </div>
+                </form>
             </div>
         </div>
     </section>
