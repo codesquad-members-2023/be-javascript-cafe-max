@@ -241,7 +241,7 @@
             flex-grow: 0;
         }
 
-        .Text2 {
+        input:default {
             /* Text */
 
 
@@ -271,7 +271,7 @@
             flex-grow: 0;
         }
 
-        .ButtonLarge {
+        button {
             /* ButtonLarge */
 
 
@@ -348,21 +348,23 @@
         <div class="DisplayTitle">회원 가입</div>
     </div>
     <div class="Frame3">
-        <div class="InputInfo">
-            <div class="Label">이메일</div>
-            <div class="Text2">이메일을 입력해 주세요</div>
-        </div>
-        <div class="InputInfo">
-            <div class="Label">닉네임</div>
-            <div class="Text2">닉네임을 입력해 주세요</div>
-        </div>
-        <div class="InputInfo">
-            <div class="Label">비밀번호</div>
-            <div class="Text2">비밀번호를 입력해 주세요 싫음 말고</div>
-        </div>
-    </div>
-    <div class="ButtonLarge">
-        <div class="Text3">회원가입</div>
+        <form>
+            <div class="InputInfo">
+                <div class="Label">이메일</div>
+                <input id="email" , type="text" , placeholder="이메일을 입력해 주세요">
+            </div>
+            <div class="InputInfo">
+                <div class="Label">닉네임</div>
+                <input id="nickname" , type="text" , placeholder="닉네임을 입력해 주세요">
+            </div>
+            <div class="InputInfo">
+                <div class="Label">비밀번호</div>
+                <input id="password" , type="text" , placeholder="비밀번호를 입력해 주세요">
+            </div>
+            <button type="button" , onclick="alert('실험용')">
+                <div class="Text3">회원가입</div>
+            </button>
+        </form>
     </div>
 </body>
 
