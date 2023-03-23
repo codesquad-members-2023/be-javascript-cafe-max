@@ -93,6 +93,55 @@ function isPassword(value) {
 }
 ```
 
+## 로컬 스토리지와 세션 스토리지
+
+- 로컬 스토리지 : 웹 페이지의 세션이 끝나더라도 지워지지 않는 브라우저 내의 데이터 저장공간
+- 세션 스토리지 : 웹 페이지의 세션이 끝나면 지워지는 브라우저 내의 저장공간
+
+### 로컬 스토리지 기본 API
+
+```javascript
+// 키에 데이터 쓰기
+localStorage.setItem("key", value);
+
+// 키로 부터 데이터 읽기
+localStorage.getItem("key");
+
+// 키의 데이터 삭제
+localStorage.removeItem("key");
+
+// 모든 키의 데이터 삭제
+localStorage.clear();
+
+// 저장된 키/값 쌍의 개수
+localStorage.length;
+```
+
+### 로컬 스토리지 주의사항
+
+- 로컬 스토리지에는 문자열 타입으로만 저장되기 때문에 숫자를 넣어도 문자열로 저장됩니다.
+
+```
+>
+localStorage.setItem('num', 1)
+undefined
+> localStorage.getItem('num') === 1
+false
+> localStorage.getItem('num')
+"1"
+> typeof localStorage.getItem('num')
+"string"
+```
+
+위와 같은 문제를 해결하기 위해서는 데이터를 JSON 형태로 저장하는 방법이 있습니다.
+
+```
+> localStorage.setItem('json', JSON.stringify({a: 1, b: 2}))
+undefined
+> JSON.parse(localStorage.getItem('json'))
+{a: 1, b: 2}
+```
+
 ## 그룹리뷰 피드백
 
 - 회원가입 입력 실패시 제출하지 않고 페이지 그대로 유지하기 위해서 event.preventDefault() 호출합니다.
@@ -105,8 +154,6 @@ $(document).ready(function () {
   });
 });
 ```
-
-## 데이터를 가지고 리다이렉트 하기
 
 ## 그룹리뷰 피드백
 
@@ -127,3 +174,6 @@ $(document).ready(function () {
 - [일반 HTML 파일에 HTML include/imports 하는 방법](https://kyung-a.tistory.com/18)
 - [JavaScript 자주 쓰는 정규식 모음 (아이디, 이메일, 비밀번호)](https://rateye.tistory.com/468)
 - [데이터를 가지고 리다이렉트 하기](https://minhanpark.github.io/today-i-learned/redirect-with-data/)
+- [\[자바스크립트\] 웹 스토리지 (localStorage, sessionStorage) 사용법](https://www.daleseo.com/js-web-storage/)
+- [\[Javascript Toy Project\] Register Page | 회원가입 페이지 만들기 토이프로젝트](https://velog.io/@eunjin/Javascript-Register-Page-%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%ED%8E%98%EC%9D%B4%EC%A7%80-%EB%A7%8C%EB%93%A4%EA%B8%B0)
+
