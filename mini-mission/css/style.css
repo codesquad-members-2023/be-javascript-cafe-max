@@ -1,6 +1,7 @@
 @import "root.css";
 @import "login.css";
 @import "main.css";
+@import "posting.css";
 
 body {
     /* Main-member */
@@ -13,6 +14,12 @@ body {
     align-items: center;
     padding: 0px 0px 80px;
     gap: 40px;
+    box-sizing: border-box;
+
+    position: relative;
+    width: 1440px;
+    height: 1238px;
+
 
     /* White */
 
@@ -40,6 +47,7 @@ body {
     font-weight: 500;
     font-size: 16px;
     line-height: 100%;
+    text-align: center;
 
     color: #14212B;
 }
