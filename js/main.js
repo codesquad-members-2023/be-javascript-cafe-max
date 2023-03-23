@@ -1,24 +1,24 @@
-function initData() {
+function initialization() {
     fetch("../json/posts.json")
     .then((file) => {
         return file.json()})
     .then((json) => {
         const urlParams = new URL(location.href).searchParams;
         const pageNationNumber = urlParams.get('pageNation') === null ? 1 : Number(urlParams.get('pageNation'));
-        initPageNation(pageNationNumber, json.length);
-        addPostsHtml(pageNationNumber, json);
+        addPageNation(pageNationNumber, json.length);
+        addPosts(pageNationNumber, json);
     });
 }
 
-function initPageNation(pageNationNumber, postsLength) {
+function addPageNation(pageNationNumber, postsLength) {
     const pageNation = document.querySelector('ul[class="pagination"]');
     const maxPageNumber = parseInt(postsLength / 10) + (postsLength % 10 === 0 ? 0 : 1);
-    pageNation.innerHTML += addPrevious(pageNationNumber);
+    pageNation.innerHTML += addPagePrevious(pageNationNumber);
     pageNation.innerHTML += addPage(pageNationNumber, maxPageNumber);
-    pageNation.innerHTML += addNext(pageNationNumber, maxPageNumber);
+    pageNation.innerHTML += addPageNext(pageNationNumber, maxPageNumber);
 }
 
-function addPrevious(pageNationNumber) {
+function addPagePrevious(pageNationNumber) {
     const pageDisabled = pageNationNumber < 2 ? 'disabled' : '';
     return `<li class="page-item ${pageDisabled}">
                <a class="page-link" href="../html/main.html?pageNation=${pageNationNumber - 1}" aria-label="Previous">
@@ -39,9 +39,7 @@ function addPage(pageNationNumber, maxPageNumber) {
     return pages;
 }
 
-function addNext(pageNationNumber, maxPageNumber) {
-    console.log(maxPageNumber);
-    console.log(pageNationNumber);
+function addPageNext(pageNationNumber, maxPageNumber) {
     const pageDisabled = pageNationNumber === maxPageNumber ? 'disabled' : '';
     return `<li class="page-item ${pageDisabled}">
                <a class="page-link" href="../html/main.html?pageNation=${pageNationNumber + 1}" aria-label="Next">
@@ -50,13 +48,12 @@ function addNext(pageNationNumber, maxPageNumber) {
             </li>`;
 }
 
-function addPostsHtml(pageNationNumber, posts) {
+function addPosts(pageNationNumber, posts) {
     document.querySelector('#postsCount').innerText = `전체 글 ${posts.length}개`;
     const tbody = document.querySelector('tbody');
     const pageFirst = (pageNationNumber - 1) * 10;
     const pageLast = pageNationNumber * 10 < posts.length ? pageNationNumber * 10 : posts.length;
 
-    // 10 20 30 31
     for (let i = pageFirst; i < pageLast; i++) {
         tbody.innerHTML += `<tr>
                                 <td class="title">${posts[i].title}</td>
@@ -68,5 +65,5 @@ function addPostsHtml(pageNationNumber, posts) {
 }
 
 document.addEventListener("DOMContentLoaded", function () {
-    initData();
+    initialization();
 });
