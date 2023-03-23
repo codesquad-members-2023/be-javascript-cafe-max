@@ -94,7 +94,7 @@
                         user
                     </div>
                     <div class="col-1">
-                        <button type="button" class="btn-close" aria-label="Close"></button>
+                        <button type="button" class="btn-close" aria-label="Close" id="1c" onclick="removeComment(event)"></button>
                     </div>
                 </div>
                 <p>게시글에 댓글을 쓰면 이런 형식으로 보여집니다!</p>
@@ -146,11 +146,13 @@
 <script>
     const commentPostElement = document.getElementById("commentPost");
 
-    function closeButton(event){
-        let targetId = event.target.id;
-        console.log(targetId+"close")
-        let element = document.getElementById(targetId+"close");
-        element.style.display = "block";
+    function removeComment(event){
+        event.preventDefault();
+        let eventId = event.target.id;
+        let targetId = eventId.substring(0, eventId.length - 1);
+        let target = document.getElementById(targetId);
+        let comments = document.getElementById(`comments`);
+        comments.removeChild(target);
     }
 
 
@@ -207,6 +209,7 @@
         closeButton.className = "btn-close";
         closeButton.setAttribute("aria-label", "Close");
         closeButton.id = id + "c";
+        closeButton.onclick = event => removeComment(event);
         userDiv.appendChild(user);
         userDiv.appendChild(closeButton);
 
