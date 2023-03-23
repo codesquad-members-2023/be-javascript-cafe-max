@@ -224,6 +224,27 @@ h1, h5 {
     font-size: 0;
 }
 
+.list .nickname {
+    width: 30%;
+}
+
+.list .top .nickname {
+    text-align: center;
+}
+
+.list .email {
+    width: 40%;
+}
+
+.list .signup-date {
+    width: 30%;
+}
+
+.page {
+    margin-top: 30px;
+    font-size: 0;
+}
+
 .page a {
     display: inline-block;
     width: 30px;
@@ -271,4 +292,13 @@ h1, h5 {
     text-align: center;
     width: 100px;
     height: 30px;
+}
+
+.title-form {
+    display: grid;
+    grid-template-rows: auto;
+}
+
+#title {
+    border: none;
 }
