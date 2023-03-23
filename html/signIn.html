@@ -12,32 +12,17 @@
             integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
             crossorigin="anonymous"></script>
     <script src="../js/layout.js" defer></script>
-    <script>
-        document.addEventListener("DOMContentLoaded", function () {
-            const urlParams = new URL(location.href).searchParams;
-            const isAuth = urlParams.get('auth');
-
-            if (isAuth) {
-                const alert = document.querySelector('.alert');
-                alert.className = alert.className + ' show';
-            }
-        });
-    </script>
-    <script></script>
+    <script src="../js/signIn.js" defer></script>
 </head>
 <body>
 <header class="navbar container">
 </header>
 <main>
-    <div class="alert alert-success alert-dismissible fade" role="alert">
-        <strong>가입을 축하합니다!</strong> Hello Java에 오신걸 환영합니다. 🎉🎉🎉
-        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-    </div>
     <div class="m-auto w-100">
         <div>
             <h2 class="title">로그인</h2>
         </div>
-        <form action="/auth/sign-in" method="post">
+        <form action="../html/main.html">
             <div class="form-floating">
                 <input type="email" class="form-control" id="email" placeholder="이메일을 입력해주세요"
                        aria-describedby="validationEmailFeedback" required>
