@@ -1,0 +1,96 @@
+#mainPage-title {
+  margin: 60px 0px;
+  height: 148px;
+  background-color: rgb(67, 98, 208);
+  border-radius: 10px;
+}
+
+#mainPage-title p {
+  padding: 40px;
+}
+
+#mainPage-title-title1 {
+  color: rgba(255, 255, 255, 0.5);
+  font-size: 16px;
+}
+
+#mainPage-title-title2 {
+  color: rgba(255, 255, 255, 1);
+  font-weight: 100;
+  font-size: 24px;
+  margin-top: -60px;
+}
+
+#mainPage-table-caption {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#mainPage-table-caption-title {
+  text-align: center;
+  width: 500px;
+}
+
+#mainPage-table-caption-except-title {
+  display: flex;
+  flex-direction: row;
+}
+
+#mainPage-table-caption-except-title p {
+  text-align: center;
+  width: 140px;
+}
+
+/** 이거 사실 중복코드**/
+.my-list-item {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+#my-list-item-title {
+  width: 500px;
+}
+#my-list-item-except-title {
+  display: flex;
+  flex-direction: row;
+}
+
+#my-list-item-except-title p {
+  text-align: center;
+  width: 140px;
+}
+
+/** mainPage 아래**/
+
+#mainPage-bottom {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+#search {
+  border: none;
+  width: 200px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.3);
+}
+
+#mainPage-bottom-right-bar-button {
+  width: 100px;
+  height: 30px;
+  margin-left: 10px;
+}
+
+#mainPage-bottom-left-bar {
+  display: flex;
+  flex-direction: row;
+}
+
+/* 왼쪽하단 버튼 css설정 */
+#page-numbers button {
+  background-color: white;
+  border: none;
+}

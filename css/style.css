@@ -1,5 +1,15 @@
 /**screens**/
 @import "screens/login.css";
+@import "screens/mainPage.css";
+@import "screens/posting.css";
+
+/**components**/
+@import "components/topBar.css";
+@import "components/button.css";
 
 /**reset**/
 @import "reset.css";
+
+.main {
+  margin: 50px 200px;
+}

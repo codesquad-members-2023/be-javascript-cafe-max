@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/style.css" />
+    <title>Main-member</title>
+  </head>
+  <header class="main">
+    <div id="topBar">
+      <p id="topBar-left-text">HELLO JAVA!</p>
+      <div id="topBar-right">
+        <p id="topBar-right-text">멤버리스트</p>
+        <button onclick="location.href = 'register1.html';" class="button">
+          마이페이지
+        </button>
+        <button onclick="location.href = 'register1.html';" class="button">
+          로그아웃
+        </button>
+      </div>
+    </div>
+  </header>
+  <body>
+    <div class="main">
+      <div id="mainPage-title">
+        <p id="mainPage-title-title1">코드스쿼드 백엔드 교육용 페이지</p>
+        <p id="mainPage-title-title2">HELLO JAVA! 입니다.</p>
+      </div>
+      <div id="mainPage-main-text">
+        <p id="mainPage-countOfText"></p>
+        <div>
+          <hr />
+          <div id="mainPage-table-caption">
+            <div id="mainPage-table-caption-title">
+              <p>제목</p>
+            </div>
+            <div id="mainPage-table-caption-except-title">
+              <p>작성자</p>
+              <p>작성일자</p>
+              <p>조회수</p>
+            </div>
+          </div>
+          <hr />
+        </div>
+        <div>
+          <ul id="mainPage-text-list"></ul>
+        </div>
+        <div id="mainPage-bottom">
+          <div id="mainPage-bottom-left-bar">
+            <span><</span>
+            <div id="page-numbers"></div>
+            <span>></span>
+          </div>
+          <div id="mainPage-bottom-right-bar">
+            <form action="posting.html" method="get">
+              <input
+                type="text"
+                id="search"
+                name="search"
+                placeholder="검색어를 입력하세요"
+              />
+              <button
+                type="submit"
+                id="mainPage-bottom-right-bar-button"
+                class="button"
+              >
+                글쓰기
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="js/mainPage.js"></script>
+  </body>
+</html>
