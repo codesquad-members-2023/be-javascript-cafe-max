@@ -22,6 +22,13 @@ body {
     height: 30px;
 }
 
+.move {
+    border: none;
+    background: #afb9ea;
+    color: white;
+    text-align: left;
+}
+
 .button {
     font-family: sans-serif;
     color: white;
@@ -32,7 +39,7 @@ body {
     font-weight: 600;
   }
 
-.button:hover {
+.button:hover, .move:hover {
     border-color:#a289bb;
     color: #a289bb;
     transition: 0.7s;
