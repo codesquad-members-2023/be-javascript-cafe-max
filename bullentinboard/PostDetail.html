@@ -22,7 +22,6 @@
                 <a class="btn btn-primary" href="Login.html" type="submit" role="button">로그아웃</a>
             </div>
         </div>
-        가
     </div>
 </nav>
 <div class="row justify-content-center">
@@ -100,7 +99,7 @@
     <div class="col-6 row text-secondary">
         <form id="commentForm">
             <div class="form-control">
-                <label for="comment" class="fs-5">user</label>
+                <label for="comment" class="fs-5" id="userName">user</label>
                 <textarea class="form-control-plaintext" placeholder="Leave a comment here" id="comment"
                           style="height: 100px;resize: none;"></textarea>
                 <div class="row justify-content-end row-cols-auto">
@@ -108,6 +107,74 @@
                         <button class="btn btn-primary disabled" type="submit" role="button" id="commentPost">
                             제출
                         </button>
+                        <script>
+                            const commentPostElement = document.getElementById("commentPost");
+
+                            function commentMouseoverEvent() {
+                                let element = document.getElementById("commentPost");
+                                element.className = "btn btn-primary";
+                            }
+
+                            function commentMouseOutEvent() {
+                                let element = document.getElementById("commentPost");
+                                element.className = "btn btn-primary disabled";
+                            }
+
+                            function validComment(event) {
+                                const newComment = document.getElementById(`comment`);
+                                event.preventDefault();
+                                if (!newComment.checkValidity() || newComment.value < 1) {
+                                    newComment.className = "form-control is-invalid"
+                                    event.stopPropagation();
+                                    return false;
+                                }
+                                addComment()
+                                setQuantity()
+                                return true;
+                            }
+
+                            commentPostElement.addEventListener('click', validComment);
+
+                            function setQuantity() {
+                                let element = document.getElementById("quantity");
+                                element.innerText = (Number(element.innerText) + 1).toString();
+                            }
+
+                            function addComment() {
+                                let elementById = document.getElementById(`comments`);
+                                const newComment = document.getElementById(`comment`);
+
+                                newComment.className = "form-control-plaintext";
+
+                                const liElement = document.createElement("li");
+
+                                liElement.setAttribute('class', "list-group-item")
+                                const user = document.createElement("p");
+                                const userName = document.getElementById("userName");
+                                user.className = "text-primary";
+                                user.innerText = userName.textContent
+                                const commentBody = document.createElement("p");
+                                commentBody.innerText = newComment.value;
+                                const date = document.createElement("p");
+                                date.className = "text-secondary";
+                                let today = new Date();
+
+                                let fullYear = today.getFullYear();
+                                let month = today.getMonth();
+                                let day = today.getDay();
+                                let hours = today.getHours();
+                                let minutes = today.getMinutes();
+
+
+                                date.innerText = fullYear + '-' + month + '-' + day + ' ' + hours + ':' + minutes;
+
+                                liElement.appendChild(user);
+                                liElement.appendChild(commentBody);
+                                liElement.appendChild(date);
+                                console.log(liElement.toString())
+                                elementById.appendChild(liElement);
+                            }
+                        </script>
                     </div>
                 </div>
             </div>
@@ -136,25 +203,6 @@
 
 </footer>
 </body>
-<script>
-    function commentMouseoverEvent() {
-        let element = document.getElementById("commentPost");
-        element.className = "btn btn-primary";
-    }
 
-    function commentMouseOutEvent() {
-        let element = document.getElementById("commentPost");
-        element.className = "btn btn-primary disabled";
-    }
-
-    function addComment() {
-        let comments = document.getElementById("comments");
-
-
-    }
-
-    let commentForm = document.getElementById("commentForm");
-
-</script>
 
 </html>
