@@ -88,61 +88,6 @@ class Page {
   }
 }
 
-window.onload = function () {
-  const posts = generate_post()
-  const currentPage = getCurrentPage()
-  const page = new Page(currentPage, 5, 10, posts.length)
-  // 게시글 출력
-  document.querySelector("#board_table tbody")
-  .replaceWith(buildBoard(posts, page))
-  // 페이지 버튼 출력
-  buildPage(posts, page)
-  document.querySelector("#countOfPost").textContent = posts.length // 전체글 개수 설정
-}
-
-function getCurrentPage() {
-  let params = new URLSearchParams(location.search);
-  if (params.get("page") == null) {
-    return 1
-  }
-  return params.get("page")
-}
-
-/**
- * json 형식의 데이터를 입력받아 현재 페이지에 따른 게시글 페이지 태그를 생성하여 반환합니다.
- * @param posts json 형식의 게시글 데이터들
- * @param page Page 객체
- * @returns {HTMLTableSectionElement} 게시글 정보가 담긴 tbody 태그
- */
-function buildBoard(posts, page) {
-  const startIndex = page.getStartIndex()
-  const endIndex = page.getEndIndex()
-  const pageData = posts.slice(startIndex, endIndex)
-
-  const tbody = document.createElement("tbody")
-  pageData.forEach(item => {
-    tbody.appendChild(createPost(item))
-  })
-  return tbody
-}
-
-/**
- * json 데이터를 기반으로 게시글 태그를 한개 만들어 반환합니다.
- * @param postData : json 형식의 게시글 한 데이터
- * @returns {HTMLTableRowElement} : <tr> 태그로 구성된 게시글
- */
-function createPost(postData) {
-  const row = document.createElement("tr")
-  const post = JSON.parse(String(postData))
-  row.innerHTML = `
-    <td class="board_table_title">${post.title}</td>
-    <td>${post.author}</td>
-    <td>${post.date}</td>
-    <td>${post.views}</td>
-    `
-  return row
-}
-
 /**
  * 현재 페이지에 따른 페이지 버튼들을 생성합니다.
  * @param posts json 형식이 게시글 데이터들
@@ -197,10 +142,9 @@ function createPageButtons(page) {
 
   // 페이지 버튼을 firstNumber번 ~ lastNumber번 생성
   for (let i = firstNumber; i <= lastNumber; i++) {
-    pageItems +=
-        `<li class="page-item">
+    pageItems += `<li class="page-item">
           <button class="board_page_link page_num_link ${page.isCurrentPage(i)
-            ? 'active' : ''}">${i}</button>
+        ? 'active' : ''}">${i}</button>
           </li>`
   }
 
@@ -224,4 +168,20 @@ function createPageButtonEvent(posts, page, pageNumber) {
   }
 }
 
+/**
+ * URI에 page 매개변수를 참조하여 페이지번호를 반환합니다.
+ * @returns {Promise<unknown>}
+ */
+function parsingCurrentPage() {
+  return new Promise((resolve) => {
+    let params = new URLSearchParams(location.search);
+    if (params.get("page") == null) {
+      resolve(1)
+    }
+    resolve(params.get("page"))
+  }).then((page) => {
+    return page
+  })
+}
 
+export {Page, buildPage, parsingCurrentPage}
