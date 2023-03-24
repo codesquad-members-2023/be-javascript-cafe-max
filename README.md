@@ -72,10 +72,36 @@ step-3 화면 구현
 내일은 쉬는 시간 줄여서 공부할 생각이다.
 
 
-# 4일차 Step-4?
+# 4일차 Step-4
+
+## 구현 내용
+localstorage를 통해 로그인 여부, 로그아웃을 구현했다.
+
+게시글 상세 페이지 이동 시 게시글 번호를 url에 붙여 페이지 이동을 시켰고, new URL(location.href).searchParams 을 이용하여 자바스크립트에서 변수로 사용하였다.
+
+~~~ javascript
+const urlParams = new URL(location.href).searchParams;
+const num = urlParams.get('num');
+~~~
+
+localstorage를 통해 댓글을 저장하여 페이지 새로고침이나, 브라우저를 다시 열어도 댓글이 사라지지 않게 함
+
+
+*localstorage
+https://www.zerocho.com/category/HTML&DOM/post/5918515b1ed39f00182d3048
+
+
+오늘 페어 리뷰가 끝나고 집중이 잘 안돼서 많이 구현하지 못했다.
+
+localstorage의 value 값을 set 해줄 때 타입을 신경 안 쓰고 get, set을 반복하다 보니 원하는 값이 안뜰 때가 있었고, set을 해주지도 않아서 값들이 안 뜨는 것인데 원인을 다른 데서 찾는 등 삽질을 많이 했다. 아무래도 개념을 자세하게 모르고 사용법만 익혀서 쓰다 보니 그런 것 같다. 개념 공부를 조금 더 열심히 해야겠다는 생각이 들었다.
+
+
 
 ## TODO
-- [ ] Step-4?
+목표는 GitHub의 static hosting 기능을 이용해 배포지만 할 수 있을지는 모르겠다....
+- [ ] 댓글 삭제 하면 localstorage에서도 삭제해주기
+- [ ] 게시판 글 작성
+- [ ] GitHub의 static hosting 기능을 이용해 배포
 - [ ] 스프링 강의 듣기?
 
 

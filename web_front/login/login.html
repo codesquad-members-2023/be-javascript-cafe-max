@@ -8,7 +8,7 @@
     <title>Document</title>
 </head>
 <body>
-    <form>
+    <form id="form">
         <div class="wrap">
             
             <div class="nav">
@@ -24,19 +24,24 @@
             <div id="input_area">
                 <div class="input_info">
                     <label>이메일</label>
-                    <input type="text">
+                    <div><input id="email" type="text" placeholder="이메일을 입력해주세요."></div>
+                    <span id="error_email"></span>
                 </div>
                 <div class="input_info">
                     <label>비밀번호</label>
-                    <input type="text">
+                    <div><input id="password" type="password" placeholder="비밀번호를 입력해주세요."></div>
+                <span id="error_password"></span>
+
                 </div>
                 <div class="button_area">
-                <button class="button_large">로그인</button>
+                <button class="button_large" id="login_button" type="button">로그인</button>
                 <div><span>아직 회원가입을 안하셨나요?</span><a href="../signup/signup.html"><span>&nbsp;회원가입하기</span></a></div>
                 </div>
                 
             </div>
         </div>
         </form>
+        <script src="../js/login.js"></script>
+
 </body>
 </html>
