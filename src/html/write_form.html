@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Ape : 미니 게시판</title>
+    <link rel="stylesheet" type="text/css" href="../css/main.css" />
+    <link rel="stylesheet" type="text/css" href="../css/write_from.css" />
+    <!-- Include stylesheet -->
+    <link href="https://cdn.quilljs.com/1.3.6/quill.snow.css" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/33f7fd1d36.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <nav class="topnav">
+        <a onclick="linkToMain()"><i class="fa-solid fa-house"></i></a>
+        <a onclick="linkToSignUp()" style="float:right">로그인</a>
+    </nav>
+
+    <header class="header">
+        <h1>CSS/JS 미니 게시판</h1>
+        <p>재미있어요.</p>
+    </header>
+
+    <section class="row">
+        <div class="column middle">
+            <div class="card">
+                <div class="card-header">
+                    <div class="card-title">글쓰기</div>
+                </div>
+                <form name="writeForm">
+                    <div>
+                        <input type="text" name="writer" class="vertical-input" placeholder="작성자" required
+                            maxlength="64" autocomplete="off">
+                        <input type="text" name="title" class="vertical-input" placeholder="제목" required maxlength="100"
+                            autocomplete="off">
+                    </div>
+                    <div class="editor">
+                        <div id="quillEditor"></div>
+                        <textarea name="content" style="display:none"></textarea>
+                        <div id="maxLength" class="text-notice">글자수: 0/1000</div>
+                    </div>
+                    <div class="card-footer">
+                        <button class="submit-btn" onclick="writePost(event)">글쓰기</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+</body>
+
+<!-- Include the Quill library -->
+<script src="https://cdn.quilljs.com/1.3.6/quill.js"></script>
+<script src="../js/write_form.js"></script>
+<script src="../js/common.js"></script>
+
+</html>

@@ -1,0 +1,13 @@
+.editor {
+    height: 375px;
+    padding-bottom: 2.5rem;
+    background-color: white;
+}
+
+.text-notice {
+    color: green;
+    font-weight: bold;
+    float: right;
+    padding: 0.5rem 1rem 0 0;
+
+}

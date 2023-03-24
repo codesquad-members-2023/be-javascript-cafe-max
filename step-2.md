@@ -1,5 +1,5 @@
 # [2단계] 메인 게시판 목록 페이지 / 글쓰기 페이지 구현
-- 2023-03-21(화)
+- 2023-03-21(화) ~ 2023-03-24(금)
 
 ---
 # 기획
@@ -19,6 +19,7 @@
 ## js파일에서 파일을 읽어오는 경로
 - js에서 `fetch(./data.json)`올 파일을 읽어 오니 현재 js 파일 기준이 아니라 js를 불러온 html이 기준 경로로 되어 있었다.
 - `fetch(../js/data.json)`로 경로를 변경하여 해결
+- 그럼 이 js파일을 재사용 한다면 절대경로를 써야 되는 건가?
 
 ## Access to fetch at '.../dummy_board_data.json' from origin 'null' has been blocked by CORS policy:
 - `fetch()`로 json 파일을 읽어오려고 했는데 크롬 보안정책 때문에 .json 파일을 읽어올 수 없다
@@ -38,6 +39,21 @@
 - 여기서 `(currentPage + pagingBarSize)` 이걸 먼저 정수로 계산한 후 url에 붙여줄거라 예상하였으나 그냥 문자열로 붙여준다
 - 다시 보니 currentPage를 URL의 queryString에서 가져와 문자열로 선언되어 발생한 문제
 - `(Number(currentPage) + pagingBarSize)` 문자열을 숫자로 변환하여 해결
+
+---
+# 기타 궁금증
+## javacript - post로 보낸 파라미터는 못 가져오나??
+- 불가능
+- post로 보낸 값은 서버에서만 처리하고 클라이언트 단으로 가지 않는다.
+
+## form submit 할 때 - html 태그로 form 작성하기 vs JS로 form을 동적으로 만들어 주기
+- 뭐 더 좋은게 있나?
+
+## class name, tag name 으로 값을 가져올 때 배열로 가져오게 되는데 이건 변경에 유리하지 못한것 같다? 모두 id를 써야 하나?
+  
+## 중복되는 header를 분리할 수 있는 방법은 없을까?
+- spring 할때는 `<%@include file="..."%>`이 있었는데 그냥 html은 안되는 건가?
+
 ---
 # 도움이 된 사이트
 1. [[[css3] table-layout - 콘텐츠 내용에 따라 셀 너비 지정](https://devjhs.tistory.com/642)](https://devjhs.tistory.com/642)
