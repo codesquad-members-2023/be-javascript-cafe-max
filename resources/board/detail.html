@@ -1,0 +1,93 @@
+<!DOCTYPE HTML>
+<html lang="kr">
+<head>
+  <title>Hello JAVA!</title>
+  <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
+  <header data-include-path="/cafe/resources/components/head_header.html"></header>
+  <script src="/cafe/resources/static/js/jquery-3.6.4.js"></script>
+  <link href="/cafe/resources/static/css/detail.css" rel="stylesheet">
+</head>
+<body>
+<header data-include-path="/cafe/resources/components/header.html"></header>
+
+<div class="detail_container">
+  <div class="detail_header">
+    <h4>자바 웹개발 교육 홈페이지 디자인 개발1</h4>
+  </div>
+  <div class="detail_writer_info">
+    <label>작성자:<span>user</span></label>
+    <label>작성일자:<span>YYYY.MM.DD. HH:MM</span></label>
+    <label>조회:<span>0</span></label>
+  </div>
+  <div class="detail_content">
+    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+      been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
+      galley of type and scrambled it to make a type specimen book. It has survived not only five
+      centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
+      was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
+      passages, and more recently with desktop publishing software like Aldus PageMaker including
+      versions of Lorem Ipsum.</p>
+  </div>
+  <div class="detail_comment">
+    <div class="detail_comment_count"><label>댓글<span>1</span>개</label></div>
+    <div class="detail_list">
+      <ul>
+        <li>
+          <div class="comment_item">
+            <div aria-label="댓글 작성자 이름" class="comment_item_writer">
+              <label>user</label>
+            </div>
+            <div aria-label="댓글 내용" class="comment_item_content">
+              <p>게시글에 댓글을 쓰면 이런 형식으로 보여집니다.!</p>
+            </div>
+            <div aria-label="댓글 작성일자" class="comment_item_regdate">
+              <label>YYYY.MM.DD. HH:MM</label>
+            </div>
+          </div>
+          <div class="comment_item">
+            <div aria-label="댓글 작성자 이름" class="comment_item_writer">
+              <label>user</label>
+            </div>
+            <div aria-label="댓글 내용" class="comment_item_content">
+              <p>게시글에 댓글을 쓰면 이런 형식으로 보여집니다.!</p>
+            </div>
+            <div aria-label="댓글 작성일자" class="comment_item_regdate">
+              <label>YYYY.MM.DD. HH:MM</label>
+            </div>
+          </div>
+        </li>
+      </ul>
+    </div>
+    <div class="detail_comment_form">
+      <form action="detail.html" method="post">
+        <div class="comment_content">
+          <div>
+            <label for="content">User</label>
+          </div>
+          <div>
+            <textarea id="content" maxlength="100" minlength="1" name="content"
+                      placeholder="댓글을 작성해주세요" rows="2"></textarea>
+          </div>
+          <div class="comment_content_btn">
+            <button class="btn btn-primary">작성</button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div class="detail_btn">
+      <div class="detail_btn_column">
+        <button class="btn btn-primary">이전 글: <span id="prev_post_title">글제목</span></button>
+        <button class="btn btn-primary ml-5">이전 글: <span id="next_post_title">글제목</span></button>
+      </div>
+      <div class="detail_btn_column">
+        <button class="btn btn-primary">목록으로</button>
+      </div>
+    </div>
+  </div>
+
+</div>
+
+<script src="/cafe/resources/static/js/common.js"></script>
+<script src="/cafe/resources/static/js/write.js"></script>
+</body>
+</html>

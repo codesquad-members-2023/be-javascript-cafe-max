@@ -1,13 +1,14 @@
 class Page {
-  constructor(currentPage, pageCount, dataLimit, totalCountOfData) {
-    this.currentPage = currentPage; // 현재 페이지 번호
-    this.pageCount = pageCount; // 한 화면에 나타날 페이지 버튼의 개수
-    this.dataLimit = dataLimit; // 한 페이지에 보여줄 데이터 개수
-    this.totalCountOfData = totalCountOfData // 전체 데이터 개수
-  }
+  #currentPage
+  #pageCount
+  #dataLimit
+  #totalCountOfData
 
-  getCurrentPage() {
-    return this.currentPage
+  constructor(currentPage, pageCount, dataLimit, totalCountOfData) {
+    this.#currentPage = currentPage; // 현재 페이지 번호
+    this.#pageCount = pageCount; // 한 화면에 나타날 페이지 버튼의 개수
+    this.#dataLimit = dataLimit; // 한 페이지에 보여줄 데이터 개수
+    this.#totalCountOfData = totalCountOfData // 전체 데이터 개수
   }
 
   /**
@@ -17,7 +18,7 @@ class Page {
    * @returns {number} 게시글 참조 시작 인덱스
    */
   getStartIndex() {
-    return (this.currentPage - 1) * this.dataLimit
+    return (this.#currentPage - 1) * this.#dataLimit
   }
 
   /**
@@ -27,7 +28,7 @@ class Page {
    * @returns {number} 게시글 참조 종료 인덱스
    */
   getEndIndex() {
-    return this.getStartIndex() + this.dataLimit
+    return this.getStartIndex() + this.#dataLimit
   }
 
   /**
@@ -36,7 +37,7 @@ class Page {
    * @returns {number} 전체 페이지
    */
   getTotalPage() {
-    return Math.ceil(this.totalCountOfData / this.dataLimit)
+    return Math.ceil(this.#totalCountOfData / this.#dataLimit)
   }
 
   /**
@@ -49,7 +50,7 @@ class Page {
    * @returns {number} 현재 페이지가 속한 그룹번호
    */
   getPageGroup() {
-    return Math.ceil(this.currentPage / this.pageCount)
+    return Math.ceil(this.#currentPage / this.#pageCount)
   }
 
   /**
@@ -60,7 +61,7 @@ class Page {
    */
   getLastNumber() {
     let totalPage = this.getTotalPage()
-    let lastNumber = this.getPageGroup() * this.pageCount
+    let lastNumber = this.getPageGroup() * this.#pageCount
     if (lastNumber > totalPage) {
       lastNumber = totalPage
     }
@@ -74,7 +75,16 @@ class Page {
    * @returns {number} 페이지 그룹의 첫번째 번호
    */
   getFirstNumber() {
-    return ((this.getPageGroup() - 1) * this.pageCount) + 1
+    return ((this.getPageGroup() - 1) * this.#pageCount) + 1
+  }
+
+  /**
+   * 입력받은 페이지번호가 현재 페이지인지 확입합니다.
+   * @param currentPage 현재 페이지
+   * @returns {boolean} true: 현재 페이지 맞음, false: 현재 페이지와 다른 페이지
+   */
+  isCurrentPage(currentPage) {
+    return parseInt(this.#currentPage) === currentPage
   }
 }
 
@@ -92,6 +102,9 @@ window.onload = function () {
 
 function getCurrentPage() {
   let params = new URLSearchParams(location.search);
+  if (params.get("page") == null) {
+    return 1
+  }
   return params.get("page")
 }
 
@@ -186,8 +199,8 @@ function createPageButtons(page) {
   for (let i = firstNumber; i <= lastNumber; i++) {
     pageItems +=
         `<li class="page-item">
-          <button class="board_page_link page_num_link ${parseInt(
-            page.getCurrentPage()) === i ? 'active' : ''}">${i}</button>
+          <button class="board_page_link page_num_link ${page.isCurrentPage(i)
+            ? 'active' : ''}">${i}</button>
           </li>`
   }
 
@@ -205,8 +218,8 @@ function createPageButtons(page) {
  * @returns {(function(): void)|*} 게시글과 페이지버튼을 렌더링하는 함수
  */
 function createPageButtonEvent(posts, page, pageNumber) {
-  const pathOfURI = window.location.pathname
   return function () {
+    const pathOfURI = window.location.pathname
     location.href = pathOfURI + "?page=" + pageNumber
   }
 }

@@ -18,6 +18,5 @@ function generate_post() {
     let date = today.toLocaleDateString();
     result.push(JSON.stringify(new Post(title, author, date)));
   }
-
   return result;
 }

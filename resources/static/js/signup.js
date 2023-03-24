@@ -1,3 +1,25 @@
+class Member {
+  #email
+  #nickname
+  #pwd
+
+  constructor(email, nickname, pwd) {
+    this.#email = email;
+    this.#nickname = nickname;
+    this.#pwd = pwd;
+  }
+
+  toJSON() {
+    return {
+      email: this.#email,
+      nickname: this.#nickname,
+      pwd: this.#pwd
+    }
+  }
+}
+
+const memberInfos = getSavedMemberInfos()
+
 function checkSignupForm() {
   const email = $("#email").val();
   const nickname = $("#nickname").val();
@@ -15,10 +37,23 @@ function checkSignupForm() {
 
   if (!isPassword(pwd)) {
     alert("소문자 및 숫자를 포함하는 8~32글자의 비밀번호를 입력해주세요");
-    return false;
+    return false
   }
 
-  document.signupForm.submit();
+  if (isDuplicatedEmail(email)) {
+    alert("이메일이 중복되었습니다.")
+    return false
+  }
+
+  if (isDuplicatedNickname(nickname)) {
+    alert("닉네임이 중복되었습니다.")
+    return false
+  }
+
+  saveMemberInfo(new Member(email, nickname, pwd))
+  alert("회원가입에 성공하였습니다.")
+  localStorage.setItem("signup_success_email", email)
+  document.signupForm.submit()
 }
 
 function isEmail(value) {
@@ -36,6 +71,31 @@ function isNickName(value) {
 function isPassword(value) {
   const regExp = /^(?=.*[a-zA-z])(?=.*\d).{8,32}$/;
   return regExp.test(value);
+}
+
+function isDuplicatedEmail(email) {
+  console.log(memberInfos.find((memberInfo) => memberInfo.email === email))
+  return memberInfos.find((memberInfo) => memberInfo.email === email)
+      !== undefined
+}
+
+function isDuplicatedNickname(nickname) {
+  return memberInfos.find((memberInfo) => memberInfo.nickname === nickname)
+      !== undefined
+}
+
+function getSavedMemberInfos() {
+  const memberInfosJSON = localStorage.getItem("memberInfos")
+  try {
+    return memberInfosJSON ? JSON.parse(memberInfosJSON) : []
+  } catch {
+    return []
+  }
+}
+
+function saveMemberInfo(member) {
+  memberInfos.push(member.toJSON())
+  localStorage.setItem("memberInfos", JSON.stringify(memberInfos))
 }
 
 $(document).ready(function () {
