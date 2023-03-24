@@ -1,0 +1,72 @@
+[
+    {
+        "title": "게시물 제목",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목2",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목3",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목4",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목5",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목6",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목7",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목8",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목9",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    },
+    {
+        "title": "게시물 제목10",
+        "content": "테스트",
+        "writer": "닉네임",
+        "writeDate": "YYYY.MM.DD",
+        "views": 0
+    }
+]
