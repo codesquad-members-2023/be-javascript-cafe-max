@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav>
+        <span id="hello-java">Hello Java!</span>
+        <button>로그인/회원가입</button>
+    </nav>
+    <header>
+        <h1>회원가입</h1>
+    </header>
+    <form>
+        <div class="input-info">
+            <label>이메일</label>
+            <input id="email" type="email" placeholder="이메일을 입력해주세요">
+            <span id="error_email"></span>
+        </div>
+        <div class="input-info">
+            <label>닉네임</label>
+            <input id="nickname" type="nickname" placeholder="닉네임을 입력해주세요">
+            <span id="error_nickname"></span>
+        </div>
+        <div class="input-info">
+            <label>비밀번호</label>
+            <input id="password" type="password" placeholder="비밀번호를 입력해주세요">
+            <span id="error_password"></span>
+        </div>
+    </form>
+    <div class="submit">
+        <button type="button" id="signup_button">회원가입</button>
+    </div>
+    <script src="../js/signup.js"></script>
+</body>
+</html>

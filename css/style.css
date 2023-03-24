@@ -1,0 +1,366 @@
+body {
+/* Login */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px 0px 40px;
+gap: 40px;
+
+position: relative;
+width: 1440px;
+height: 1024px;
+
+/* White */
+
+background: #FFFFFF;
+}
+
+header {
+
+    /* Frame 2 */
+width: 1040px;
+height: 148px;
+
+
+/* Inside auto layout */
+display: flex;
+    flex-direction: column;
+    align-items: center;
+order: 1;
+flex-grow: 0;
+
+}
+
+nav {
+/* Nav */
+
+
+width: 1040px;
+height: 64px;
+
+
+/* Inside auto layout */
+
+justify-content: space-between;
+display: flex;
+order: 0;
+flex-grow: 0;
+}
+
+#hello-java {
+    /* HELLO JAVA! */
+
+
+/* position: absolute; */
+width: 96px;
+height: 16px;
+left: 0px;
+top: calc(50% - 16px/2);
+
+/* BoldR */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 500;
+font-size: 16px;
+line-height: 100%;
+/* identical to box height, or 16px */
+
+
+/* Black */
+
+color: #14212B;
+}
+
+nav button {
+ /* ButtonSmall */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: row;
+justify-content: center;
+align-items: center;
+/* padding: 8px 16px; */
+gap: 10px;
+border : none;
+width: 122px;
+height: 32px;
+right: 0px;
+
+/* Primary */
+
+background: #4362D0;
+border-radius: 8px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+
+/* Text */
+
+/* BoldS */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 500;
+font-size: 14px;
+line-height: 100%;
+/* identical to box height, or 14px */
+
+display: flex;
+align-items: center;
+text-align: center;
+
+/* White */
+
+color: #FFFFFF;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+}
+
+
+form {
+    /* Auto layout */
+ 
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     padding: 0px;
+     gap: 30px;
+ 
+     width: 320px;
+     /* height: 144px; */
+ 
+ 
+     /* Inside auto layout */
+ 
+     flex: none;
+     order: 2;
+     flex-grow: 0;
+ }
+ 
+.input-info {
+/* InputInfo */
+
+
+box-sizing: border-box;
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: flex-start;
+padding: 8px 16px;
+gap: 8px;
+
+width: 320px;
+height: 64px;
+
+/* White */
+
+background: #FFFFFF;
+/* Gray100 */
+
+border: 1px solid #D2DAE0;
+border-radius: 8px;
+
+/* Inside auto layout */
+
+flex: none;
+order: 0;
+flex-grow: 0;
+ }
+ 
+ .input-info label {
+     /* Label */
+ 
+ 
+     width: 288px;
+     height: 14px;
+ 
+     /* BoldS */
+ 
+     font-family: 'Pretendard';
+     font-style: normal;
+     font-weight: 500;
+     font-size: 14px;
+     line-height: 100%;
+     /* identical to box height, or 14px */
+ 
+ 
+     /* Gray300 */
+ 
+     color: #4B5966;
+ 
+ 
+     /* Inside auto layout */
+ 
+     flex: none;
+     order: 0;
+     align-self: stretch;
+     flex-grow: 0;
+ }
+ 
+.input-info input {
+/* Text */
+
+
+width: 288px;
+height: 26px;
+
+/* BodyR */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 16px;
+line-height: 160%;
+/* identical to box height, or 26px */
+
+
+/* Gray200 */
+
+color: #879298;
+
+
+/* Inside auto layout */
+
+border: none;
+flex: none;
+order: 0;
+align-self: stretch;
+flex-grow: 0;
+
+ }
+
+
+ .submit {
+/* Frame 4 */
+
+
+/* Auto layout */
+
+display: flex;
+flex-direction: column;
+align-items: center;
+padding: 0px;
+gap: 16px;
+
+width: 320px;
+height: 78px;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 3;
+flex-grow: 0;
+ }
+
+ .submit button {
+    /* Text */
+    
+    
+    width: 300px;
+    height: 16px;
+    
+    /* BoldR */
+    
+    font-family: 'Pretendard';
+    font-style: normal;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 100%;
+    /* identical to box height, or 16px */
+    
+    display: flex;
+    align-items: center;
+    text-align: center;
+    
+    /* White */
+    
+    color: #FFFFFF;
+    
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 1;
+    
+        /* ButtonLarge */
+    
+    
+    /* Auto layout */
+    
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0px 10px;
+    gap: 10px;
+    
+    width: 320px;
+    height: 40px;
+    border:none;
+    
+    /* Primary */
+    
+    background: #4362D0;
+    border-radius: 8px;
+    
+    /* Inside auto layout */
+    
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+     }
+    
+    
+
+ .submit span {
+/* 아직 회원가입을 안하셨나요? 회원가입하기 */
+
+
+/* width: 236px; */
+height: 22px;
+
+/* BodyS */
+
+font-family: 'Pretendard';
+font-style: normal;
+font-weight: 400;
+font-size: 14px;
+line-height: 160%;
+/* or 22px */
+
+text-align: center;
+
+/* Black */
+
+color: #14212B;
+
+
+/* Inside auto layout */
+
+flex: none;
+order: 1;
+flex-grow: 0;
+ }
+
+ .submit a {
+    text-decoration-line: none;
+ }
