@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>main-member</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="style.css">
+    </head>
+    <body>
+        <div class="headerMember">
+            <button class="move" type="button" onclick="window.location.href='main-member.html'"><h2>HELLO JAVA!</h2></button>
+            <button class="headMember button" type="button" onclick="window.location.href='memberList.html'"><span>멤버리스트</span></button>
+            <button class="headMember button" type="button" onclick="window.location.href='myPage.html'"><span>마이페이지</span></button>
+            <button class="headMember button" type="button" onclick="window.location.href='main-guest.html'"><span>로그아웃</span></button>
+        </div>
+        <div></div>
+        <div class="description">
+            <div class="inbox">
+                <h5>코드스쿼드 백엔드 교육용 페이지</h5>
+                <h1>HELLO JAVA! 입니다.</h1>
+            </div>
+        </div>
+        <div class="board">
+            <div class="countOfpost">
+                <p>전체 글 <span id="post_count"></span>개</p>
+            </div>
+            <div class="board_list">
+                <div class="list">
+                    <div class="top column">
+                        <div class="title column">제목</div>
+                        <div class="writer">작성자</div>
+                        <div class="date">작성일자</div>
+                        <div class="hits">조회수</div>
+                    </div>
+                </div>
+                <div class="tail">
+                    <div class="page">
+                        <a href="#" class="first"><<</a>
+                        <a href="#" class="prev"><</a>
+                        <a href="#" class="num on">1</a>
+                        <a href="#" class="num">2</a>
+                        <a href="#" class="num">3</a>
+                        <a href="#" class="num">4</a>
+                        <a href="#" class="num">5</a>
+                        <a href="#" class="next">></a>
+                        <a href="#" class="last">>></a>
+                    </div>
+                    <div></div>
+                    <div class="write">
+                        <input type="text" id="searchInput">
+                        <span class="readingglass">🔍</span>
+                        <button id="buttonwrite" type="button" onclick="window.location.href='posting.html'">글쓰기</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="jsondata.js"></script>
+    </body>
+</html>

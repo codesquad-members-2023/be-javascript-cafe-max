@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>main-member</title>
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="posting-style.css">
+        <script src="dataValidation.js"></script>
+    </head>
+    <body>
+        <div class="headerMember">
+            <button class="move" type="button" onclick="window.location.href='main-member.html'"><h2>HELLO JAVA!</h2></button>
+            <button class="headMember button" type="button" onclick="window.location.href='memberList.html'"><span>멤버리스트</span></button>
+            <button class="headMember button" type="button" onclick="window.location.href='myPage.html'"><span>마이페이지</span></button>
+            <button class="headMember button" type="button" onclick="window.location.href='main-guest.html'"><span>로그아웃</span></button>
+        </div>
+        <div></div>
+        <div class="wrap">
+            <div class="h3">
+                <h3>글쓰기</h3>
+            </div>
+            <div class="title-form">
+                <label for="title">제목</label>
+                <input type="text" id="title" placeholder="글의 제목을 입력하세요." onkeyup="verifyTitle()">
+            </div>
+            <div class="content-form">
+                <label for="content">내용</label>
+                <textarea id="content" placeholder="글의 내용을 입력하세요." onkeyup="verifyContent()"></textarea>
+            </div>
+            <div class="write-complete">
+                <div id="writingMessage" class="message"></div>
+                <button class="button complete" type="button" onclick="validateWriting()">작성완료</button>
+            </div>
+        </div>
+    </body>
+</html>
