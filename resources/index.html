@@ -4,8 +4,10 @@
   <title>Hello JAVA!</title>
   <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
   <header data-include-path="/cafe/resources/components/head_header.html"></header>
+
   <script src="/cafe/resources/static/js/jquery-3.6.4.js"></script>
-  <link href="/cafe/resources/static/css/board.css" rel="stylesheet">
+  <script crossorigin="anonymous" src="https://kit.fontawesome.com/5ec64ef296.js"></script>
+  <link href="/cafe/resources/static/css/index.css" rel="stylesheet">
 </head>
 <body>
 <header data-include-path="/cafe/resources/components/header.html"></header>
@@ -34,18 +36,30 @@
       </tbody>
     </table>
   </div>
-  <div class="board_page">
-    <nav aria-label="Page navigation">
-      <ul class="pagination" id="board_pagination">
+  <div class="board_footer">
+    <div class="board_page">
+      <nav aria-label="Page navigation">
+        <ul class="pagination" id="board_pagination">
 
-      </ul>
-    </nav>
+        </ul>
+      </nav>
+    </div>
+    <div class="board_btn login_section">
+      <div>
+        <input name="titleContent" placeholder="검색어를 입력하세요" type="text">
+        <button class="btn btn-link"><i class="fa-solid fa-magnifying-glass"></i></button>
+      </div>
+      <div>
+        <button class="btn btn-primary">글쓰기</button>
+      </div>
+    </div>
   </div>
+
 </div>
 
 
 <script src="/cafe/resources/static/js/common.js"></script>
-<script src="/cafe/resources/static/js/post_generator.js"></script>
-<script src="/cafe/resources/static/js/post_pagination.js"></script>
+<script src="/cafe/resources/static/js/index.js" type="module"></script>
+<script src="/cafe/resources/static/js/logout.js"></script>
 </body>
 </html>
