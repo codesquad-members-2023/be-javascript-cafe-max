@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="utf-8">
+    <title>회원가입 페이지</title>
+    <script language="javascript">
+        function validate() {
+            var email = document.getElementById("email");
+            var nickname = document.getElementById("nickname");
+            var password = document.getElementById("password");
+            var emailFormat = /^[a-zA-Z0-9+-\_.]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+            var passwordFormat = /^(?=.*[a-zA-Z])(?=.*[0-9]).{8,32}$/;
+            var flag = true;
+
+            if (!emailFormat.test(email.value)) {
+                alert("이메일 형식이 올바르지 않습니다.");
+                flag = false;
+            }
+
+            if (nickname.value.length < 2 || nickname.value.length > 64) {
+                alert("닉네임은 2~64자 여야 합니다.");
+                flag = false;
+            }
+
+            if (!passwordFormat.test(password.value)) {
+                alert("패스워드 형식이 올바르지 않습니다.");
+                flag = false;
+            }
+
+            if (flag) {
+                alert("회원 가입이 되었습니다.");
+            }
+            else {
+                alert("회원 가입에 실패했습니다.")
+            }
+        }
+    </script>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px 0px 40px;
+            gap: 40px;
+            position: relative;
+            width: 1440px;
+            height: 1024px;
+            background: #FFFFFF;
+        }
+
+        .NAV {
+            width: 1040px;
+            height: 64px;
+            flex: none;
+            display: flex;
+            order: 0;
+            flex-grow: 0;
+            position: relative
+        }
+
+        .HELLOJAVA {
+            position: absolute;
+            width: 96px;
+            height: 16px;
+            left: 0px;
+            top: calc(50% - 16px/2);
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 100%;
+            color: #14212B;
+        }
+
+        .Frame1 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            padding: 0px;
+            gap: 16px;
+            position: absolute;
+            width: 122px;
+            height: 32px;
+            right: 0px;
+            top: calc(50% - 32px/2 + 1px);
+        }
+
+        .NavList {
+            display: none;
+            width: 61px;
+            height: 14px;
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 100%;
+            text-align: center;
+            color: #4B5966;
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        .ButtonSmall {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 8px 16px;
+            gap: 10px;
+            width: 122px;
+            height: 32px;
+            background: #4362D0;
+            border-radius: 8px;
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+        }
+
+        .Text1 {
+            width: 90px;
+            height: 14px;
+
+            /* BoldS */
+
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 100%;
+            /* identical to box height, or 14px */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* White */
+
+            color: #FFFFFF;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        .Frame2 {
+            /* Frame 2 */
+            position: relative;
+
+
+            width: 1040px;
+            height: 148px;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 1;
+            flex-grow: 0;
+        }
+
+        .DisplayTitle {
+            /* DisplayTitle */
+
+
+            position: absolute;
+            width: 111px;
+            height: 38px;
+            left: calc(50% - 111px/2 + 0.5px);
+            top: calc(50% - 38px/2);
+
+            /* DisplayL */
+
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 32px;
+            line-height: 38px;
+            text-align: center;
+
+            /* Black */
+
+            color: #14212B;
+        }
+
+        .Frame3 {
+            /* Frame 3 */
+
+
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 0px;
+            gap: 16px;
+
+            width: 320px;
+            height: 224px;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 2;
+            flex-grow: 0;
+        }
+
+
+        .InputInfo {
+            /* InputInfo */
+
+
+            box-sizing: border-box;
+
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+            padding: 8px 16px;
+            gap: 8px;
+
+            width: 320px;
+            height: 64px;
+
+            /* White */
+
+            background: #FFFFFF;
+            /* Gray100 */
+
+            border: 1px solid #D2DAE0;
+            border-radius: 8px;
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 0;
+        }
+
+        .Label {
+            /* Label */
+
+
+            width: 288px;
+            height: 14px;
+
+            /* BoldS */
+
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 14px;
+            line-height: 100%;
+            /* identical to box height, or 14px */
+
+
+            /* Gray300 */
+
+            color: #4B5966;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            align-self: stretch;
+            flex-grow: 0;
+        }
+
+        input:default {
+            /* Text */
+
+
+            width: 288px;
+            height: 26px;
+
+            /* BodyR */
+
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 160%;
+            /* identical to box height, or 26px */
+
+
+            /* Gray200 */
+
+            color: #879298;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 1;
+            align-self: stretch;
+            flex-grow: 0;
+        }
+
+        button {
+            /* ButtonLarge */
+
+
+            /* Auto layout */
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            padding: 0px 10px;
+            gap: 10px;
+
+            width: 320px;
+            height: 40px;
+
+            /* Primary */
+
+            background: #4362D0;
+            border-radius: 8px;
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 3;
+            flex-grow: 0;
+        }
+
+        .Text3 {
+            /* Text */
+
+
+            width: 300px;
+            height: 16px;
+
+            /* BoldR */
+
+            font-family: 'Pretendard';
+            font-style: normal;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 100%;
+            /* identical to box height, or 16px */
+
+            display: flex;
+            align-items: center;
+            text-align: center;
+
+            /* White */
+
+            color: #FFFFFF;
+
+
+            /* Inside auto layout */
+
+            flex: none;
+            order: 0;
+            flex-grow: 1;
+        }
+    </style>
+
+</head>
+
+<body>
+    <div class="NAV">
+        <div class="HELLOJAVA"> HELLO JAVA!</div>
+        <div class="Frame1">
+            <div class="NavList"></div>
+            <div class="ButtonSmall">
+                <div class="Text1">로그인 / 회원가입</div>
+            </div>
+        </div>
+    </div>
+    <div class="Frame2">
+        <div class="DisplayTitle">회원 가입</div>
+    </div>
+    <div class="Frame3">
+        <form>
+            <div class="InputInfo">
+                <div class="Label">이메일</div>
+                <input id="email" , type="text" , placeholder="이메일을 입력해 주세요">
+            </div>
+            <div class="InputInfo">
+                <div class="Label">닉네임</div>
+                <input id="nickname" , type="text" , placeholder="닉네임을 입력해 주세요">
+            </div>
+            <div class="InputInfo">
+                <div class="Label">비밀번호</div>
+                <input id="password" , type="text" , placeholder="비밀번호를 입력해 주세요">
+            </div>
+            <button type="button" , onclick="validate()">
+                <div class="Text3">회원가입</div>
+            </button>
+        </form>
+    </div>
+</body>
+
+</html>
