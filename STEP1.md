@@ -168,6 +168,12 @@ $(document).ready(function () {
 });
 ```
 
+## 어려운점
+
+- 로컬 스토리지를 이용한 로그인-로그아웃 문제
+    - 아무래도 비동기화적으로 작동하여 생기는 문제 같음
+    - 코드 정리도 필요함
+
 ## References
 
 - [How TO - Include HTML](https://www.w3schools.com/howto/howto_html_include.asp)
