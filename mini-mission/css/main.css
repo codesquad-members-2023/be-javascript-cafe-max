@@ -32,7 +32,7 @@
     color: #4B5966;
 }
 
-.navigation button, .small-button {
+.navigation button, #button-and-search button, #footer-navigator .small-button{
     /* ButtonSmall */
 
 
@@ -56,9 +56,10 @@
     flex: none;
     order: 1;
     flex-grow: 0;
+    text-align: center;
 }
 
-header {
+#main-header {
     /* Hero */
 
 
@@ -498,3 +499,4 @@ li a {
 #search-bar input{
     border: none;
 }
+
