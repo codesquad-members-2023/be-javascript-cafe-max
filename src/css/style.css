@@ -201,6 +201,8 @@ h1, h5 {
 .list .title {
     width: 60%;
     text-align: left;
+    padding-left: 20px;
+    width: 580px;
 }
 
 .list .top .title {
