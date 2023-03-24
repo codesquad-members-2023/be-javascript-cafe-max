@@ -1,11 +1,17 @@
-let viewCount = 2;
 const board = JSON.parse(localStorage.getItem("board"));
-console.log(board)
 const urlParams = new URL(location.href).searchParams;
 const num = urlParams.get('num');
+let viewCount = board[num]["reply"].length;
 getContet();
 getReply();
 var count = board[num]["reply"].length;
+
+let temp = [];
+
+for(let j = 0; j<board[num]["reply"].length; j++){
+    if(board[num]["reply"][j]!=null)
+    temp.push(board[num]["reply"][j]);
+}
 
 
 
@@ -29,48 +35,70 @@ function getReply(){
     let replyarea = document.querySelector('.reply_list');
     let html ="";
     for(let i = 0; i<board[num]["reply"].length; i++) {
+
     html += '<div class="reply">'+
                 '<div class="reply_body">'+
                 '<span>'+board[num]["nickname"]+'</span>'+
-                '<span >'+board[num]["reply"][i]+'</span>'+
+                '<span id =id'+i+' >'+board[num]["reply"][i]+'</span>'+
                 '<span>'+createDate()+'</span>'+
-                '<button id= num'+i+' onclick = "deleteReply('+i+')" >삭제</button>'+
+                '<button class= "delete" >삭제</button>'+
                 '</div>'
-                +'</div>'
+                +'</div>';
     }
-    replyarea.innerHTML += html;
+    replyarea.innerHTML = html;
+    //document.querySelector('.delete').addEventListener("click",deleteReply);
+    deleteClass();
+
     document.getElementById('reply_count').innerHTML = "댓글 "+viewCount+"개";
 }
 
+function deleteClass(){
+    let items = document.querySelectorAll('.delete');
+    items.forEach(item => {
+        item.addEventListener('click',deleteReply);
+      })
+}
 
 
 function writeReply(){
     var reply = document.getElementById('reply_input');
     let replyarea = document.querySelector('.reply_list');
-    board[num]["reply"][count] = reply.value;
+     temp.push(reply.value);
+     board[num]["reply"] = temp;
     localStorage.setItem("board",JSON.stringify(board));
     let html ="";
     html += '<div class="reply">'+
                 '<div class="reply_body">'+
                 '<span>'+board[num]["nickname"]+'</span>'+
-                '<span >'+reply.value+'</span>'+
+                '<span id= id'+count+ '>'+reply.value+'</span>'+
                 '<span>'+createDate()+'</span>'+
-                '<button id= num'+count+' onclick = "deleteReply('+count+')" >삭제</button>'+
+                '<button class= "delete">삭제</button>'+
                 '</div>'
                 +'</div>'
     replyarea.innerHTML += html;
     reply.value = null;
     viewCount++;
+    deleteClass();
+
     document.getElementById('reply_count').innerHTML = "댓글 "+viewCount+"개";
     count++;
 }
 
-function deleteReply(i) {
-    let parent = document.getElementById('num'+i).parentNode.parentNode.parentNode;
-    let child  = document.getElementById('num'+i).parentNode.parentNode;
-    parent.removeChild(child);
+function deleteReply() { 
+    console.log(temp);
+    for(let k = 0; k < temp.length; k++) {
+        if(temp[k] == this.previousSibling.previousSibling.textContent)  {
+          temp.splice(k, 1);
+          k--;
+        }
+        }
+    board[num]["reply"] = temp;
+    localStorage.setItem("board",JSON.stringify(board));
+    console.log(localStorage.getItem("board"));
     viewCount--;
     document.getElementById('reply_count').innerHTML = "댓글 "+viewCount+"개";
+    getReply();
+
 }
 
 function createDate(){
