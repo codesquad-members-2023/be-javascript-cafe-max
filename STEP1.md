@@ -142,38 +142,6 @@ undefined
 {a: 1, b: 2}
 ```
 
-## 그룹리뷰 피드백
-
-- 회원가입 입력 실패시 제출하지 않고 페이지 그대로 유지하기 위해서 event.preventDefault() 호출합니다.
-
-```javascript
-$(document).ready(function () {
-  $("#signUpBtn").click(function (event) {
-    event.preventDefault();
-    checkSignupForm();
-  });
-});
-```
-
-## 그룹리뷰 피드백
-
-- 회원가입 입력 실패시 제출하지 않고 페이지 그대로 유지하기 위해서 event.preventDefault() 호출합니다.
-
-```javascript
-$(document).ready(function () {
-  $("#signUpBtn").click(function (event) {
-    event.preventDefault();
-    checkSignupForm();
-  });
-});
-```
-
-## 어려운점
-
-- 로컬 스토리지를 이용한 로그인-로그아웃 문제
-    - 아무래도 비동기화적으로 작동하여 생기는 문제 같음
-    - 코드 정리도 필요함
-
 ## References
 
 - [How TO - Include HTML](https://www.w3schools.com/howto/howto_html_include.asp)
