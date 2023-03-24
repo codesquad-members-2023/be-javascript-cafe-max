@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="join members" content="회원가입 페이지">
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="domain.js"></script>
+    <title>회원가입</title>
+</head>
+
+<body>
+<header>
+    <nav>
+        <div>HELLO JAVA!</div>
+        <a href="">로그인/회원가입</a>
+    </nav>
+</header>
+<div class="main"><h1>회원가입</h1></div>
+<div class="form-wrapper">
+    <form name="register-form" method="post" action="JoinComplete.html" autocomplete="off">
+        <label for="name"></label>
+        <input
+                type="text"
+                name="name"
+                id="name"
+                placeholder="이름을 입력해주세요"
+                required minlength="2"
+                maxlength="64">
+
+        <label for="email"></label>
+        <input
+                type="text"
+                id="email"
+                name="email"
+                placeholder="이메일을 입력해주세요"
+                required>
+        <span>@</span>
+        <select id="domain" name="domain" required onchange="showDomainInput()">
+            <option value="">도메인 선택</option>
+            <option value="other">직접 입력</option>
+            <option value="naver.com">naver.com</option>
+            <option value="gamil.com">gmail.com</option>
+            <option value="github.com">github.com</option>
+            <option value="kakao.com">kakao.com</option>
+        </select>
+        <div id="domainInput" style="display:none;">
+            <input
+                    type="text"
+                    id="otherDomain"
+                    name="otherDomain"
+                    placeholder="직접 입력">
+        </div> <br><br>
+
+        <label for="password"></label>
+        <input
+                type="password"
+                name="password"
+                id="password"
+                placeholder="비밀번호를 입력해주세요"
+                required minlength="8"
+                maxlength="32"
+                pattern="^(?=.*[a-z])(?=.*[0-9])[a-z0-9]{8,32}$">
+
+
+        <label class="form-label">
+            <span>성별</span> <br>
+            <input
+                    type="radio"
+                    name="gender"
+                    value="male"
+                    checked>남성
+        </label>
+        <label>
+            <input
+                    type="radio"
+                    name="gender"
+                    value="female">여성
+        </label> <br>
+
+        <label for="dtIp">생년월일</label>
+        <input
+                id="dtIp"
+                type="date"
+                min="1900-01-01"
+                max="2030-12-31"><br><br>
+
+        <input
+                type="submit"
+                value="회원가입">
+    </form>
+</div>
+</body>
+</html>
