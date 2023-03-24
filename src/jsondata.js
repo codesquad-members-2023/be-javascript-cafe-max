@@ -2,10 +2,10 @@ const board = JSON.parse(jsondata());
 createBoard();
 
 function jsondata() {
-    var board = new Array();
+    let board = new Array();
 		
-	for (var i = 0; i <= 50; i++) {
-		var data = new Object();
+	for (let i = 0; i <= 50; i++) {
+		let data = new Object();
 			
 		data.title = "게시물 제목 #"+ i;
 		data.nickname = "닉네임" + i;
@@ -19,8 +19,8 @@ function jsondata() {
 }
 
 function createBoard() {
-    var content = "";
-    for (var i = 0, j = 0; i < 8; i++, j++) {
+    let content = "";
+    for (let i = 0, j = 0; i < 8; i++, j++) {
         content += "<div class='column'>";
         content += "<div class='title'><a href='#'>" + board[i].title + "</a></div>";
         content += "<div class='writer'>" + board[i].nickname + "</div>";

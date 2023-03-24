@@ -1,6 +1,6 @@
 const check = [false, false, false];
 const writeCheck = [false, false];
-var user = {};
+let user = {};
 
 function verifyEmail() {
     const email = document.getElementById("email").value;
