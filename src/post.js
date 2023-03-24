@@ -5,22 +5,35 @@ function register() {
     let nickname = document.createElement("div");
     let input = document.createElement("div");
     let date = document.createElement("div");
+    let remove = document.createElement("button");
     
     wrap.classList.add("comment-in-wrap");
     nickname.classList.add("comment-nickname");
     input.classList.add("comment");
     date.classList.add("comment-date");
+    remove.classList.add("remove");
+    remove.classList.add("button");
+    remove.addEventListener("click", removeComment);
 
     nickname.innerText = "wisdom";
     input.innerText = comment;
     date.innerText = toStringDate();
+    remove.innerText = "Delete";
     
     document.querySelector(".comment-detail").appendChild(wrap);
-    document.querySelector(".comment-in-wrap").appendChild(nickname);
-    document.querySelector(".comment-in-wrap").appendChild(input);
-    document.querySelector(".comment-in-wrap").appendChild(date);
+    wrap.appendChild(nickname);
+    wrap.appendChild(input);
+    wrap.appendChild(date);
+    date.appendChild(remove);
 
     document.getElementById("comment-input").value = "";
+
+    count();
+}
+
+function removeComment() {
+    let remove = this.parentNode.parentNode;
+    remove.remove();
 
     count();
 }

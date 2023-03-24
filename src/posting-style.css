@@ -242,3 +242,13 @@ input:focus, textarea:focus {
 .pre-writing {
     margin-right: 30px;
 }
+
+.comment-date {
+    display: flex;
+    justify-content: space-between;
+}
+
+.remove {
+    width: 100px;
+    height: 30px;
+}
