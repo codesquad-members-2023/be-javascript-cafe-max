@@ -1,10 +1,11 @@
 import {members} from "./members.js";
 
 $(document).ready(function () {
-  document.querySelector("#loginBtn").addEventListener("click", checkLogin)
+
+  document.querySelector("#loginBtn").addEventListener("click", validateLogin)
 })
 
-function checkLogin(event) {
+function validateLogin(event) {
   event.preventDefault()
   const email = $("#email").val()
   const pwd = $("#pwd").val()

@@ -11,7 +11,7 @@ window.onload = async function () {
   const currentPage = await parsingCurrentPage()
   const page = new Page(currentPage, 5, 10, posts.length())
 
-  // 로그인 여부에 따른 헤더 출력
+  // 로그인 영역 출력
   checkLogin()
 
   // 게시글 출력

@@ -1,11 +1,15 @@
 import {members} from "./members.js";
 import {Post} from "./post.js";
 import {Posts, createPosts} from "./posts.js";
+import {checkLogin} from "./header.js";
 
 $(document).ready(async function () {
   const datas = await createPosts()
   const posts = new Posts(datas)
   const loginEmail = localStorage.getItem("loginMember")
+
+  // 로그인 영역 출력
+  await checkLogin()
 
   $("#writeBtn").click(async function (event) {
     event.preventDefault()

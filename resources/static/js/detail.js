@@ -1,6 +1,9 @@
 import {createPosts, Posts} from "./posts.js";
+import {checkLogin} from "./header.js";
 
 window.onload = async function () {
+  checkLogin()
+
   const id = validateParam()
   const post = await findPostById(id)
   outputPost(post)

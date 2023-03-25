@@ -30,4 +30,4 @@ function includeHTML() {
   }
 }
 
-includeHTML();
+includeHTML()
