@@ -48,5 +48,13 @@ function getList() {
 }
 
 function movePage(i) {
+    viewCountPlus(i);
     location.href ="../board/boardinfo.html?num="+i;
+}
+
+function viewCountPlus(i){
+    let temp = [];
+    temp = jsonList;
+    temp[i].viewcount +=1 ;
+    localStorage.setItem("board",JSON.stringify(temp));
 }
