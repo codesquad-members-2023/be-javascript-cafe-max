@@ -15,8 +15,6 @@ for(let j = 0; j<board[num]["reply"].length; j++){
         };
         temp.push(data);
         console.log(temp);
-        // temp.push(board[num]["reply"][j]);
-
     }
 }
 
@@ -41,15 +39,18 @@ function getReply(){
     var reply = document.getElementById('reply_input');
     let replyarea = document.querySelector('.reply_list');
     let html ="";
+    let button = "";
     replyLabel();
     for(let i = 0; i<board[num]["reply"].length; i++) {
-
+    if(localStorage.getItem('loginInfo').split("@")[0] ==board[num]["reply"][i]["writer"] ){
+        button = '<button class= "delete" >삭제</button>'
+    }
     html += '<div class="reply">'+
                 '<div class="reply_body">'+
                 '<span>'+board[num]["reply"][i]["writer"]+'</span>'+
                 '<span>'+board[num]["reply"][i]["content"]+'</span>'+
                 '<span>'+board[num]["reply"][i]["date"]+'</span>'+
-                '<button class= "delete" >삭제</button>'+
+                button+
                 '</div>'
                 +'</div>';
     }
