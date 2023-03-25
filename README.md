@@ -101,6 +101,17 @@ localstorage의 value 값을 set 해줄 때 타입을 신경 안 쓰고 get, set
 GitHub 배포 URL
 https://doekyong.github.io/be-javascript-cafe-max/
 
+로컬 스토리지는 세션과 달리 브라우저를 닫아도 남아있기 때문에 접속을 했다면 브라우저를 닫기 전에
+
+크롬 기준 개발자도구 -> Application -> local Storage 하위 항목우클릭 clear 해야 사라짐
+
+창을 닫을 때 지워주세요 ~
+
+<img width="1440" alt="image" src="https://user-images.githubusercontent.com/100547825/227740463-5de117ac-b49a-46c0-a148-a5e97b4447ba.png">
+
+
+
+
 댓글 관련 기능을 구현하면서 가지고 있던 json 파일의 형태를 계속 바꿔줘야 해서 힘들었다.
 
 또 변경이 있으면 로컬 스토리지를 복사해서 변경을 해준 후 다시 덮어쓰기 방식으로 구현해야 해서 비효율적이었던 것 같다.
