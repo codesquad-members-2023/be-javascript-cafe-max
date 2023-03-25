@@ -18,25 +18,6 @@ function loadBoardDataJson() {
 
 getList();
 
-// function makeJson() {
-//     let jsonList = new Array() ;
-//     for(let i=0; i<7; i++){        
-//         let data = new Object() ;
-//         data.title = i+"번 게시물 입니다." ;
-//         data.nickname = "유저" + i ;
-//         data.date = "2023.12.25",
-//         data.viewcount = i;
-//         data.content = "글";
-//         data.reply =[];        
-//         jsonList.push(data) ;
-//     }
-//     console.log(jsonList);
-//     let jsonData = JSON.stringify(jsonList);
-//     console.log(jsonData);
-//     localStorage.setItem("board",jsonData);    
-//     return jsonList;
-// }
-
 function getlogOut(){
    const name =  localStorage.getItem("loginInfo")
     if(localStorage.getItem("loginInfo")!= null) {
@@ -50,10 +31,10 @@ document.getElementById('logout').addEventListener('click',function(){
 });
 
 function getList() {
-
     getlogOut();
+    let length = jsonList.length-1;
     let html = "";
-    for(let i = 0; i<jsonList.length; i++) {
+    for(let i = jsonList.length-1; i>=length-14; i--) {
         html +=
         '<tr class="td_line" id = line'+i+' onclick="movePage('+i+')">'+
         '<td class="title">'+jsonList[i]["title"]+'</td>'+
