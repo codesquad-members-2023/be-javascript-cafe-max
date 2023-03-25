@@ -41,6 +41,7 @@ function getReply(){
     var reply = document.getElementById('reply_input');
     let replyarea = document.querySelector('.reply_list');
     let html ="";
+    replyLabel();
     for(let i = 0; i<board[num]["reply"].length; i++) {
 
     html += '<div class="reply">'+
@@ -125,4 +126,45 @@ function createDate(){
     var minutes = ('0' + today.getMinutes()).slice(-2);
     var seconds = ('0' + today.getSeconds()).slice(-2);
     return year + '-' + month  + '-' + day +"   "+ hours + ':' + minutes  + ':' + seconds;
+}
+
+function replyLabel(){
+    let label = document.getElementById('form').firstElementChild;
+    console.log(label);
+    const name = localStorage.getItem("loginInfo").split("@")[0];
+    label.innerHTML = name
+}
+
+document.getElementById('exit').addEventListener("click",function(){
+    location.href = "../main/main.html";
+});
+
+document.getElementsByClassName('move_button')[0].addEventListener('click',function(){
+    if(num == board.length-1){
+        alert("이전글이 존재하지 않습니다.");
+        return "#";
+    }
+    let prePage = Number(num)+1;
+    viewCountPlus(prePage);
+    return  location.href ="../board/boardinfo.html?num="+prePage;
+});
+
+document.getElementsByClassName('move_button')[1].addEventListener('click',function(){
+    if(num == 0){
+        alert("다음글이 존재하지 않습니다.");
+        return "#";
+    }
+    let prePage = Number(num)-1;
+    viewCountPlus(prePage);
+    return  location.href ="../board/boardinfo.html?num="+prePage;
+});
+
+
+
+function viewCountPlus(i){
+    console.log(board.length);
+    let temp = [];
+    temp = board;
+    temp[i].viewcount +=1 ;
+    localStorage.setItem("board",JSON.stringify(temp));
 }
