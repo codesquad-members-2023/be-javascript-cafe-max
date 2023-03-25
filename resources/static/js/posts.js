@@ -25,6 +25,21 @@ class Posts {
     return this._posts.slice(startIndex, endIndex)
   }
 
+  createId() {
+    let maxId = 0
+    for (let i = 0; i < this._posts.length; i++) {
+      if (this._posts[i].id > maxId) {
+        maxId = this._posts[i].id
+      }
+    }
+    return maxId + 1
+  }
+
+  findById(id) {
+    return this._posts.filter((item) => {
+      return parseInt(item.id) === parseInt(id)
+    })
+  }
 }
 
 async function createPosts() {
