@@ -5,12 +5,19 @@ let viewCount = board[num]["reply"].length;
 getContet();
 getReply();
 var count = board[num]["reply"].length;
-
 let temp = [];
-
 for(let j = 0; j<board[num]["reply"].length; j++){
-    if(board[num]["reply"][j]!=null)
-    temp.push(board[num]["reply"][j]);
+    if(board[num]["reply"][j]!=null){
+        let data = {
+            "writer" : board[num]["reply"][j]["writer"],
+            "content" : board[num]["reply"][j]["content"],
+            "date" : board[num]["reply"][j]["date"]
+        };
+        temp.push(data);
+        console.log(temp);
+        // temp.push(board[num]["reply"][j]);
+
+    }
 }
 
 
@@ -38,9 +45,9 @@ function getReply(){
 
     html += '<div class="reply">'+
                 '<div class="reply_body">'+
-                '<span>'+board[num]["nickname"]+'</span>'+
-                '<span id =id'+i+' >'+board[num]["reply"][i]+'</span>'+
-                '<span>'+createDate()+'</span>'+
+                '<span>'+board[num]["reply"][i]["writer"]+'</span>'+
+                '<span>'+board[num]["reply"][i]["content"]+'</span>'+
+                '<span>'+board[num]["reply"][i]["date"]+'</span>'+
                 '<button class= "delete" >삭제</button>'+
                 '</div>'
                 +'</div>';
@@ -63,18 +70,24 @@ function deleteClass(){
 function writeReply(){
     var reply = document.getElementById('reply_input');
     let replyarea = document.querySelector('.reply_list');
-     temp.push(reply.value);
+    const name = localStorage.getItem("loginInfo").split("@")[0];
+    let data ={
+        writer : name,
+        content : reply.value,
+        date : createDate()
+    }
+    temp.push(data);
      board[num]["reply"] = temp;
     localStorage.setItem("board",JSON.stringify(board));
     let html ="";
     html += '<div class="reply">'+
                 '<div class="reply_body">'+
-                '<span>'+board[num]["nickname"]+'</span>'+
-                '<span id= id'+count+ '>'+reply.value+'</span>'+
+                '<span>'+name+'</span>'+
+                '<span>'+reply.value+'</span>'+
                 '<span>'+createDate()+'</span>'+
                 '<button class= "delete">삭제</button>'+
                 '</div>'
-                +'</div>'
+                +'</div>';
     replyarea.innerHTML += html;
     reply.value = null;
     viewCount++;
@@ -87,16 +100,18 @@ function writeReply(){
 function deleteReply() { 
     console.log(temp);
     for(let k = 0; k < temp.length; k++) {
-        if(temp[k] == this.previousSibling.previousSibling.textContent)  {
+        if(temp[k]["content"] == this.previousSibling.previousSibling.textContent)  {
+            console.log(temp[k]);
           temp.splice(k, 1);
           k--;
         }
-        }
+    }
     board[num]["reply"] = temp;
     localStorage.setItem("board",JSON.stringify(board));
     console.log(localStorage.getItem("board"));
     viewCount--;
     document.getElementById('reply_count').innerHTML = "댓글 "+viewCount+"개";
+
     getReply();
 
 }
