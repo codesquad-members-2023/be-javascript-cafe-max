@@ -38,6 +38,32 @@ console.log(div.outerHTML);
 // "<div><span></span></div>"
 ```
 
+## 자바스크립트 날짜와 시간 참조 및 포맷팅
+
+```javascript
+const today = new Date() // "2023-03-25T05:20:13.830Z"
+console.log(today.toLocaleDateString()) // "2023. 3. 25.
+```
+
+```javascript
+const now = new Date(); // 현재 시간
+
+const year = now.getFullYear(); // 현재 연도
+const month = now.getMonth() + 1; // 현재 월 (0부터 시작하므로 1을 더해줌)
+const date = now.getDate(); // 현재 일
+const day = now.getDay(); // 현재 요일 (0부터 시작하며 일요일은 0, 토요일은 6)
+
+const hours = now.getHours(); // 현재 시간 (24시간 표기법)
+const minutes = now.getMinutes(); // 현재 분
+const seconds = now.getSeconds(); // 현재 초
+const milliseconds = now.getMilliseconds(); // 현재 밀리초
+
+const formattedDateTime = `${year}-${month.toString().padStart(2, '0')}-${date.toString().padStart(
+    2, '0')} ${hours.toString().padStart(2, '0')}:${minutes.toString().padStart(2,
+    '0')}:${seconds.toString().padStart(2, '0')}`;
+console.log(formattedDateTime); // 예시 출력: "2022-03-21 16:34:25"
+```
+
 ## References
 
 - [How TO - Include HTML](https://www.w3schools.com/howto/howto_html_include.asp)
