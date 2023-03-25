@@ -43,7 +43,8 @@ var loginInfo = [];
             return;
         }
         const form = document.getElementById("form");
-        form.action = '../main/main.html';
+        form.action = 'main/main.html';
         localStorage.setItem("loginInfo",loginInfo);
+
         form.submit();  
     });
