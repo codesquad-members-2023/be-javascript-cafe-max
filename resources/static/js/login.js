@@ -1,3 +1,9 @@
+import {members} from "./members.js";
+
+$(document).ready(function () {
+  document.querySelector("#loginBtn").addEventListener("click", checkLogin)
+})
+
 function checkLogin(event) {
   event.preventDefault()
   const email = $("#email").val()
@@ -12,8 +18,7 @@ function checkLogin(event) {
 }
 
 function checkMember(email, pwd) {
-  const memberInfos = JSON.parse(localStorage.getItem("memberInfos"))
-  const member = memberInfos.find((member) => member.email === email)
+  const member = members.findEmail(email)
 
   return member.email === email && member.pwd === pwd
 }

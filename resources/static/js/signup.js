@@ -1,26 +1,9 @@
-class Member {
-  #email
-  #nickname
-  #pwd
+import {members} from "./members.js";
+import Member from "./member.js";
 
-  constructor(email, nickname, pwd) {
-    this.#email = email;
-    this.#nickname = nickname;
-    this.#pwd = pwd;
-  }
+function checkSignupForm(event) {
+  event.preventDefault()
 
-  toJSON() {
-    return {
-      email: this.#email,
-      nickname: this.#nickname,
-      pwd: this.#pwd
-    }
-  }
-}
-
-const memberInfos = getSavedMemberInfos()
-
-function checkSignupForm() {
   const email = $("#email").val();
   const nickname = $("#nickname").val();
   const pwd = $("#pwd").val();
@@ -50,7 +33,7 @@ function checkSignupForm() {
     return false
   }
 
-  saveMemberInfo(new Member(email, nickname, pwd))
+  members.add(new Member(email, nickname, pwd))
   alert("회원가입에 성공하였습니다.")
   localStorage.setItem("signup_success_email", email)
   document.signupForm.submit()
@@ -73,34 +56,17 @@ function isPassword(value) {
   return regExp.test(value);
 }
 
+// 이메일이 중복되었는지 확인합니다.
 function isDuplicatedEmail(email) {
-  console.log(memberInfos.find((memberInfo) => memberInfo.email === email))
-  return memberInfos.find((memberInfo) => memberInfo.email === email)
-      !== undefined
+  return members.findEmail(email) !== undefined
 }
 
+// 닉네임이 중복되었는지 확인합니다.
 function isDuplicatedNickname(nickname) {
-  return memberInfos.find((memberInfo) => memberInfo.nickname === nickname)
-      !== undefined
-}
-
-function getSavedMemberInfos() {
-  const memberInfosJSON = localStorage.getItem("memberInfos")
-  try {
-    return memberInfosJSON ? JSON.parse(memberInfosJSON) : []
-  } catch {
-    return []
-  }
-}
-
-function saveMemberInfo(member) {
-  memberInfos.push(member.toJSON())
-  localStorage.setItem("memberInfos", JSON.stringify(memberInfos))
+  return members.findNickname(nickname) !== undefined
 }
 
 $(document).ready(function () {
-  $("#signUpBtn").click(function (event) {
-    event.preventDefault();
-    checkSignupForm();
-  });
+  document.querySelector("#signUpBtn").addEventListener("click",
+      checkSignupForm)
 });

@@ -1,7 +1,9 @@
 .header {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   padding: 25px 0;
+  margin: 0 auto;
+  width: 1000px;
 }
 
 .header .header_title_container {
@@ -16,9 +18,8 @@
 
 .header .header_signup_container {
   display: flex;
-  justify-content: center;
+  justify-content: right;
   align-items: center;
-  width: 125px;
   height: 50px;
 }
 
@@ -30,3 +31,4 @@
   color: white;
   font-size: 14px;
 }
+

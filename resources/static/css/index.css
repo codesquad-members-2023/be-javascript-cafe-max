@@ -43,3 +43,21 @@
   background-color: #fff;
   border: none;
 }
+
+.board_container .board_footer {
+  display: flex;
+  justify-content: space-between;
+}
+
+.board_container .board_footer .board_btn {
+  display: flex;
+}
+
+.board_container .board_footer .board_btn input {
+  border: none;
+  border-bottom: 1px #D2DAE0 solid;
+}
+
+.board_container .board_footer .board_btn input:focus {
+  outline: none;
+}
