@@ -5,7 +5,8 @@ import {checkLogin} from "./header.js";
 import {Posts, createPosts} from "./posts.js";
 
 window.onload = async function () {
-  const datas = await createPosts()
+  let datas = await createPosts()
+  datas = filterPostByTitle(datas)
   const posts = new Posts(datas)
   const currentPage = await parsingCurrentPage()
   const page = new Page(currentPage, 5, 10, posts.length())
@@ -24,5 +25,19 @@ window.onload = async function () {
   const countOfPost = document.querySelector("#countOfPost")
   countOfPost.textContent = posts.length()
 
+  // 검색 버튼 이벤트 등록
+  document.querySelector("#searchBtn").addEventListener("click", function () {
+    const content = $("#search_content").val()
+    location.href = "/cafe/resources/index.html?content=" + content
+  })
+}
+
+function filterPostByTitle(datas) {
+  let params = new URLSearchParams(location.search);
+  const content = params.get("content")
+  if (content != null) {
+    return datas.filter((item) => item.title.includes(content))
+  }
+  return datas
 }
 
