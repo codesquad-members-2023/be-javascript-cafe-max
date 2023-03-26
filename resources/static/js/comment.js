@@ -1,21 +1,24 @@
 class Comment {
+  #id
   #commenter
   #content
-  #regdate
+  #regDate
   #postId
 
-  constructor(commenter, content, regdate, postId) {
+  constructor(id, commenter, content, regDate, postId) {
+    this.#id = id
     this.#commenter = commenter
     this.#content = content
-    this.#regdate = regdate
+    this.#regDate = regDate
     this.#postId = postId
   }
 
   toJSON() {
     return {
+      id: this.#id,
       commenter: this.#commenter,
       content: this.#content,
-      regdate: this.#regdate,
+      regDate: this.#regDate,
       postId: this.#postId
     }
   }
