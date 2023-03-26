@@ -20,7 +20,7 @@ $(document).ready(async function () {
       const regDate = new Date()
       const newPost = new Post(id, title, content, writer, regDate)
       await writePost(posts, newPost)
-      location.href = "/cafe/resources/index.html"
+      location.href = "/cafe/index.html"
     }
   });
 })

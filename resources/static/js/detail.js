@@ -41,7 +41,7 @@ function validateParam() {
   const params = new URLSearchParams(location.search)
   const id = params.get("id")
   if (id == null) {
-    location.href = "/cafe/resources/index.html"
+    location.href = "/cafe/index.html"
   }
   return id
 }
