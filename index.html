@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
-    <form id="form">
+    <form id="form" onsubmit="return false";>
         <div class="wrap">
             
             <div class="nav">
@@ -24,24 +24,24 @@
             <div id="input_area">
                 <div class="input_info">
                     <label>이메일</label>
-                    <div><input id="email" type="text" placeholder="이메일을 입력해주세요."></div>
+                    <div><input id="email" type="text" placeholder="아무 이메일이나 입력해도 됨"></div>
                     <span id="error_email"></span>
                 </div>
                 <div class="input_info">
                     <label>비밀번호</label>
-                    <div><input id="password" type="password" placeholder="비밀번호를 입력해주세요."></div>
+                    <div><input id="password" type="password" placeholder="아무거나 쳐도 됨"></div>
                 <span id="error_password"></span>
 
                 </div>
                 <div class="button_area">
                 <button class="button_large" id="login_button" type="button">로그인</button>
-                <div><span>아직 회원가입을 안하셨나요?</span><a href="../signup/signup.html"><span>&nbsp;회원가입하기</span></a></div>
+                <div><span>아직 회원가입을 안하셨나요?</span><a href="signup/signup.html"><span>&nbsp;회원가입하기</span></a></div>
                 </div>
                 
             </div>
         </div>
         </form>
-        <script src="../js/login.js"></script>
+        <script src="js/login.js"></script>
 
 </body>
 </html>

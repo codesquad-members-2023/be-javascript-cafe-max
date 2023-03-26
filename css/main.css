@@ -346,6 +346,7 @@ flex-grow: 0;
     order: 2;
     align-self: stretch;
     flex-grow: 0;
+    padding-bottom: 40px;
 }
 
 .page_area{
@@ -436,3 +437,7 @@ color: #FFFFFF;
 #write:hover {
     background-color: #000;
 }
+
+#page_number{
+    padding-left: 0px;
+    padding-right: 40px;}

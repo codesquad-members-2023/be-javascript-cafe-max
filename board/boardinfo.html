@@ -54,6 +54,7 @@
                 <form id="form">
                 <label>user</label>
                 <span><input id="reply_input" type="text"></span>
+                <input type="text" style="display:none;">
                 <button id="write_button" type="button" onclick="writeReply()">글작성</button>
                 </form>
             </div>
@@ -65,8 +66,8 @@
         <!--                   footer_start                          -->
         <div class="info_footer">
             <div class="move_button_area">
-                <button class="move_button" type="button">이전글: {글제목} </button>
-                <button class="move_button" type="button">다음글: {글제목} </button>
+                <button class="move_button" type="button">이전글</button>
+                <button class="move_button" type="button">다음글</button>
             </div>
             <button id="exit">목록으로</button>
         </div>
