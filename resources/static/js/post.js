@@ -7,7 +7,6 @@ class Post {
     this.author = author;
     this.date = date;
     this.views = 0;
-    this.comments = []
   }
 }
 

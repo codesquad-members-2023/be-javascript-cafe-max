@@ -12,12 +12,6 @@ class Posts {
     localStorage.setItem("posts", JSON.stringify(this.#posts))
   }
 
-  addComment(id, comment) {
-    const post = this.findById(id)
-    post.comments.push(comment.toJSON())
-    localStorage.setItem("posts", JSON.stringify(this.#posts))
-  }
-
   get posts() {
     return this.#posts;
   }

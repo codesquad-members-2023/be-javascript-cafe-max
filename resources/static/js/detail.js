@@ -1,4 +1,4 @@
-import {posts} from "./common.js";
+import {posts, comments} from "./common.js";
 import {checkLogin} from "./header.js";
 import {members} from "./common.js";
 import {Comment} from "./comment.js";
@@ -13,6 +13,14 @@ window.onload = async function () {
 
   // 댓글작성 버튼 클릭시 닉네임, 내용, 작성일자를 입력으로 받아 댓글을 작성합니다.
   $("#writeBtn").click(clickWriteBtn)
+
+  // 삭제 버튼 이벤트 등록
+  const comment_delBtn = $(".comment_delBtn")
+  comment_delBtn.each((idx, item) => {
+    const postId = $(item).data("postid")
+    const commentId = $(item).data("commentid")
+    $(item).click(() => clickDeleteBtn(postId, commentId))
+  })
 
   // TODO: 다음글 이벤트 등록
 }
@@ -39,9 +47,12 @@ function toLocalDate(date) {
 }
 
 async function outputComment(postId) {
-  const comments = posts.findById(postId).comments
-  // 댓글 생성
-  document.querySelector("#comment_list").replaceWith(buildComments(comments))
+  const commentsByPostId = await comments.findAllByPostId(postId)
+  if (commentsByPostId !== undefined) {
+    // 댓글 생성
+    document.querySelector("#comment_list").replaceWith(
+        buildComments(commentsByPostId))
+  }
 
   // 댓글작성 작성자 아이디 출력
   document.querySelector("#commenter").textContent = members.findByEmail(
@@ -67,10 +78,10 @@ function buildComment(comment) {
               <p>${comment.content}</p>
             </div>
             <div aria-label="댓글 작성일자" class="comment_item_regdate">
-              <label>${toLocalDateTime(comment.regdate)}</label>
+              <label>${toLocalDateTime(comment.regDate)}</label>
             </div>
             <div aria-label="댓글 삭제 버튼영역" class="d-flex justify-content-end">
-              <button class="btn btn-primary comment_delBtn">삭제</button>
+              <button class="btn btn-primary comment_delBtn" data-commentid="${comment.id}" data-postid="${comment.postId}">삭제</button>
             </div>
           </div>
           `
@@ -78,23 +89,29 @@ function buildComment(comment) {
 }
 
 function toLocalDateTime(date) {
-  const regdate = new Date(date)
-  return `${regdate.getFullYear()}. 
-          ${(regdate.getMonth() + 1).toString().padStart(2, '0')}. 
-          ${regdate.getDate().toString().padStart(2, '0')}. 
-          ${regdate.getHours().toString().padStart(2, '0')}:
-          ${regdate.getMinutes().toString().padStart(2, '0')}`
+  const regDate = new Date(date)
+  return `${regDate.getFullYear()}. 
+          ${(regDate.getMonth() + 1).toString().padStart(2, '0')}. 
+          ${regDate.getDate().toString().padStart(2, '0')}. 
+          ${regDate.getHours().toString().padStart(2, '0')}:
+          ${regDate.getMinutes().toString().padStart(2, '0')}`
 }
 
 async function clickWriteBtn(event) {
   event.preventDefault()
+  const id = comments.nextId()
   const commenter = $("#commenter").text()
   const content = $("#comment_content").val()
-  const regdate = new Date()
+  const regDate = new Date()
   const postId = validateParam()
 
-  const comment = new Comment(commenter, content, regdate, postId)
-  posts.addComment(postId, comment)
+  const comment = new Comment(id, commenter, content, regDate, postId)
+  comments.add(comment)
+  location.href = "/cafe/resources/board/detail.html?id=" + postId
+}
+
+function clickDeleteBtn(postId, id) {
+  comments.remove(id)
   location.href = "/cafe/resources/board/detail.html?id=" + postId
 }
 
