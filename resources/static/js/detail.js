@@ -146,15 +146,15 @@ async function clickWriteBtn(event) {
 
   const comment = new Comment(id, commenter, content, regDate, postId)
   comments.add(comment)
-  location.href = "/resources/board/detail.html?id=" + postId
+  location.href = "/be-javascript-cafe-max/resources/board/detail.html?id=" + postId
 }
 
 function clickDeleteBtn(postId, id) {
   comments.remove(id)
-  location.href = "/resources/board/detail.html?id=" + postId
+  location.href = "/be-javascript-cafe-max/resources/board/detail.html?id=" + postId
 }
 
 function clickPostBtn(postId) {
-  location.href = "/resources/board/detail.html?id=" + postId
+  location.href = "/be-javascript-cafe-max/resources/board/detail.html?id=" + postId
 }
 

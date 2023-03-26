@@ -7,6 +7,6 @@ $(document).ready(() => {
   $("#nickname").val(member.nickname)
 
   $("#loginBtn").click(() => {
-    location.href = "/resources/user/login.html";
+    location.href = "/be-javascript-cafe-max/resources/user/login.html";
   });
 });
