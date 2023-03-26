@@ -1,5 +1,6 @@
 import {getMembers} from "./members.js";
 import {getPosts} from "./posts.js";
+import {getComments} from "./comments.js";
 
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
@@ -36,4 +37,5 @@ function includeHTML() {
 includeHTML()
 let members = getMembers()
 let posts = await getPosts()
-export {members, posts}
+let comments = await getComments()
+export {members, posts, comments}
