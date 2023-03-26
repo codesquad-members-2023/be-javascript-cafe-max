@@ -1,6 +1,6 @@
 function logout() {
   localStorage.removeItem("loginMember")
-  location.href = "/cafe/resources/user/login.html"
+  location.href = "/resources/user/login.html"
 }
 
 

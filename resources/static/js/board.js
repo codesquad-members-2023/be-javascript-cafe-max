@@ -24,7 +24,7 @@ function buildBoard(posts, page) {
 function buildBoardPost(post) {
   const row = document.createElement("tr")
   row.innerHTML = `
-    <td class="board_table_title"><a href="/cafe/resources/board/detail.html?id=${post.id}">${post.title}</a></td>
+    <td class="board_table_title"><a href="/resources/board/detail.html?id=${post.id}">${post.title}</a></td>
     <td>${post.author}</td>
     <td>${toLocalDate(post.date)}</td>
     <td>${post.views}</td>

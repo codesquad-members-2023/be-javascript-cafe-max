@@ -41,7 +41,7 @@ function validateParam() {
   const params = new URLSearchParams(location.search)
   const id = params.get("id")
   if (id == null) {
-    location.href = "/cafe/index.html"
+    location.href = "/index.html"
   }
   return id
 }
@@ -146,15 +146,15 @@ async function clickWriteBtn(event) {
 
   const comment = new Comment(id, commenter, content, regDate, postId)
   comments.add(comment)
-  location.href = "/cafe/resources/board/detail.html?id=" + postId
+  location.href = "/resources/board/detail.html?id=" + postId
 }
 
 function clickDeleteBtn(postId, id) {
   comments.remove(id)
-  location.href = "/cafe/resources/board/detail.html?id=" + postId
+  location.href = "/resources/board/detail.html?id=" + postId
 }
 
 function clickPostBtn(postId) {
-  location.href = "/cafe/resources/board/detail.html?id=" + postId
+  location.href = "/resources/board/detail.html?id=" + postId
 }
 
