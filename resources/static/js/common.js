@@ -2,7 +2,7 @@ import {getMembers} from "./members.js";
 import {getPosts} from "./posts.js";
 import {getComments} from "./comments.js";
 
-function includeHTML() {
+async function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
   z = document.getElementsByTagName("*");
@@ -34,8 +34,8 @@ function includeHTML() {
   }
 }
 
-includeHTML()
-let members = getMembers()
+await includeHTML()
+let members = await getMembers()
 let posts = await getPosts()
 let comments = await getComments()
 export {members, posts, comments}

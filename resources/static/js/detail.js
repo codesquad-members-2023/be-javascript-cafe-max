@@ -8,8 +8,9 @@ window.onload = async function () {
 
   const id = validateParam()
   const post = posts.findById(id)
-  outputPost(post)
+  await outputPost(post)
   await outputComment(id)
+  await outputPostBtn(post)
 
   // 댓글작성 버튼 클릭시 닉네임, 내용, 작성일자를 입력으로 받아 댓글을 작성합니다.
   $("#writeBtn").click(clickWriteBtn)
@@ -22,7 +23,10 @@ window.onload = async function () {
     $(item).click(() => clickDeleteBtn(postId, commentId))
   })
 
-  // TODO: 다음글 이벤트 등록
+  // 이전글/다음글 이벤트 등록
+  $("#prevPostBtn").click(() => clickPostBtn(parseInt(post.id) - 1))
+  $("#nextPostBtn").click(() => clickPostBtn(parseInt(post.id) + 1))
+
 }
 
 function validateParam() {
@@ -51,7 +55,7 @@ async function outputComment(postId) {
   if (commentsByPostId !== undefined) {
     // 댓글 생성
     document.querySelector("#comment_list").replaceWith(
-        buildComments(commentsByPostId))
+        await buildComments(commentsByPostId))
   }
 
   // 댓글작성 작성자 아이디 출력
@@ -59,16 +63,33 @@ async function outputComment(postId) {
       localStorage.getItem("loginMember")).nickname
 }
 
-function buildComments(comments) {
+async function outputPostBtn(post) {
+  const prevPost = posts.findById(parseInt(post.id) - 1)
+  const nextPost = posts.findById(parseInt(post.id) + 1)
+  const postMoveBtnContainer = $("#postMoveBtnContainer")[0]
+
+  if (prevPost !== undefined) {
+    postMoveBtnContainer.innerHTML += `<button class="btn btn-primary" id="prevPostBtn">이전 글: <span id="prev_post_title">${prevPost.title}</span></button>`
+  }
+  if (nextPost !== undefined) {
+    postMoveBtnContainer.innerHTML += `<button class="btn btn-primary" id="nextPostBtn">다음 글: <span id="next_post_title">${nextPost.title}</span></button>`
+  }
+}
+
+async function buildComments(comments) {
   const ul = document.createElement("ul")
-  comments.forEach(item => {
-    ul.appendChild(buildComment(item))
-  })
+  for (const item of comments) {
+    ul.appendChild(await buildComment(item))
+  }
   return ul
 }
 
-function buildComment(comment) {
+async function buildComment(comment) {
   const li = document.createElement("li")
+  const loginMember = await members.findByEmail(
+      localStorage.getItem("loginMember"))
+  const loginNickname = loginMember !== undefined ? loginMember.nickname
+      : undefined
   li.innerHTML = `
             <div class="comment_item">
             <div aria-label="댓글 작성자 이름" class="comment_item_writer">
@@ -80,7 +101,8 @@ function buildComment(comment) {
             <div aria-label="댓글 작성일자" class="comment_item_regdate">
               <label>${toLocalDateTime(comment.regDate)}</label>
             </div>
-            <div aria-label="댓글 삭제 버튼영역" class="d-flex justify-content-end">
+            <div aria-label="댓글 삭제 버튼영역" class="d-flex justify-content-end ${comment.commenter
+  !== loginNickname ? 'hidden' : ''}">
               <button class="btn btn-primary comment_delBtn" data-commentid="${comment.id}" data-postid="${comment.postId}">삭제</button>
             </div>
           </div>
@@ -112,6 +134,10 @@ async function clickWriteBtn(event) {
 
 function clickDeleteBtn(postId, id) {
   comments.remove(id)
+  location.href = "/cafe/resources/board/detail.html?id=" + postId
+}
+
+function clickPostBtn(postId) {
   location.href = "/cafe/resources/board/detail.html?id=" + postId
 }
 
