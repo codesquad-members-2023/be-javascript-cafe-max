@@ -5,7 +5,6 @@ class Posts {
 
   constructor(posts) {
     this.#posts = posts;
-    this._posts = posts;
   }
 
   add(post) {
@@ -13,30 +12,36 @@ class Posts {
     localStorage.setItem("posts", JSON.stringify(this.#posts))
   }
 
+  addComment(postId, comment) {
+    const post = this.findById(postId)[0]
+    post.comments.push(comment.toJSON())
+    localStorage.setItem("posts", JSON.stringify(this.#posts))
+  }
+
   get posts() {
-    return this._posts;
+    return this.#posts;
   }
 
   length() {
-    return this._posts.length
+    return this.#posts.length
   }
 
   slice(startIndex, endIndex) {
-    return this._posts.slice(startIndex, endIndex)
+    return this.#posts.slice(startIndex, endIndex)
   }
 
   createId() {
     let maxId = 0
-    for (let i = 0; i < this._posts.length; i++) {
-      if (this._posts[i].id > maxId) {
-        maxId = this._posts[i].id
+    for (let i = 0; i < this.#posts.length; i++) {
+      if (this.#posts[i].id > maxId) {
+        maxId = this.#posts[i].id
       }
     }
     return maxId + 1
   }
 
   findById(id) {
-    return this._posts.filter((item) => {
+    return this.#posts.filter((item) => {
       return parseInt(item.id) === parseInt(id)
     })
   }

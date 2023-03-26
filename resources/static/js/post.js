@@ -7,6 +7,7 @@ class Post {
     this.author = author;
     this.date = date;
     this.views = 0;
+    this.comments = []
   }
 
   toJSON() {
@@ -16,7 +17,8 @@ class Post {
       content: this.content,
       author: this.author,
       date: this.date,
-      views: this.views
+      views: this.views,
+      comments: this.comments
     }
   }
 
