@@ -25,19 +25,8 @@
   <div class="detail_comment">
     <div class="detail_comment_count"><label>댓글<span>1</span>개</label></div>
     <div class="detail_list">
-      <ul>
+      <ul id="comment_list">
         <li>
-          <div class="comment_item">
-            <div aria-label="댓글 작성자 이름" class="comment_item_writer">
-              <label>user</label>
-            </div>
-            <div aria-label="댓글 내용" class="comment_item_content">
-              <p>게시글에 댓글을 쓰면 이런 형식으로 보여집니다.!</p>
-            </div>
-            <div aria-label="댓글 작성일자" class="comment_item_regdate">
-              <label>YYYY.MM.DD. HH:MM</label>
-            </div>
-          </div>
           <div class="comment_item">
             <div aria-label="댓글 작성자 이름" class="comment_item_writer">
               <label>user</label>
@@ -53,28 +42,30 @@
       </ul>
     </div>
     <div class="detail_comment_form">
-      <form action="detail.html" method="post">
+      <form>
         <div class="comment_content">
           <div>
-            <label for="content">User</label>
+            <label for="content" id="commenter">User</label>
           </div>
           <div>
             <textarea id="comment_content" maxlength="100" minlength="1" name="content"
                       placeholder="댓글을 작성해주세요" rows="2"></textarea>
           </div>
           <div class="comment_content_btn">
-            <button class="btn btn-primary">작성</button>
+            <button class="btn btn-primary" id="writeBtn">작성</button>
           </div>
         </div>
       </form>
     </div>
     <div class="detail_btn">
       <div class="detail_btn_column">
-        <button class="btn btn-primary">이전 글: <span id="prev_post_title">글제목</span></button>
-        <button class="btn btn-primary ml-5">이전 글: <span id="next_post_title">글제목</span></button>
+        <button class="btn btn-primary" id="prevPostBtn">이전 글: <span id="prev_post_title">글제목</span>
+        </button>
+        <button class="btn btn-primary ml-5" id="nextPostBtn">다음 글: <span
+            id="next_post_title">글제목</span></button>
       </div>
       <div class="detail_btn_column">
-        <button class="btn btn-primary">목록으로</button>
+        <a class="btn btn-primary" href="/cafe/resources/index.html">목록으로</a>
       </div>
     </div>
   </div>
