@@ -7,10 +7,10 @@
 function buildBoard(posts, page) {
   const startIndex = page.getStartIndex()
   const endIndex = page.getEndIndex()
-  const pageData = posts.slice(startIndex, endIndex)
+  const postData = posts.slice(startIndex, endIndex)
 
   const tbody = document.createElement("tbody")
-  pageData.forEach(item => {
+  postData.forEach(item => {
     tbody.appendChild(buildBoardPost(item))
   })
   return tbody
@@ -24,12 +24,16 @@ function buildBoard(posts, page) {
 function buildBoardPost(post) {
   const row = document.createElement("tr")
   row.innerHTML = `
-    <td class="board_table_title">${post.title}</td>
+    <td class="board_table_title"><a href="/cafe/resources/board/detail.html?id=${post.id}">${post.title}</a></td>
     <td>${post.author}</td>
-    <td>${post.date}</td>
+    <td>${toLocalDate(post.date)}</td>
     <td>${post.views}</td>
     `
   return row
+}
+
+function toLocalDate(date) {
+  return new Date(date).toLocaleDateString()
 }
 
 export {buildBoard}

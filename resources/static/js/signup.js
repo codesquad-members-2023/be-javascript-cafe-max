@@ -1,6 +1,11 @@
 import {members} from "./members.js";
 import Member from "./member.js";
 
+$(document).ready(function () {
+  document.querySelector("#signUpBtn").addEventListener("click",
+      checkSignupForm)
+});
+
 function checkSignupForm(event) {
   event.preventDefault()
 
@@ -65,8 +70,3 @@ function isDuplicatedEmail(email) {
 function isDuplicatedNickname(nickname) {
   return members.findNickname(nickname) !== undefined
 }
-
-$(document).ready(function () {
-  document.querySelector("#signUpBtn").addEventListener("click",
-      checkSignupForm)
-});

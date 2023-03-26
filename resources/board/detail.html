@@ -12,21 +12,15 @@
 
 <div class="detail_container">
   <div class="detail_header">
-    <h4>자바 웹개발 교육 홈페이지 디자인 개발1</h4>
+    <h4 id="title"></h4>
   </div>
   <div class="detail_writer_info">
-    <label>작성자:<span>user</span></label>
-    <label>작성일자:<span>YYYY.MM.DD. HH:MM</span></label>
-    <label>조회:<span>0</span></label>
+    <label>작성자:<span id="author"></span></label>
+    <label>작성일자:<span id="regdate"></span></label>
+    <label>조회:<span id="views"></span></label>
   </div>
   <div class="detail_content">
-    <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
-      been the industry's standard dummy text ever since the 1500s, when an unknown printer took a
-      galley of type and scrambled it to make a type specimen book. It has survived not only five
-      centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It
-      was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum
-      passages, and more recently with desktop publishing software like Aldus PageMaker including
-      versions of Lorem Ipsum.</p>
+    <p id="content"></p>
   </div>
   <div class="detail_comment">
     <div class="detail_comment_count"><label>댓글<span>1</span>개</label></div>
@@ -65,7 +59,7 @@
             <label for="content">User</label>
           </div>
           <div>
-            <textarea id="content" maxlength="100" minlength="1" name="content"
+            <textarea id="comment_content" maxlength="100" minlength="1" name="content"
                       placeholder="댓글을 작성해주세요" rows="2"></textarea>
           </div>
           <div class="comment_content_btn">
@@ -88,6 +82,6 @@
 </div>
 
 <script src="/cafe/resources/static/js/common.js"></script>
-<script src="/cafe/resources/static/js/write.js"></script>
+<script src="/cafe/resources/static/js/detail.js" type="module"></script>
 </body>
 </html>

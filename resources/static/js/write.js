@@ -1,13 +1,38 @@
-$(document).ready(function () {
-  $("#writeBtn").click(function (event) {
+import {members} from "./members.js";
+import {Post} from "./post.js";
+import {Posts, createPosts} from "./posts.js";
+import {checkLogin} from "./header.js";
+
+$(document).ready(async function () {
+  const datas = await createPosts()
+  const posts = new Posts(datas)
+  const loginEmail = localStorage.getItem("loginMember")
+
+  // 로그인 영역 출력
+  await checkLogin()
+
+  $("#writeBtn").click(async function (event) {
     event.preventDefault()
 
     if (checkWriteForm()) {
-      document.write_form.submit()
+      const id = posts.createId()
+      const title = $("#title").val()
+      const content = $("#content").val()
+      const writer = members.findEmail(loginEmail).nickname
+      const regDate = new Date()
+      const newPost = new Post(id, title, content, writer, regDate)
+      await writePost(posts, newPost)
+      location.href = "/cafe/resources/index.html"
     }
-
   });
 })
+
+/* 게시글 글쓰기 처리 */
+function writePost(posts, newPost) {
+  posts.add(newPost)
+}
+
+/* 글쓰기 유효성 검사 */
 
 function checkWriteForm() {
   const title = $("#title").val();
