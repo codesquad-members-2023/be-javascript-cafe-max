@@ -7,7 +7,7 @@ import {posts} from "./common.js";
 window.onload = async function () {
   console.log(posts)
   const currentPage = await parsingCurrentPage()
-  const page = new Page(currentPage, 5, 10, posts.length())
+  const page = new Page(currentPage, 5, 15, posts.length())
 
   // 로그인 영역 출력
   checkLogin()
