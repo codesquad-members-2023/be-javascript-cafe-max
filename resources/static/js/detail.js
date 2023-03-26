@@ -11,9 +11,17 @@ window.onload = async function () {
   await outputPost(post)
   await outputComment(id)
   await outputPostBtn(post)
+  await outputCommentCount(comments.size())
 
-  // 댓글작성 버튼 클릭시 닉네임, 내용, 작성일자를 입력으로 받아 댓글을 작성합니다.
-  $("#writeBtn").click(clickWriteBtn)
+  // 로그인여부에 따른 댓글작성버튼 활성화/비활성화 처리
+  const loginMember = members.findByEmail(localStorage.getItem("loginMember"))
+  console.log(loginMember)
+  if (loginMember === undefined) {
+    $("#writeBtn").attr('disabled', true);
+  } else {
+    // 댓글작성 버튼 클릭시 닉네임, 내용, 작성일자를 입력으로 받아 댓글을 작성합니다.
+    $("#writeBtn").click(clickWriteBtn)
+  }
 
   // 삭제 버튼 이벤트 등록
   const comment_delBtn = $(".comment_delBtn")
@@ -59,8 +67,13 @@ async function outputComment(postId) {
   }
 
   // 댓글작성 작성자 아이디 출력
-  document.querySelector("#commenter").textContent = members.findByEmail(
-      localStorage.getItem("loginMember")).nickname
+  const loginMember = members.findByEmail(localStorage.getItem("loginMember"))
+  if (loginMember !== undefined) {
+    $("#commenter").text(loginMember.nickname)
+  } else {
+    $("#commenter").text("로그인 해주세요")
+  }
+
 }
 
 async function outputPostBtn(post) {
@@ -74,6 +87,10 @@ async function outputPostBtn(post) {
   if (nextPost !== undefined) {
     postMoveBtnContainer.innerHTML += `<button class="btn btn-primary" id="nextPostBtn">다음 글: <span id="next_post_title">${nextPost.title}</span></button>`
   }
+}
+
+async function outputCommentCount(count) {
+  $("#comment_count").text(count)
 }
 
 async function buildComments(comments) {

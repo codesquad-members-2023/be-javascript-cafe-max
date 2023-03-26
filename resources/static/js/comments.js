@@ -34,6 +34,10 @@ class Comments {
     }
     return maxId + 1
   }
+
+  size() {
+    return this.#comments.length
+  }
 }
 
 async function getComments() {

@@ -6,7 +6,7 @@ class Members {
   }
 
   add(member) {
-    this.#members.push(member)
+    this.#members.push(member.toJSON())
     localStorage.setItem("members", JSON.stringify(this.#members))
   }
 

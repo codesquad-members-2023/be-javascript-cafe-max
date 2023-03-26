@@ -8,6 +8,17 @@ class Post {
     this.date = date;
     this.views = 0;
   }
+
+  toJSON() {
+    return {
+      id: this.id,
+      title: this.title,
+      content: this.content,
+      author: this.author,
+      date: this.date,
+      views: this.views
+    }
+  }
 }
 
 export {Post}

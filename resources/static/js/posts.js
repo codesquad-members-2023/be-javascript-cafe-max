@@ -8,7 +8,7 @@ class Posts {
   }
 
   add(post) {
-    this.#posts.push(post)
+    this.#posts.push(post.toJSON())
     localStorage.setItem("posts", JSON.stringify(this.#posts))
   }
 
