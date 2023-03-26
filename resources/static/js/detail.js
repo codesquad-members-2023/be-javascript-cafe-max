@@ -1,23 +1,20 @@
-import {createPosts, Posts} from "./posts.js";
+import {posts} from "./common.js";
 import {checkLogin} from "./header.js";
-import {members} from "./members.js";
-import {Post} from "./post.js";
+import {members} from "./common.js";
 import {Comment} from "./comment.js";
 
 window.onload = async function () {
   checkLogin()
 
   const id = validateParam()
-  const post = await findPostById(id)
+  const post = posts.findById(id)
   outputPost(post)
   await outputComment(id)
 
   // 댓글작성 버튼 클릭시 닉네임, 내용, 작성일자를 입력으로 받아 댓글을 작성합니다.
-  document.querySelector("#writeBtn")
-  .addEventListener("click", clickWriteBtn)
+  $("#writeBtn").click(clickWriteBtn)
 
-  // 다음글 이벤트 등록
-
+  // TODO: 다음글 이벤트 등록
 }
 
 function validateParam() {
@@ -29,18 +26,12 @@ function validateParam() {
   return id
 }
 
-async function findPostById(id) {
-  const datas = await createPosts()
-  const posts = new Posts(datas)
-  return posts.findById(id)[0]
-}
-
 function outputPost(post) {
-  $("#title")[0].textContent = post.title
-  $("#author")[0].textContent = post.author
-  $("#regdate")[0].textContent = toLocalDate(post.date)
-  $("#views")[0].textContent = post.views
-  $("#content")[0].textContent = post.content
+  $("#title").text(post.title)
+  $("#author").text(post.author)
+  $("#regdate").text(toLocalDate(post.date))
+  $("#views").text(post.views)
+  $("#content").text(post.content)
 }
 
 function toLocalDate(date) {
@@ -48,16 +39,13 @@ function toLocalDate(date) {
 }
 
 async function outputComment(postId) {
-  const posts = new Posts(await createPosts())
-  const findPost = posts.findById(postId)[0]
-  const comments = findPost.comments
-
+  const comments = posts.findById(postId).comments
   // 댓글 생성
   document.querySelector("#comment_list").replaceWith(buildComments(comments))
 
   // 댓글작성 작성자 아이디 출력
-  document.querySelector("#commenter").textContent =
-      members.findEmail(localStorage.getItem("loginMember")).nickname
+  document.querySelector("#commenter").textContent = members.findByEmail(
+      localStorage.getItem("loginMember")).nickname
 }
 
 function buildComments(comments) {
@@ -70,7 +58,7 @@ function buildComments(comments) {
 
 function buildComment(comment) {
   const li = document.createElement("li")
-  const result = `
+  li.innerHTML = `
             <div class="comment_item">
             <div aria-label="댓글 작성자 이름" class="comment_item_writer">
               <label>${comment.commenter}</label>
@@ -86,7 +74,6 @@ function buildComment(comment) {
             </div>
           </div>
           `
-  li.innerHTML = result
   return li
 }
 
@@ -101,13 +88,12 @@ function toLocalDateTime(date) {
 
 async function clickWriteBtn(event) {
   event.preventDefault()
-  const commenter = document.querySelector("#commenter").textContent
+  const commenter = $("#commenter").text()
   const content = $("#comment_content").val()
   const regdate = new Date()
   const postId = validateParam()
 
   const comment = new Comment(commenter, content, regdate, postId)
-  const posts = new Posts(await createPosts())
   posts.addComment(postId, comment)
   location.href = "/cafe/resources/board/detail.html?id=" + postId
 }

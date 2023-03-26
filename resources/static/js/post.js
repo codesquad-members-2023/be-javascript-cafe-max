@@ -9,19 +9,6 @@ class Post {
     this.views = 0;
     this.comments = []
   }
-
-  toJSON() {
-    return {
-      id: this.id,
-      title: this.title,
-      content: this.content,
-      author: this.author,
-      date: this.date,
-      views: this.views,
-      comments: this.comments
-    }
-  }
-
 }
 
 export {Post}

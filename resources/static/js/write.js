@@ -1,11 +1,9 @@
-import {members} from "./members.js";
+import {members} from "./common.js";
 import {Post} from "./post.js";
-import {Posts, createPosts} from "./posts.js";
+import {posts} from "./common.js";
 import {checkLogin} from "./header.js";
 
 $(document).ready(async function () {
-  const datas = await createPosts()
-  const posts = new Posts(datas)
   const loginEmail = localStorage.getItem("loginMember")
 
   // 로그인 영역 출력
@@ -15,10 +13,10 @@ $(document).ready(async function () {
     event.preventDefault()
 
     if (checkWriteForm()) {
-      const id = posts.createId()
+      const id = posts.nextId()
       const title = $("#title").val()
       const content = $("#content").val()
-      const writer = members.findEmail(loginEmail).nickname
+      const writer = members.findByEmail(loginEmail).nickname
       const regDate = new Date()
       const newPost = new Post(id, title, content, writer, regDate)
       await writePost(posts, newPost)

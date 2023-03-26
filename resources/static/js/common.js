@@ -1,3 +1,6 @@
+import {getMembers} from "./members.js";
+import {getPosts} from "./posts.js";
+
 function includeHTML() {
   var z, i, elmnt, file, xhttp;
   /* Loop through a collection of all HTML elements: */
@@ -31,3 +34,6 @@ function includeHTML() {
 }
 
 includeHTML()
+let members = getMembers()
+let posts = await getPosts()
+export {members, posts}

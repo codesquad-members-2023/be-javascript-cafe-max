@@ -1,18 +1,28 @@
-import {members} from "./members.js";
+import {members} from "./common.js";
 import Member from "./member.js";
 
 $(document).ready(function () {
-  document.querySelector("#signUpBtn").addEventListener("click",
-      checkSignupForm)
+  $("form").submit(signup)
 });
 
-function checkSignupForm(event) {
+function signup(event) {
   event.preventDefault()
 
   const email = $("#email").val();
   const nickname = $("#nickname").val();
   const pwd = $("#pwd").val();
 
+  if (!validateSignUp(email, nickname, pwd)) {
+    return false
+  }
+
+  members.add(new Member(email, nickname, pwd))
+  alert("회원가입에 성공하였습니다.")
+  localStorage.setItem("signup_success_email", email)
+  document.form.submit()
+}
+
+function validateSignUp(email, nickname, pwd) {
   if (!isEmail(email)) {
     alert("잘못된 이메일 형식입니다.");
     return false;
@@ -37,13 +47,10 @@ function checkSignupForm(event) {
     alert("닉네임이 중복되었습니다.")
     return false
   }
-
-  members.add(new Member(email, nickname, pwd))
-  alert("회원가입에 성공하였습니다.")
-  localStorage.setItem("signup_success_email", email)
-  document.signupForm.submit()
+  return true
 }
 
+// 이메일 형식을 지키는지 검사합니다.
 function isEmail(value) {
   const regExp = /^[\da-zA-Z]([-_.]?[\da-zA-Z])*@[\da-zA-Z]([-_.]?[\da-zA-Z])*\.[a-zA-Z]{2,3}$/i;
   return regExp.test(value);
@@ -63,10 +70,10 @@ function isPassword(value) {
 
 // 이메일이 중복되었는지 확인합니다.
 function isDuplicatedEmail(email) {
-  return members.findEmail(email) !== undefined
+  return members.findByEmail(email) !== undefined
 }
 
 // 닉네임이 중복되었는지 확인합니다.
 function isDuplicatedNickname(nickname) {
-  return members.findNickname(nickname) !== undefined
+  return members.findByNickname(nickname) !== undefined
 }

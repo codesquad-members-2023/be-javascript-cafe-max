@@ -1,13 +1,13 @@
 class Page {
   #currentPage
-  #pageCount
-  #dataLimit
+  #pageSize
+  #dataSize
   #totalCountOfData
 
-  constructor(currentPage, pageCount, dataLimit, totalCountOfData) {
+  constructor(currentPage, pageSize, dataSize, totalCountOfData) {
     this.#currentPage = currentPage; // 현재 페이지 번호
-    this.#pageCount = pageCount; // 한 화면에 나타날 페이지 버튼의 개수
-    this.#dataLimit = dataLimit; // 한 페이지에 보여줄 데이터 개수
+    this.#pageSize = pageSize; // 한 화면에 나타날 페이지 버튼의 개수
+    this.#dataSize = dataSize; // 한 페이지에 보여줄 데이터 개수
     this.#totalCountOfData = totalCountOfData // 전체 데이터 개수
   }
 
@@ -18,7 +18,7 @@ class Page {
    * @returns {number} 게시글 참조 시작 인덱스
    */
   getStartIndex() {
-    return (this.#currentPage - 1) * this.#dataLimit
+    return (this.#currentPage - 1) * this.#dataSize
   }
 
   /**
@@ -28,7 +28,7 @@ class Page {
    * @returns {number} 게시글 참조 종료 인덱스
    */
   getEndIndex() {
-    return this.getStartIndex() + this.#dataLimit
+    return this.getStartIndex() + this.#dataSize
   }
 
   /**
@@ -37,7 +37,7 @@ class Page {
    * @returns {number} 전체 페이지
    */
   getTotalPage() {
-    return Math.ceil(this.#totalCountOfData / this.#dataLimit)
+    return Math.ceil(this.#totalCountOfData / this.#dataSize)
   }
 
   /**
@@ -50,7 +50,7 @@ class Page {
    * @returns {number} 현재 페이지가 속한 그룹번호
    */
   getPageGroup() {
-    return Math.ceil(this.#currentPage / this.#pageCount)
+    return Math.ceil(this.#currentPage / this.#pageSize)
   }
 
   /**
@@ -61,7 +61,7 @@ class Page {
    */
   getLastNumber() {
     let totalPage = this.getTotalPage()
-    let lastNumber = this.getPageGroup() * this.#pageCount
+    let lastNumber = this.getPageGroup() * this.#pageSize
     if (lastNumber > totalPage) {
       lastNumber = totalPage
     }
@@ -75,7 +75,7 @@ class Page {
    * @returns {number} 페이지 그룹의 첫번째 번호
    */
   getFirstNumber() {
-    return ((this.getPageGroup() - 1) * this.#pageCount) + 1
+    return ((this.getPageGroup() - 1) * this.#pageSize) + 1
   }
 
   /**
@@ -99,8 +99,7 @@ function buildPage(posts, page) {
   const lastNumber = page.getLastNumber()
   const prev = firstNumber - 1
   const next = lastNumber + 1
-  let pagination = document.querySelector("#board_pagination")
-  pagination.innerHTML = createPageButtons(page)
+  $("#board_pagination")[0].innerHTML = createPageButtons(page)
 
   // 페이지 번호 버튼에 이벤트 등록
   let buttons = $(".page_num_link").get()

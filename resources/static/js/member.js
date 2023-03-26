@@ -11,14 +11,6 @@ class Member {
     this._nickname = nickname;
   }
 
-  toJSON() {
-    return {
-      email: this.#email,
-      nickname: this.#nickname,
-      pwd: this.#pwd
-    }
-  }
-
   get email() {
     return this._email;
   }
