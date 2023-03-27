@@ -19,7 +19,6 @@ class Post {
       views: this.views
     }
   }
-
 }
 
 export {Post}

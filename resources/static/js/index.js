@@ -2,21 +2,18 @@ import {Page} from "./page.js"
 import {buildBoard} from "./board.js";
 import {buildPage, parsingCurrentPage} from "./page.js";
 import {checkLogin} from "./header.js";
-import {Posts, createPosts} from "./posts.js";
+import {posts} from "./common.js";
 
 window.onload = async function () {
-  let datas = await createPosts()
-  datas = filterPostByTitle(datas)
-  const posts = new Posts(datas)
+  console.log(posts)
   const currentPage = await parsingCurrentPage()
-  const page = new Page(currentPage, 5, 10, posts.length())
+  const page = new Page(currentPage, 5, 15, posts.length())
 
   // 로그인 영역 출력
   checkLogin()
 
   // 게시글 출력
-  const tbody = document.querySelector("#board_table tbody")
-  tbody.replaceWith(buildBoard(posts, page))
+  $("#board tbody").replaceWith(buildBoard(posts, page))
 
   // 페이지 버튼 출력
   buildPage(posts, page)
@@ -28,7 +25,7 @@ window.onload = async function () {
   // 검색 버튼 이벤트 등록
   document.querySelector("#searchBtn").addEventListener("click", function () {
     const content = $("#search_content").val()
-    location.href = "/cafe/resources/index.html?content=" + content
+    location.href = "/cafe/index.html?content=" + content
   })
 }
 

@@ -1,13 +1,12 @@
-import {members} from "./members.js";
+import {members} from "./common.js";
 
-$(document).ready(function () {
+$(document).ready(() => {
   const email = localStorage.getItem("signup_success_email")
-  const member = members.findEmail(email)
-  console.log(member)
+  const member = members.findByEmail(email)
   $("#email").val(member.email)
   $("#nickname").val(member.nickname)
 
-  $("#loginBtn").click(function () {
-    location.href = "login.html";
+  $("#loginBtn").click(() => {
+    location.href = "/cafe/resources/user/login.html";
   });
 });

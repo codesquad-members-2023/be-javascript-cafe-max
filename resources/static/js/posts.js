@@ -5,7 +5,6 @@ class Posts {
 
   constructor(posts) {
     this.#posts = posts;
-    this._posts = posts;
   }
 
   add(post) {
@@ -14,47 +13,43 @@ class Posts {
   }
 
   get posts() {
-    return this._posts;
+    return this.#posts;
   }
 
   length() {
-    return this._posts.length
+    return this.#posts.length
   }
 
   slice(startIndex, endIndex) {
-    return this._posts.slice(startIndex, endIndex)
+    return this.#posts.slice(startIndex, endIndex)
   }
 
-  createId() {
+  nextId() {
     let maxId = 0
-    for (let i = 0; i < this._posts.length; i++) {
-      if (this._posts[i].id > maxId) {
-        maxId = this._posts[i].id
+    for (let i = 0; i < this.#posts.length; i++) {
+      if (this.#posts[i].id > maxId) {
+        maxId = this.#posts[i].id
       }
     }
     return maxId + 1
   }
 
   findById(id) {
-    return this._posts.filter((item) => {
-      return parseInt(item.id) === parseInt(id)
-    })
+    return this.#posts.find((item) => parseInt(item.id) === parseInt(id))
   }
 }
 
-async function createPosts() {
+async function getPosts() {
   let posts = localStorage.getItem("posts")
   if (posts !== null) {
-    const parsePosts = JSON.parse(posts)
-    parsePosts.sort(descDate)
-    return parsePosts
+    posts = JSON.parse(posts)
+    posts.sort(descDate)
+    return new Posts(posts)
   }
-  const datas = await fetchPost("/cafe/resources/static/json/post.json")
-  posts = []
-  datas.forEach((item) => posts.push(item))
+  posts = await fetchPost("/cafe/resources/static/json/post.json")
   posts.sort(descDate)
   localStorage.setItem("posts", JSON.stringify(posts))
-  return posts
+  return new Posts(posts)
 }
 
 function descDate(a, b) {
@@ -63,5 +58,5 @@ function descDate(a, b) {
   return date2 - date1
 }
 
-export {Posts, createPosts}
+export {getPosts}
 
