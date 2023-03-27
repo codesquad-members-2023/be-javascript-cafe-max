@@ -19,7 +19,7 @@ function signup(event) {
   members.add(new Member(email, nickname, pwd))
   alert("회원가입에 성공하였습니다.")
   localStorage.setItem("signup_success_email", email)
-  document.form.submit()
+  location.href = "/be-javascript-cafe-max/resources/user/signup_success.html"
 }
 
 function validateSignUp(email, nickname, pwd) {

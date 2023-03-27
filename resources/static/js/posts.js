@@ -46,7 +46,7 @@ async function getPosts() {
     posts.sort(descDate)
     return new Posts(posts)
   }
-  posts = await fetchPost("/cafe/resources/static/json/post.json")
+  posts = await fetchPost("/be-javascript-cafe-max/resources/static/json/post.json")
   posts.sort(descDate)
   localStorage.setItem("posts", JSON.stringify(posts))
   return new Posts(posts)

@@ -25,7 +25,7 @@ window.onload = async function () {
   // 검색 버튼 이벤트 등록
   document.querySelector("#searchBtn").addEventListener("click", function () {
     const content = $("#search_content").val()
-    location.href = "/cafe/index.html?content=" + content
+    location.href = "/be-javascript-cafe-max/index.html?content=" + content
   })
 }
 
